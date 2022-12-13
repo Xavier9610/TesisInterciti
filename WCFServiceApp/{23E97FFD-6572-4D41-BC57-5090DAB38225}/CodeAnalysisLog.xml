@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2019\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="16.0">
+ <Targets>
+  <Target Name="C:\Users\Pato\AppData\Local\Temp\tmp550E.tmp.cadir\bin\App_Code.dll">
+   <Modules>
+    <Module Name="app_code.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="Service+CompletedAsyncResult`1" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#AsyncWaitHandle" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_AsyncWaitHandle()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2022-02-08 11:56:36Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="c:\Users\Pato\source\repos\SolutionTesisInterciti\WCFServiceApp\App_Code" File="Service.cs" Line="640">'Service.CompletedAsyncResult&lt;T&gt;.AsyncWaitHandle.get()' crea una excepción de tipo 'Exception', un tipo de excepción que no se debe producir en una propiedad. Si puede producirse la instancia de esta excepción, use un tipo de excepción diferente, convierta esta propiedad en un método o cambie la lógica de esta propiedad para que no produzca una excepción.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065">
+   <Name>No producir excepciones en ubicaciones inesperadas</Name>
+   <Description>No produzca excepciones de forma explícita en ubicaciones inesperadas. Hay algunos métodos, como Equals y GetHashCode, que los usuarios no esperan que produzcan excepciones. Por tanto, las llamadas a estos métodos no se suelen ajustar en bloques try catch.</Description>
+   <Resolution Name="PropertyGetter">{0} crea una excepción de tipo {1}, un tipo de excepción que no se debe producir en una propiedad. Si puede producirse la instancia de esta excepción, use un tipo de excepción diferente, convierta esta propiedad en un método o cambie la lógica de esta propiedad para que no produzca una excepción.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb386039.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error, Warning</MessageLevel>
+   <File Name="designrules.dll" Version="16.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Categoría</String>
+  <String Key="Certainty">Certeza</String>
+  <String Key="CollapseAll">Contraer todo</String>
+  <String Key="CheckId">Comprobar id.</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">errores</String>
+  <String Key="ExpandAll">Expandir todo</String>
+  <String Key="Help">Ayuda</String>
+  <String Key="Line">Línea</String>
+  <String Key="Messages">mensajes</String>
+  <String Key="LocationNotStoredInPdb">[Ubicación no almacenada en Pdb]</String>
+  <String Key="Project">Proyecto</String>
+  <String Key="Resolution">Resolución</String>
+  <String Key="Rule">Regla</String>
+  <String Key="RuleFile">Archivo de regla</String>
+  <String Key="RuleDescription">Descripción de la regla</String>
+  <String Key="Source">Origen</String>
+  <String Key="Status">Estado</String>
+  <String Key="Target">Círculos concéntricos</String>
+  <String Key="Warning">Advertencia</String>
+  <String Key="Warnings">advertencias</String>
+  <String Key="ReportTitle">Informe de análisis del código</String>
+ </Localized>
+</FxCopReport>

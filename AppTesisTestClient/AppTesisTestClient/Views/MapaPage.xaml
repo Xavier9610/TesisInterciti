@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Map="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             x:Class="AppTesisTestClient.Views.AboutPage"
+             xmlns:fonts="clr-namespace:AppTesisTestClient.Models"
+             Title="{Binding Title}"
+             x:Name="contenMapa">
+
+
+    <RelativeLayout x:Name="layMapaMain"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+
+        <Map:Map x:Name="mapaAppCliente" VerticalOptions="FillAndExpand" IsVisible="true" HorizontalOptions="FillAndExpand" 
+                     RelativeLayout.WidthConstraint=
+         "{ConstraintExpression Type=RelativeToParent,
+                                Property=Width,
+                                Factor=1}"
+     RelativeLayout.HeightConstraint=
+         "{ConstraintExpression Type=RelativeToParent,
+                                Property=Height,
+                                Factor=1}"></Map:Map>
+        <!---->
+        <StackLayout IsVisible="false" x:Name="layoutRecorrido" Orientation="Vertical" RelativeLayout.XConstraint="0" 
+         RelativeLayout.YConstraint="40" 
+         RelativeLayout.WidthConstraint=
+            "{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=1}" BackgroundColor="Transparent">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center">
+                    <Label x:Name="lblTiempo" Text="0:00" HorizontalOptions="Start"></Label>
+                    <Label x:Name="lblRecorrido"  Text="Esperando respuestas" HorizontalOptions="End"></Label>
+                    <Label x:Name="lblDistancia"  Text="" HorizontalOptions="End"></Label>
+                </StackLayout>
+                <StackLayout HorizontalOptions="EndAndExpand" Orientation="Horizontal">
+                    
+                    <StackLayout Orientation="Vertical" HorizontalOptions="End">
+                        <Button x:Name="btnCancelAll"  FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.CancelCircled2}"
+                           FontSize="35"
+                           TextColor="OrangeRed" BackgroundColor="Transparent"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center"
+                           ></Button>
+                        <Label FontSize="Micro" HorizontalOptions="Center" Text="Cancelar"
+                           ></Label>
+                    </StackLayout>
+                    
+                </StackLayout>
+
+            </StackLayout>
+            <StackLayout x:Name="layoutRespuestas"  Orientation="Vertical" VerticalOptions="FillAndExpand" HeightRequest="500">
+                <ListView x:Name="lstListaRecorrido" SeparatorVisibility="None" ItemsSource="{Binding AppTesisTestClient.Models.Recorrido}"
+                              Margin="20,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" RowHeight="200" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate >
+                            <ViewCell>
+                                <Frame BackgroundColor="White" BorderColor="#F0F0F0" HeightRequest="200" Padding="5" Margin="0,0,0,5" HasShadow="False">
+                                    <Grid HeightRequest="200" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            
+                                        </Grid.ColumnDefinitions>
+                                        <StackLayout Grid.Column="1" Orientation="Vertical" Margin="20,0" HorizontalOptions="Start" VerticalOptions="Center">
+                                            <Label Text="Conductor:"></Label>
+                                            <Image Source="{Binding IdConductor.Picture.Source}" Aspect="AspectFit"></Image>
+                                            <Label  Text="{Binding IdConductor.Nombre}" TextColor="Black" FontSize="Subtitle"  FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                            <Label  Text="{Binding IdConductor.Apellido}" TextColor="Black" FontSize="Subtitle"  FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                            
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="2" Orientation="Vertical" Margin="20,0" HorizontalOptions="Start" VerticalOptions="Center">
+                                            <Label Text="Vehiculo:"></Label>
+                                            <Label  Text="{Binding IdConductor.Vehiculo.Marca}" TextColor="Black" FontSize="Subtitle"  FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                            <Label  Text="{Binding IdConductor.Vehiculo.Modelo}" TextColor="Black" FontSize="Subtitle"  FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                            <Label  Text="{Binding IdConductor.Vehiculo.Placa}" TextColor="Black" FontSize="Subtitle"  FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="3" Orientation="Vertical" Margin="20,0" HorizontalOptions="Start" VerticalOptions="Center">
+                                            <Label Text="Contra oferta:" TextColor="Green"></Label>
+                                            <Label  Text="{Binding ValorRecorrido}" TextColor="Green" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+<!-- -->
+        <StackLayout IsVisible="false" x:Name="layoutBarraBu" Orientation="Vertical" RelativeLayout.XConstraint="25" 
+         RelativeLayout.YConstraint="50"
+         RelativeLayout.HeightConstraint="{ConstraintExpression 
+            Type=RelativeToParent,
+            Property=Height,
+            Factor=0.3}" 
+         RelativeLayout.WidthConstraint=
+            "{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=0.9}" BackgroundColor="Transparent">
+            <Label Text="Datos de ruta:" FontSize="Title" TextColor="Black"></Label>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <SearchBar x:Name="txtSearch" IsEnabled="False" HorizontalOptions="Center"
+                           VerticalOptions="Center" BackgroundColor="{x:Static fonts:IconFont.ColorFondo}">
+
+                </SearchBar>
+               
+            </StackLayout>
+
+        </StackLayout>
+        <!---->
+        <StackLayout IsVisible="false" x:Name="layoutBusquedaResult" VerticalOptions="StartAndExpand" BackgroundColor="White" Orientation="Vertical" RelativeLayout.XConstraint="25" 
+         RelativeLayout.YConstraint="150" 
+         RelativeLayout.WidthConstraint=
+            "{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=0.85}" >
+            <Label Text="Resultados:" FontSize="Subtitle" ></Label>
+            <ListView x:Name="lstVResultados" VerticalOptions="StartAndExpand" >
+            </ListView>
+        </StackLayout>
+        <!---->
+        <StackLayout IsVisible="false" x:Name="layoutDirecciones" Orientation="Vertical" BackgroundColor="Transparent" RelativeLayout.XConstraint="25" 
+         RelativeLayout.YConstraint="150"
+         RelativeLayout.HeightConstraint="{ConstraintExpression 
+            Type=RelativeToParent,
+            Property=Height,
+            Factor=0.6}" 
+         RelativeLayout.WidthConstraint=
+            "{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=0.9}">
+            <StackLayout Orientation="Vertical">
+
+                <StackLayout BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" Orientation="Horizontal" x:Name="lInicio">
+                    <RadioButton x:Name="rBtnInicio" BackgroundColor="{x:Static fonts:IconFont.ColorFondo}"  IsEnabled="False"></RadioButton>
+                    <Button x:Name="btnUbicacionInicio"  IsEnabled="True" TextColor="{x:Static fonts:IconFont.ColorTexto}" HorizontalOptions="StartAndExpand" BackgroundColor="Transparent" Text="Punto de Partida" RelativeLayout.WidthConstraint="{ConstraintExpression 
+                    Type=RelativeToView, 
+                    ElementName=lInicio, 
+                    Property=Y}"></Button>
+                    <Label x:Name="txtInicio"  FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.Location}"
+                           FontSize="Title"
+                           TextColor="Green"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="Center"
+                           ></Label>
+                </StackLayout>
+                <StackLayout BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" Orientation="Horizontal" x:Name="lFinal">
+                    <RadioButton x:Name="rBtnFin" BackgroundColor="{x:Static fonts:IconFont.ColorFondo}"  IsEnabled="False"></RadioButton>
+                    <Button x:Name="btnUbicacionFin"  IsEnabled="True" TextColor="{x:Static fonts:IconFont.ColorTexto}" HorizontalOptions="Start" BackgroundColor="Transparent" Text="Destino" RelativeLayout.WidthConstraint="{ConstraintExpression 
+                    Type=RelativeToView, 
+                    ElementName=lFinal, 
+                    Property=Y}"></Button>
+                    <Label x:Name="txtFin"  FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.FlagCheckered}"
+                           FontSize="Title"
+                           TextColor="OrangeRed"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="Center"
+                           ></Label>
+                </StackLayout>
+                <Label Text="Fecha del recorrido:" BackgroundColor="Transparent" TextColor="Black" FontSize="Title"></Label>
+                <StackLayout BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" Orientation="Horizontal" x:Name="lReserva">
+                    <RadioButton x:Name="rBtnReserva" BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" IsEnabled="False"></RadioButton>
+                    <Button x:Name="btnDateRecorrido" IsEnabled="True" TextColor="{x:Static fonts:IconFont.ColorTexto}" HorizontalOptions="StartAndExpand" BackgroundColor="Transparent" Text="Reservar" RelativeLayout.WidthConstraint="{ConstraintExpression 
+                    Type=RelativeToView, 
+                    ElementName=lReserva, 
+                    Property=Y}"></Button>
+                    <DatePicker x:Name="dateRecorrido" BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" >
+                    </DatePicker>
+                    <Label   FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.CalendarCheckO}"
+                           FontSize="Title"
+                           TextColor="{x:Static fonts:IconFont.ColorIcono}"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="Center"
+                           ></Label>
+                </StackLayout>
+                <StackLayout BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" Orientation="Horizontal" x:Name="lTipoVehiculo">
+                    <RadioButton x:Name="rBtnTipoVehiculo" BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" BorderColor="DarkBlue" IsEnabled="False"></RadioButton>
+                    <Picker x:Name="btnTipoVehiculo" IsEnabled="True" TextColor="{x:Static fonts:IconFont.ColorTexto}" HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" RelativeLayout.WidthConstraint="{ConstraintExpression 
+                    Type=RelativeToView, 
+                    ElementName=lTipoVehiculo, 
+                    Property=Y}"></Picker>
+                    <Label   FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.Cab}"
+                           FontSize="Title"
+                           TextColor="Blue"
+                           HorizontalOptions="End"
+                             
+                             
+                           VerticalOptions="Center"
+                           ></Label>
+                </StackLayout>
+                <StackLayout BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" Orientation="Horizontal" x:Name="lOferta">
+                    <RadioButton x:Name="rBtnOferta" BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" IsEnabled="False"></RadioButton>
+                        <Entry x:Name="txtOferta" HorizontalOptions="FillAndExpand" IsEnabled="True" Keyboard="Numeric" TextColor="{x:Static fonts:IconFont.ColorTexto}" BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" RelativeLayout.WidthConstraint="{ConstraintExpression 
+                        Type=RelativeToView, 
+                        ElementName=lOferta, 
+                        Property=Y}"></Entry>
+                        <Label   FontFamily="fontello"
+                               Text="{x:Static fonts:IconFont.Dollar}"
+                               FontSize="Title"
+                               TextColor="Green"
+                               HorizontalOptions="End"
+                               VerticalOptions="Center"
+                               ></Label>
+                </StackLayout>
+                <StackLayout BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" Orientation="Horizontal" x:Name="lSoliciar">
+                    <Button x:Name="btnSolicitar" IsEnabled="True" TextColor="{x:Static fonts:IconFont.ColorTexto}" HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" Text="Realizar la solicitud" RelativeLayout.WidthConstraint="{ConstraintExpression 
+                    Type=RelativeToView, 
+                    ElementName=lSoliciar, 
+                    Property=Y}"></Button>
+
+                </StackLayout>
+
+            </StackLayout>
+        </StackLayout>
+        <!---->
+        <StackLayout IsVisible="False" x:Name="layoutSeleccionDirecciones" Padding="40" BackgroundColor="White" RelativeLayout.XConstraint="0" 
+         RelativeLayout.YConstraint="550" Orientation="Horizontal" HeightRequest="100"
+         RelativeLayout.WidthConstraint=
+            "{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=1}">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Orientation="Horizontal">
+                <StackLayout HorizontalOptions="Center" BackgroundColor="Transparent" Orientation="Vertical" RelativeLayout.XConstraint="100">
+                    <Button x:Name="btnMiUbi" BackgroundColor="Transparent" 
+                        FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.Location}"
+                           FontSize="50"
+                           TextColor="Green"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" ></Button>
+                    <Label Text="Mi ubicación"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="End" >
+                    <StackLayout   Orientation="Vertical">
+
+                        <Button x:Name="btnMiAceptarUbicacion" BackgroundColor="Transparent" HorizontalOptions="Fill"
+                            FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.OkCircled2}"
+                           FontSize="50"
+                           TextColor="GreenYellow"
+                           VerticalOptions="Center"></Button>
+                        <Label Text="Selecconar" HorizontalOptions="Center"></Label>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="Start" BackgroundColor="Transparent" Orientation="Vertical" >
+                        <Button x:Name="btnMiCancelarUbicacion"  BackgroundColor="Transparent" 
+                            FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.CancelCircled2}"
+                           FontSize="50"
+                           TextColor="OrangeRed"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                            ></Button>
+                        <Label Text="Cancelar" HorizontalOptions="Center"></Label>
+                    </StackLayout>
+
+
+
+
+                </StackLayout>
+
+            </StackLayout>
+            
+        </StackLayout>
+        <!-- -->
+        
+        <!-- -->
+        <StackLayout IsVisible="false" x:Name="layoutSolicitar" RelativeLayout.YConstraint="650" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=1}">
+            <StackLayout >
+                <Button Text="Solicitar Recorrido"></Button>
+            </StackLayout>
+
+        </StackLayout>
+        <!---->
+        <StackLayout IsVisible="False"  BackgroundColor="White"  x:Name="layoutCalificarRecorrido"  Orientation="Vertical" RelativeLayout.XConstraint="25" 
+         RelativeLayout.YConstraint="50"
+         RelativeLayout.HeightConstraint="{ConstraintExpression 
+            Type=RelativeToParent,
+            Property=Height,
+            Factor=0.35}" 
+         RelativeLayout.WidthConstraint=
+            "{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=0.9}">
+            <Label  HorizontalOptions="FillAndExpand" FontSize="Large" TextColor="Black" BackgroundColor="Transparent" Text="Califique el servicio:" RelativeLayout.WidthConstraint="{ConstraintExpression 
+                    Type=RelativeToView, 
+                    ElementName=layoutSolicitar, 
+                    Property=Y}"></Label>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="Center" BackgroundColor="Transparent" >
+                <StackLayout >
+                    <Button  x:Name="btnEmo1" FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.Emo1}"
+                           FontSize="Title" WidthRequest="50" BackgroundColor="Red" BorderColor="Black" CornerRadius="50"
+                           TextColor="{x:Static fonts:IconFont.ColorIcono}"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="Center" RelativeLayout.WidthConstraint="20"
+                           >
+                      
+                    </Button>
+                </StackLayout>
+                <StackLayout>
+                    <Button  x:Name="btnEmo2" FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.Emo2}"
+                           FontSize="Title" WidthRequest="50" BackgroundColor="OrangeRed" BorderColor="Black" CornerRadius="50"
+                           TextColor="{x:Static fonts:IconFont.ColorIcono}"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="Center" RelativeLayout.WidthConstraint="20"
+                           ></Button>
+                </StackLayout>
+                <StackLayout>
+                    <Button x:Name="btnEmo3" FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.Emo3}"
+                           FontSize="Title" WidthRequest="50" BackgroundColor="Orange" BorderColor="Black" CornerRadius="50"
+                           TextColor="{x:Static fonts:IconFont.ColorIcono}"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="Center" RelativeLayout.WidthConstraint="20"
+                           ></Button>
+                </StackLayout>
+                <StackLayout>
+                    <Button x:Name="btnEmo4" FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.Emo4}"
+                           FontSize="Title" WidthRequest="50" BackgroundColor="Yellow" BorderColor="Black" CornerRadius="50"
+                           TextColor="{x:Static fonts:IconFont.ColorIcono}"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="Center" RelativeLayout.WidthConstraint="20"
+                           ></Button>
+                </StackLayout>
+                <StackLayout>
+                    <Button x:Name="btnEmo5" FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.Emo5}"
+                           FontSize="Title" WidthRequest="50" BackgroundColor="GreenYellow" BorderColor="Black" CornerRadius="50"
+                           TextColor="{x:Static fonts:IconFont.ColorIcono}"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="Center" RelativeLayout.WidthConstraint="20"
+                           ></Button>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout x:Name="comentario" VerticalOptions="Center">
+                <Label Text="Envianos un comentario:" FontSize="Title"></Label>
+                <Editor x:Name="txtComentario" TextColor="Black" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Text="" RelativeLayout.WidthConstraint="{ConstraintExpression 
+                    Type=RelativeToView, 
+                    ElementName=comentario, 
+                    Property=Y}"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression 
+                    Type=RelativeToParent,  
+                    Property=Height,
+                    Factor=0.4}"></Editor>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" VerticalOptions="End" RelativeLayout.YConstraint="{ConstraintExpression 
+                    Type=RelativeToView, 
+                    ElementName=comentario, 
+                    Property=Y, Factor=-0.1}">
+                <Button x:Name="btnEnviar" Text="Enviar" VerticalOptions="End"></Button>
+                <Button x:Name="btnCancelarCalif" Text="Cancelar" VerticalOptions="End" BackgroundColor="Red"></Button>
+            </StackLayout>
+        </StackLayout>
+    </RelativeLayout>
+
+</ContentPage>

@@ -1,0 +1,114 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseDeDatos", "BaseDeDatos\BaseDeDatos.csproj", "{2D6DA75B-22A9-4FFA-B39B-F32008B66B30}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WCFServiceApp", "WCFServiceApp\", "{23E97FFD-6572-4D41-BC57-5090DAB38225}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		ProjectReferences = "{2d6da75b-22a9-4ffa-b39b-f32008b66b30}|BaseDeDatos.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_52224"
+		Debug.AspNetCompiler.PhysicalPath = "WCFServiceApp\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52224\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_52224"
+		Release.AspNetCompiler.PhysicalPath = "WCFServiceApp\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52224\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "52224"
+		SlnRelativePath = "WCFServiceApp\"
+		DefaultWebSiteLanguage = "Visual C#"
+		StartServerOnDebug = "true"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTesisTestClient.Android", "AppTesisTestClient\AppTesisTestClient.Android\AppTesisTestClient.Android.csproj", "{69154A47-9797-4611-AA70-784BBC7CF057}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTesisTestClient", "AppTesisTestClient\AppTesisTestClient\AppTesisTestClient.csproj", "{CF29B0DF-9824-4656-8E2A-60332B80A1F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTesisTestConductor", "AppTesisTestConductor\AppTesisTestConductor\AppTesisTestConductor.csproj", "{5F00BBD1-1FAD-4608-A169-42A7811034BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTesisTestConductor.Android", "AppTesisTestConductor\AppTesisTestConductor.Android\AppTesisTestConductor.Android.csproj", "{6848921D-042D-4656-AA5F-9957A8DF9D07}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5F00BBD1-1FAD-4608-A169-42A7811034BD} = {5F00BBD1-1FAD-4608-A169-42A7811034BD}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPApp", "ASPApp\ASPApp.csproj", "{D78C6DE7-E4C5-4143-A7B2-7A9BE33D8630}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFServiceApp.Test", "WCFServiceApp.Test\WCFServiceApp.Test.csproj", "{20B53410-607A-4903-ACD5-E79A854A11E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTesisTestClient.Test", "AppTesisTestClient.Test\AppTesisTestClient.Test.csproj", "{C1A486F0-C497-4F89-BEA9-A3AA8EBDE494}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTesisTestConductor.Test", "AppTesisTestConductor.Test\AppTesisTestConductor.Test.csproj", "{B049AA7A-9B84-4849-96F5-6920FC3C473E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseDeDatos.Test", "BaseDeDatos.Test\BaseDeDatos.Test.csproj", "{8E03F6F1-C548-45F2-9142-205F68658FC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D6DA75B-22A9-4FFA-B39B-F32008B66B30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D6DA75B-22A9-4FFA-B39B-F32008B66B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D6DA75B-22A9-4FFA-B39B-F32008B66B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D6DA75B-22A9-4FFA-B39B-F32008B66B30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23E97FFD-6572-4D41-BC57-5090DAB38225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23E97FFD-6572-4D41-BC57-5090DAB38225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23E97FFD-6572-4D41-BC57-5090DAB38225}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{23E97FFD-6572-4D41-BC57-5090DAB38225}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{69154A47-9797-4611-AA70-784BBC7CF057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69154A47-9797-4611-AA70-784BBC7CF057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69154A47-9797-4611-AA70-784BBC7CF057}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{69154A47-9797-4611-AA70-784BBC7CF057}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{69154A47-9797-4611-AA70-784BBC7CF057}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{69154A47-9797-4611-AA70-784BBC7CF057}.Release|Any CPU.Deploy.0 = Debug|Any CPU
+		{CF29B0DF-9824-4656-8E2A-60332B80A1F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF29B0DF-9824-4656-8E2A-60332B80A1F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF29B0DF-9824-4656-8E2A-60332B80A1F1}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF29B0DF-9824-4656-8E2A-60332B80A1F1}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{5F00BBD1-1FAD-4608-A169-42A7811034BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F00BBD1-1FAD-4608-A169-42A7811034BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F00BBD1-1FAD-4608-A169-42A7811034BD}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F00BBD1-1FAD-4608-A169-42A7811034BD}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{6848921D-042D-4656-AA5F-9957A8DF9D07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6848921D-042D-4656-AA5F-9957A8DF9D07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6848921D-042D-4656-AA5F-9957A8DF9D07}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6848921D-042D-4656-AA5F-9957A8DF9D07}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{6848921D-042D-4656-AA5F-9957A8DF9D07}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{6848921D-042D-4656-AA5F-9957A8DF9D07}.Release|Any CPU.Deploy.0 = Debug|Any CPU
+		{D78C6DE7-E4C5-4143-A7B2-7A9BE33D8630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D78C6DE7-E4C5-4143-A7B2-7A9BE33D8630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D78C6DE7-E4C5-4143-A7B2-7A9BE33D8630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D78C6DE7-E4C5-4143-A7B2-7A9BE33D8630}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20B53410-607A-4903-ACD5-E79A854A11E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20B53410-607A-4903-ACD5-E79A854A11E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20B53410-607A-4903-ACD5-E79A854A11E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20B53410-607A-4903-ACD5-E79A854A11E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1A486F0-C497-4F89-BEA9-A3AA8EBDE494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A486F0-C497-4F89-BEA9-A3AA8EBDE494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A486F0-C497-4F89-BEA9-A3AA8EBDE494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1A486F0-C497-4F89-BEA9-A3AA8EBDE494}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B049AA7A-9B84-4849-96F5-6920FC3C473E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B049AA7A-9B84-4849-96F5-6920FC3C473E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B049AA7A-9B84-4849-96F5-6920FC3C473E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B049AA7A-9B84-4849-96F5-6920FC3C473E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E03F6F1-C548-45F2-9142-205F68658FC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E03F6F1-C548-45F2-9142-205F68658FC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E03F6F1-C548-45F2-9142-205F68658FC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E03F6F1-C548-45F2-9142-205F68658FC2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {68BCF171-656D-448B-B9DF-46231C58BB73}
+	EndGlobalSection
+EndGlobal

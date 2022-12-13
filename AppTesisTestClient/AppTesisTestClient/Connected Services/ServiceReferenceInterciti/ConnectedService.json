@@ -1,0 +1,46 @@
+{
+  "ExtendedData": {
+    "inputs": [
+      "https://wcfserviceappinterciti.azurewebsites.net/Service.svc"
+    ],
+    "collectionTypes": [
+      "System.Collections.Generic.Dictionary`2",
+      "System.Collections.Generic.List`1"
+    ],
+    "namespaceMappings": [
+      "*, ServiceReferenceInterciti"
+    ],
+    "references": [
+      "Microsoft.CSharp, {Microsoft.CSharp, 4.5.0}",
+      "Microsoft.IdentityModel.Abstractions, {Microsoft.IdentityModel.Abstractions, 6.19.0}",
+      "Microsoft.IdentityModel.JsonWebTokens, {Microsoft.IdentityModel.JsonWebTokens, 6.19.0}",
+      "Microsoft.IdentityModel.Logging, {Microsoft.IdentityModel.Logging, 6.19.0}",
+      "Microsoft.IdentityModel.Tokens, {Microsoft.IdentityModel.Tokens, 6.19.0}",
+      "Newtonsoft.Json, {Newtonsoft.Json, 13.0.1}",
+      "Plugin.LocalNotification, {Plugin.LocalNotification, 9.2.0}",
+      "Plugin.Media, {Xam.Plugin.Media, 5.0.1}",
+      "Plugin.Permissions, {Plugin.Permissions, 6.0.1}",
+      "System.Collections.Specialized, {System.Collections.Specialized, 4.3.0}",
+      "System.IdentityModel.Tokens.Jwt, {System.IdentityModel.Tokens.Jwt, 6.19.0}",
+      "System.Numerics.Vectors, {System.Numerics.Vectors, 4.5.0}",
+      "System.Runtime, {System.Runtime, 4.3.0}",
+      "System.Security.Cryptography.Cng, {System.Security.Cryptography.Cng, 4.5.0}",
+      "System.ServiceModel, {System.ServiceModel.Primitives, 4.4.4}",
+      "System.ServiceModel.Duplex, {System.ServiceModel.Duplex, 4.4.4}",
+      "System.ServiceModel.Http, {System.ServiceModel.Http, 4.4.4}",
+      "System.ServiceModel.NetTcp, {System.ServiceModel.NetTcp, 4.4.4}",
+      "System.ServiceModel.Primitives, {System.ServiceModel.Primitives, 4.4.4}",
+      "System.ServiceModel.Security, {System.ServiceModel.Security, 4.4.4}",
+      "Twilio, {Twilio, 5.77.0}",
+      "Xamarin.Auth, {Xamarin.Auth, 1.7.0}",
+      "Xamarin.Essentials, {Xamarin.Essentials, 1.7.1}",
+      "Xamarin.Forms.Core, {Xamarin.Forms, 5.0.0.2337}",
+      "Xamarin.Forms.GoogleMaps, {Xamarin.Forms.GoogleMaps, 3.3.0}",
+      "Xamarin.Forms.Platform, {Xamarin.Forms, 5.0.0.2337}",
+      "Xamarin.Forms.Xaml, {Xamarin.Forms, 5.0.0.2337}"
+    ],
+    "sync": true,
+    "targetFramework": "netstandard2.1",
+    "typeReuseMode": "All"
+  }
+}

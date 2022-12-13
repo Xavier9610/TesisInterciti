@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fonts="clr-namespace:AppTesisTestConductor.Models"
+             x:Class="AppTesisTestConductor.Views.MFAPage">
+    <RelativeLayout VerticalOptions="Center">
+
+        <StackLayout x:Name="layoutPerfil" IsVisible="true" Padding="20"  BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" Opacity="1" RelativeLayout.XConstraint="25" 
+         RelativeLayout.YConstraint="50"
+         RelativeLayout.HeightConstraint="{ConstraintExpression 
+            Type=RelativeToParent,
+            Property=Height,
+            Factor=0.8}" 
+         RelativeLayout.WidthConstraint=
+            "{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=0.8}">
+
+            <StackLayout  Spacing="5" Orientation="Vertical" Padding="20">
+                <Image Source="logoInterciti.png" HeightRequest="150" WidthRequest="100"></Image>
+                <Label Text="Ingrese el codigo enviado a su numero de celular o " FontSize="Title"></Label>
+                <Label Text="Ingrese el codigo:"  FontSize="Subtitle"></Label>
+            </StackLayout>
+            <StackLayout  Spacing="5" Orientation="Horizontal">
+                <Label IsEnabled="True" FontFamily="fontello" BackgroundColor="Transparent"
+                       Text="{x:Static fonts:IconFont.UserSecret}"
+                       FontSize="50"
+                       TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" ></Label>
+                <Entry x:Name="txtCode" IsPassword="False" Placeholder="d5Ct@^.a" HorizontalOptions="FillAndExpand"></Entry>
+            </StackLayout>
+            <Button x:Name="btnOk" HorizontalOptions="FillAndExpand" Text="Confirmar" TextColor="White"></Button>
+        </StackLayout>
+    </RelativeLayout>
+
+</ContentPage>

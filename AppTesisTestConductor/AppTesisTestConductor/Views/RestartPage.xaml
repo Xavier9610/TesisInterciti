@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AppTesisTestConductor.ViewModels"
+             xmlns:fonts="clr-namespace:AppTesisTestConductor.Models"
+             x:Class="AppTesisTestConductor.Views.RestartPage">
+    <RelativeLayout VerticalOptions="Center">
+
+        <StackLayout x:Name="layoutPerfil" IsVisible="true"  BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" Opacity="1" RelativeLayout.XConstraint="25" 
+         RelativeLayout.YConstraint="50"
+         RelativeLayout.HeightConstraint="{ConstraintExpression 
+            Type=RelativeToParent,
+            Property=Height,
+            Factor=0.8}" 
+         RelativeLayout.WidthConstraint=
+            "{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=0.8}">
+            
+            <StackLayout  Spacing="5" Orientation="Vertical">
+
+                <Label Text="Ingrese su correo o cedula de identidad" FontSize="Subtitle"></Label>
+                <Label Text="Ingrese su correo"  FontSize="Title"></Label>
+            </StackLayout>
+            <StackLayout  Spacing="5" Orientation="Vertical">
+                <Entry x:Name="txtAuthPass" IsPassword="False" Placeholder="0960400373 o patricio@ejemplo.com" HorizontalOptions="FillAndExpand"></Entry>
+            </StackLayout>
+            <StackLayout  Spacing="5" Orientation="Vertical">
+                <Button x:Name="btnRestart" IsEnabled="True" Text="Restablecer"  HorizontalOptions="FillAndExpand" CornerRadius="10"></Button>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Iniciar Sesion con:" FontSize="Subtitle"></Label>
+            </StackLayout>
+            <StackLayout HorizontalOptions="End" >
+                <Button x:Name="btnContacto" HorizontalOptions="End" TextColor="{x:Static fonts:IconFont.ColorTexto}"  BackgroundColor="Transparent" Text ="Contactar con soporte"></Button>
+            </StackLayout>
+        </StackLayout>
+    </RelativeLayout>
+
+</ContentPage>

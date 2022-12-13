@@ -1,0 +1,242 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Windows.Forms;
+
+namespace AdminAppWeb.Paginas
+{
+    public partial class CRUDConductor : System.Web.UI.Page
+    {
+        ServiceReferenceInterciti.ServiceClient usuario = new ServiceReferenceInterciti.ServiceClient();
+        ServiceReferenceInterciti.Conductor cliente = new ServiceReferenceInterciti.Conductor();
+
+
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Request.QueryString["id"] != null)
+            {
+                if (Request.QueryString["op"] != null)
+                {
+                    switch (Request.QueryString["op"].ToString())
+                    {
+                        case "C":
+                            FillCreate();
+                            break;
+                        case "U":
+                            FillUpdate();
+                            break;
+                        case "D":
+                            FillDelete();
+                            break;
+                        default:
+                            // code block
+                            break;
+                    }
+                }
+            }
+
+
+        }
+
+        private void FillDelete()
+        {
+            lblInfoCrud.Text = "Desea eliminar el Conductor?";
+            int id = Int32.Parse(Request.QueryString["id"].ToString());
+            cliente = new ServiceReferenceInterciti.Conductor();
+            cliente = usuario.FindConductorByID(id);
+            txtNombre.Text = cliente.Nombre;
+            txtID.Text = cliente.IdConductor.ToString();
+            txtApellido.Text = cliente.Apellido;
+            txtCorreo.Text = cliente.Correo;
+            txtCI.Text = cliente.Cedula;
+            txtTelefono.Text = cliente.Telefono;
+            txtLicencia.Text = cliente.NLicencia;
+            txtFecha.Text = cliente.FechaNacimiento.Date.ToString();
+
+            txtNombre.Enabled = false;
+            txtID.Enabled = false;
+            txtApellido.Enabled = false;
+            txtCorreo.Enabled = false;
+            txtCI.Enabled = false;
+            txtTelefono.Enabled = false;
+            txtFecha.Enabled = false;
+
+            btnGuardar.Text = "Eliminar";
+        }
+
+        private void FillUpdate()
+        {
+            lblInfoCrud.Text = "Editar Conductor";
+            int id = Int32.Parse(Request.QueryString["id"].ToString());
+            cliente = new ServiceReferenceInterciti.Conductor();
+            cliente = usuario.FindConductorByID(id);
+            if (btnGuardar.Text != "Guardar")
+            {
+                cliente.Nombre = txtNombre.Text;
+                cliente.Apellido = txtApellido.Text;
+                cliente.Cedula = txtCI.Text;
+                cliente.Correo = txtCorreo.Text;
+                cliente.Telefono = txtTelefono.Text;
+                cliente.FechaNacimiento = DateTime.Parse(txtFecha.Text).Date;
+            }
+            else
+            {
+
+
+                txtNombre.Text = cliente.Nombre;
+                txtID.Text = cliente.IdConductor.ToString();
+                txtApellido.Text = cliente.Apellido;
+                txtCorreo.Text = cliente.Correo;
+                txtCI.Text = cliente.Cedula;
+                txtTelefono.Text = cliente.Telefono;
+                txtFecha.Text = cliente.FechaNacimiento.ToString();
+
+                txtNombre.Enabled = true;
+                txtID.Enabled = false;
+                txtApellido.Enabled = true;
+                txtCorreo.Enabled = true;
+                txtCI.Enabled = true;
+                txtTelefono.Enabled = true;
+                txtFecha.Enabled = true;
+
+                btnGuardar.Text = "Actualizar";
+
+            }
+
+        }
+
+        private void FillCreate()
+        {
+            lblInfoCrud.Text = "Nuevo Conductor";
+
+            txtNombre.Enabled = true;
+            txtID.Enabled = false;
+            txtApellido.Enabled = true;
+            txtCorreo.Enabled = true;
+            txtCI.Enabled = true;
+            txtTelefono.Enabled = true;
+            txtFecha.Enabled = true;
+
+            btnGuardar.Text = "Crear";
+
+        }
+
+        protected void btnCalendario_Clicked(object sender, EventArgs e)
+        {
+            cFechaNacimiento.Visible = true;
+        }
+        protected void btnGuardar_Clicked(object sender, EventArgs e)
+        {
+            MessageBox.Show(txtNombre.Text, "info", MessageBoxButtons.OK);
+            cliente.Nombre = txtNombre.Text;
+            cliente.Apellido = txtApellido.Text;
+            cliente.Cedula = txtCI.Text;
+            cliente.Correo = txtCorreo.Text;
+            cliente.Telefono = txtTelefono.Text;
+            cliente.NLicencia = txtLicencia.Text;
+            cliente.FechaNacimiento = DateTime.Parse(txtFecha.Text).Date;
+            if (Request.QueryString["op"] != null)
+            {
+                switch (Request.QueryString["op"].ToString())
+                {
+                    case "C":
+                        SaveNew_Client();
+                        break;
+                    case "U":
+                        SaveUpdate_Client();
+                        break;
+                    case "D":
+                        SaveDelete_Client();
+                        break;
+                    default:
+                        // code block
+                        break;
+                }
+            }
+        }
+
+        private void SaveDelete_Client()
+        {
+            if (usuario.EliminarCliente(cliente.IdConductor) == 0)
+            {
+                Response.Redirect("Conductor.aspx?sts=ok&op=D");
+            }
+            else
+            {
+                Response.Redirect("Conductor.aspx?sts=Fail&op=D");
+            }
+        }
+
+        private void SaveUpdate_Client()
+        {
+            //ServiceReferenceInterciti.Cliente cliente = usuario.FindClienteByID(Int32.Parse(Request.QueryString["id"].ToString()));
+
+
+            MessageBox.Show("Se cambiara el nombre " + cliente.IdConductor + "," + cliente.Nombre + " por: " + txtID.Text, "info", MessageBoxButtons.OK);
+
+            if (usuario.ActualizarConductor(cliente) != -1)
+            {
+                Response.Redirect("Conductor.aspx?sts=ok&op=U");
+            }
+            else
+            {
+                Response.Redirect("Conductor.aspx?sts=Fail&op=U");
+            }
+        }
+
+        private void SaveNew_Client()
+        {
+            if (usuario.AgregarConductores(txtNombre.Text, "PASS",1,txtLicencia.Text, txtApellido.Text, txtCI.Text, txtCorreo.Text, txtTelefono.Text, DateTime.Now.Date) == 0)
+            {
+                Response.Redirect("Conductor.aspx?sts=ok&op=C");
+            }
+            else
+            {
+                Response.Redirect("Conductor.aspx?sts=Fail&op=C");
+            }
+        }
+
+        protected void cFecha_Clicked(object sender, EventArgs e)
+        {
+            txtFecha.Text = cFechaNacimiento.SelectedDate.ToString();
+            cFechaNacimiento.Visible = false;
+        }
+
+        protected void btnVolver_Clicked(object sender, EventArgs e)
+        {
+            Response.Redirect("Conductor.aspx");
+        }
+        protected void TxtNombre_TextChanged1(object sender, EventArgs e)
+        {
+            txtNombre.Text = txtNombre.Text;
+            //   MessageBox.Show("Se cambiara el nombre " + cliente.Nombre + " por: " + TextBox1.Text, "Eror", MessageBoxButtons.OK);
+
+        }
+        protected void TxtApellido_TextChanged1(object sender, EventArgs e)
+        {
+            //cliente.Apellido = txtApellido.Text;
+        }
+        protected void TxtCI_TextChanged1(object sender, EventArgs e)
+        {
+            //cliente.Cedula = txtCI.Text;
+        }
+        protected void TxtCorreo_TextChanged1(object sender, EventArgs e)
+        {
+            //cliente.Correo = txtCorreo.Text;
+        }
+        protected void TxtTelefono_TextChanged1(object sender, EventArgs e)
+        {
+            //cliente.Telefono = txtTelefono.Text;
+        }
+        protected void TxtFecha_TextChanged1(object sender, EventArgs e)
+        {
+            //cliente.FechaNacimiento = DateTime.Parse(txtFecha.Text);
+        }
+
+        
+    }
+}

@@ -1,0 +1,2180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_IService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://wcfserviceappinterciti.azurewebsites.net/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://wcfserviceappinterciti.azurewebsites.net/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://wcfserviceappinterciti.azurewebsites.net/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_FindAdminByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAdminByID" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindAdminByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAdminByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindClienteByCorreo_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindClienteByCorreo" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindClienteByCorreo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindClienteByCorreoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindClienteByTelefono_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindClienteByTelefono" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindClienteByTelefono_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindClienteByTelefonoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindConductorByTelefono_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindConductorByTelefono" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindConductorByTelefono_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindConductorByTelefonoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRecorridoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindRecorridoById" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRecorridoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindRecorridoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindAñoVehiculoByIdAño_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAñoVehiculoByIdAño" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindAñoVehiculoByIdAño_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAñoVehiculoByIdAñoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindModeloVehiculoByModelo_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindModeloVehiculoByModelo" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindModeloVehiculoByModelo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindModeloVehiculoByModeloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindTipoVehiculoByTipo_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindTipoVehiculoByTipo" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindTipoVehiculoByTipo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindTipoVehiculoByTipoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GenerarPass_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarPass" />
+  </wsdl:message>
+  <wsdl:message name="IService_GenerarPass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarPassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarUbicaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarUbicaciones" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarUbicaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarUbicacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindUbicacionByNombre_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindUbicacionByNombre" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindUbicacionByNombre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindUbicacionByNombreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindUbicacionByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindUbicacionByID" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindUbicacionByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindUbicacionByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarUbicacionesTemporales_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarUbicacionesTemporales" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarUbicacionesTemporales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarUbicacionesTemporalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRecorridos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecorridos" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRecorridos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecorridosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarUbicaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarUbicaciones" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarUbicaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarUbicacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRecorridosByCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindRecorridosByCliente" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRecorridosByCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindRecorridosByClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRecorridosByConductor_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindRecorridosByConductor" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRecorridosByConductor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindRecorridosByConductorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SenMail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SenMail" />
+  </wsdl:message>
+  <wsdl:message name="IService_SenMail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SenMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_BuscarUbicaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarUbicaciones" />
+  </wsdl:message>
+  <wsdl:message name="IService_BuscarUbicaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarUbicacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_BuscarVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService_BuscarVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_BuscarRecorrido_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarRecorrido" />
+  </wsdl:message>
+  <wsdl:message name="IService_BuscarRecorrido_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarRecorridoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_BuscarRecorridoCo_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarRecorridoCo" />
+  </wsdl:message>
+  <wsdl:message name="IService_BuscarRecorridoCo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarRecorridoCoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarUbicaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarUbicaciones" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarUbicaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarUbicacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarUbicaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarUbicaciones" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarUbicaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarUbicacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindMarcaVehiculoByMarca_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindMarcaVehiculoByMarca" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindMarcaVehiculoByMarca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindMarcaVehiculoByMarcaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindConductorByMail_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindConductorByMail" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindConductorByMail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindConductorByMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarClientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarClientes" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarClientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarConductores_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarConductores" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarConductores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarConductoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarConductores_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarConductores" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarConductores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarConductoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarConductor_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarConductor" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarConductor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarConductorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarConductor_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarConductor" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarConductor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarConductorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarTipo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarTipo" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarTipo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarTipoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarModelo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarModelo" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarModelo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarModeloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarMarca_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarMarca" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarMarca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarMarcaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarAnio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarAnio" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarAnio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarAnioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarRecorrido_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarRecorrido" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarRecorrido_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarRecorridoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarRecorrido_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarRecorrido" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarRecorrido_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarRecorridoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarRecorrido_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarRecorrido" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarRecorrido_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarRecorridoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarRecorrido_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarRecorrido" />
+  </wsdl:message>
+  <wsdl:message name="IService_ActualizarRecorrido_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarRecorridoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindClienteByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindClienteByID" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindClienteByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindClienteByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_sha512_hash_InputMessage">
+    <wsdl:part name="parameters" element="tns:sha512_hash" />
+  </wsdl:message>
+  <wsdl:message name="IService_sha512_hash_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sha512_hashResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_sha256_hash_InputMessage">
+    <wsdl:part name="parameters" element="tns:sha256_hash" />
+  </wsdl:message>
+  <wsdl:message name="IService_sha256_hash_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sha256_hashResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindConductorByCI_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindConductorByCI" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindConductorByCI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindConductorByCIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindConductorByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindConductorByID" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindConductorByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindConductorByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindVehiculoByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindVehiculoByID" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindVehiculoByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindVehiculoByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarTipoVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarTipoVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarTipoVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarTipoVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarTipoVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTipoVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarTipoVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTipoVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarTipoVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarTipoVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarTipoVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarTipoVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarMarcaVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMarcaVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarMarcaVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMarcaVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarMarcaVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarMarcaVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarMarcaVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarMarcaVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarAñoVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarAñoVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarAñoVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarAñoVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarAnioVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAnioVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarAnioVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAnioVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarAñoVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarAñoVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarAñoVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarAñoVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarModeloVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarModeloVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarModeloVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarModeloVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarMarcaVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarMarcaVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService_AgregarMarcaVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarMarcaVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarModeloVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarModeloVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarModeloVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarModeloVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarModeloVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarModeloVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarModeloVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarModeloVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindTipoVehiculoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindTipoVehiculoById" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindTipoVehiculoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindTipoVehiculoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindAñoVehiculoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAñoVehiculoById" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindAñoVehiculoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAñoVehiculoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindMarcaVehiculoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindMarcaVehiculoById" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindMarcaVehiculoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindMarcaVehiculoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindModeloVehiculoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindModeloVehiculoById" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindModeloVehiculoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindModeloVehiculoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindModeloVehiculoByMarca_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindModeloVehiculoByMarca" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindModeloVehiculoByMarca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindModeloVehiculoByMarcaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindClienteByCI_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindClienteByCI" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindClienteByCI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindClienteByCIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindAdminByCI_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAdminByCI" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindAdminByCI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAdminByCIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindAdminByCorreo_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAdminByCorreo" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindAdminByCorreo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAdminByCorreoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="FindAdminByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindAdminByID" message="tns:IService_FindAdminByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindAdminByIDResponse" message="tns:IService_FindAdminByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindClienteByCorreo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindClienteByCorreo" message="tns:IService_FindClienteByCorreo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindClienteByCorreoResponse" message="tns:IService_FindClienteByCorreo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindClienteByTelefono">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindClienteByTelefono" message="tns:IService_FindClienteByTelefono_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindClienteByTelefonoResponse" message="tns:IService_FindClienteByTelefono_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindConductorByTelefono">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindConductorByTelefono" message="tns:IService_FindConductorByTelefono_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindConductorByTelefonoResponse" message="tns:IService_FindConductorByTelefono_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRecorridoById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindRecorridoById" message="tns:IService_FindRecorridoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindRecorridoByIdResponse" message="tns:IService_FindRecorridoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAñoVehiculoByIdAño">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindAñoVehiculoByIdAño" message="tns:IService_FindAñoVehiculoByIdAño_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindAñoVehiculoByIdAñoResponse" message="tns:IService_FindAñoVehiculoByIdAño_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindModeloVehiculoByModelo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindModeloVehiculoByModelo" message="tns:IService_FindModeloVehiculoByModelo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindModeloVehiculoByModeloResponse" message="tns:IService_FindModeloVehiculoByModelo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindTipoVehiculoByTipo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindTipoVehiculoByTipo" message="tns:IService_FindTipoVehiculoByTipo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindTipoVehiculoByTipoResponse" message="tns:IService_FindTipoVehiculoByTipo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarPass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GenerarPass" message="tns:IService_GenerarPass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GenerarPassResponse" message="tns:IService_GenerarPass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarUbicaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarUbicaciones" message="tns:IService_ListarUbicaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarUbicacionesResponse" message="tns:IService_ListarUbicaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindUbicacionByNombre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindUbicacionByNombre" message="tns:IService_FindUbicacionByNombre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindUbicacionByNombreResponse" message="tns:IService_FindUbicacionByNombre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindUbicacionByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindUbicacionByID" message="tns:IService_FindUbicacionByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindUbicacionByIDResponse" message="tns:IService_FindUbicacionByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUbicacionesTemporales">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarUbicacionesTemporales" message="tns:IService_EliminarUbicacionesTemporales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarUbicacionesTemporalesResponse" message="tns:IService_EliminarUbicacionesTemporales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecorridos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetRecorridos" message="tns:IService_GetRecorridos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetRecorridosResponse" message="tns:IService_GetRecorridos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarUbicaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AgregarUbicaciones" message="tns:IService_AgregarUbicaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AgregarUbicacionesResponse" message="tns:IService_AgregarUbicaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRecorridosByCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindRecorridosByCliente" message="tns:IService_FindRecorridosByCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindRecorridosByClienteResponse" message="tns:IService_FindRecorridosByCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRecorridosByConductor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindRecorridosByConductor" message="tns:IService_FindRecorridosByConductor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindRecorridosByConductorResponse" message="tns:IService_FindRecorridosByConductor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SenMail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SenMail" message="tns:IService_SenMail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SenMailResponse" message="tns:IService_SenMail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUbicaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/BuscarUbicaciones" message="tns:IService_BuscarUbicaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/BuscarUbicacionesResponse" message="tns:IService_BuscarUbicaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/BuscarVehiculo" message="tns:IService_BuscarVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/BuscarVehiculoResponse" message="tns:IService_BuscarVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarRecorrido">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/BuscarRecorrido" message="tns:IService_BuscarRecorrido_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/BuscarRecorridoResponse" message="tns:IService_BuscarRecorrido_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarRecorridoCo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/BuscarRecorridoCo" message="tns:IService_BuscarRecorridoCo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/BuscarRecorridoCoResponse" message="tns:IService_BuscarRecorridoCo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUbicaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarUbicaciones" message="tns:IService_EliminarUbicaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarUbicacionesResponse" message="tns:IService_EliminarUbicaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUbicaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizarUbicaciones" message="tns:IService_ActualizarUbicaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizarUbicacionesResponse" message="tns:IService_ActualizarUbicaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindMarcaVehiculoByMarca">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindMarcaVehiculoByMarca" message="tns:IService_FindMarcaVehiculoByMarca_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindMarcaVehiculoByMarcaResponse" message="tns:IService_FindMarcaVehiculoByMarca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindConductorByMail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindConductorByMail" message="tns:IService_FindConductorByMail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindConductorByMailResponse" message="tns:IService_FindConductorByMail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AgregarCliente" message="tns:IService_AgregarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AgregarClienteResponse" message="tns:IService_AgregarCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarClientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarClientes" message="tns:IService_ListarClientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarClientesResponse" message="tns:IService_ListarClientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarCliente" message="tns:IService_EliminarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarClienteResponse" message="tns:IService_EliminarCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizarCliente" message="tns:IService_ActualizarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizarClienteResponse" message="tns:IService_ActualizarCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarConductores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AgregarConductores" message="tns:IService_AgregarConductores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AgregarConductoresResponse" message="tns:IService_AgregarConductores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarConductores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarConductores" message="tns:IService_ListarConductores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarConductoresResponse" message="tns:IService_ListarConductores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarConductor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarConductor" message="tns:IService_EliminarConductor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarConductorResponse" message="tns:IService_EliminarConductor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarConductor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizarConductor" message="tns:IService_ActualizarConductor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizarConductorResponse" message="tns:IService_ActualizarConductor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AgregarAdmin" message="tns:IService_AgregarAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AgregarAdminResponse" message="tns:IService_AgregarAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarAdmin" message="tns:IService_ListarAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarAdminResponse" message="tns:IService_ListarAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarAdmin" message="tns:IService_EliminarAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarAdminResponse" message="tns:IService_EliminarAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizarAdmin" message="tns:IService_ActualizarAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizarAdminResponse" message="tns:IService_ActualizarAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTipo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizarTipo" message="tns:IService_ActualizarTipo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizarTipoResponse" message="tns:IService_ActualizarTipo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarModelo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizarModelo" message="tns:IService_ActualizarModelo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizarModeloResponse" message="tns:IService_ActualizarModelo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMarca">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizarMarca" message="tns:IService_ActualizarMarca_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizarMarcaResponse" message="tns:IService_ActualizarMarca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAnio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizarAnio" message="tns:IService_ActualizarAnio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizarAnioResponse" message="tns:IService_ActualizarAnio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AgregarVehiculo" message="tns:IService_AgregarVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AgregarVehiculoResponse" message="tns:IService_AgregarVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarVehiculo" message="tns:IService_ListarVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarVehiculoResponse" message="tns:IService_ListarVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarVehiculo" message="tns:IService_EliminarVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarVehiculoResponse" message="tns:IService_EliminarVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizarVehiculo" message="tns:IService_ActualizarVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizarVehiculoResponse" message="tns:IService_ActualizarVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarRecorrido">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarRecorrido" message="tns:IService_ListarRecorrido_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarRecorridoResponse" message="tns:IService_ListarRecorrido_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarRecorrido">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AgregarRecorrido" message="tns:IService_AgregarRecorrido_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AgregarRecorridoResponse" message="tns:IService_AgregarRecorrido_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarRecorrido">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarRecorrido" message="tns:IService_EliminarRecorrido_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarRecorridoResponse" message="tns:IService_EliminarRecorrido_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarRecorrido">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ActualizarRecorrido" message="tns:IService_ActualizarRecorrido_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActualizarRecorridoResponse" message="tns:IService_ActualizarRecorrido_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindClienteByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindClienteByID" message="tns:IService_FindClienteByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindClienteByIDResponse" message="tns:IService_FindClienteByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sha512_hash">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/sha512_hash" message="tns:IService_sha512_hash_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/sha512_hashResponse" message="tns:IService_sha512_hash_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sha256_hash">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/sha256_hash" message="tns:IService_sha256_hash_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/sha256_hashResponse" message="tns:IService_sha256_hash_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindConductorByCI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindConductorByCI" message="tns:IService_FindConductorByCI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindConductorByCIResponse" message="tns:IService_FindConductorByCI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindConductorByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindConductorByID" message="tns:IService_FindConductorByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindConductorByIDResponse" message="tns:IService_FindConductorByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindVehiculoByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindVehiculoByID" message="tns:IService_FindVehiculoByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindVehiculoByIDResponse" message="tns:IService_FindVehiculoByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarTipoVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AgregarTipoVehiculo" message="tns:IService_AgregarTipoVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AgregarTipoVehiculoResponse" message="tns:IService_AgregarTipoVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarTipoVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarTipoVehiculo" message="tns:IService_ListarTipoVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarTipoVehiculoResponse" message="tns:IService_ListarTipoVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTipoVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarTipoVehiculo" message="tns:IService_EliminarTipoVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarTipoVehiculoResponse" message="tns:IService_EliminarTipoVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarMarcaVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarMarcaVehiculo" message="tns:IService_ListarMarcaVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarMarcaVehiculoResponse" message="tns:IService_ListarMarcaVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMarcaVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarMarcaVehiculo" message="tns:IService_EliminarMarcaVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarMarcaVehiculoResponse" message="tns:IService_EliminarMarcaVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAñoVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AgregarAñoVehiculo" message="tns:IService_AgregarAñoVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AgregarAñoVehiculoResponse" message="tns:IService_AgregarAñoVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarAnioVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarAnioVehiculo" message="tns:IService_ListarAnioVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarAnioVehiculoResponse" message="tns:IService_ListarAnioVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAñoVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarAñoVehiculo" message="tns:IService_EliminarAñoVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarAñoVehiculoResponse" message="tns:IService_EliminarAñoVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarModeloVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AgregarModeloVehiculo" message="tns:IService_AgregarModeloVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AgregarModeloVehiculoResponse" message="tns:IService_AgregarModeloVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarMarcaVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AgregarMarcaVehiculo" message="tns:IService_AgregarMarcaVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AgregarMarcaVehiculoResponse" message="tns:IService_AgregarMarcaVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarModeloVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarModeloVehiculo" message="tns:IService_ListarModeloVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarModeloVehiculoResponse" message="tns:IService_ListarModeloVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarModeloVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarModeloVehiculo" message="tns:IService_EliminarModeloVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarModeloVehiculoResponse" message="tns:IService_EliminarModeloVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindTipoVehiculoById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindTipoVehiculoById" message="tns:IService_FindTipoVehiculoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindTipoVehiculoByIdResponse" message="tns:IService_FindTipoVehiculoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAñoVehiculoById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindAñoVehiculoById" message="tns:IService_FindAñoVehiculoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindAñoVehiculoByIdResponse" message="tns:IService_FindAñoVehiculoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindMarcaVehiculoById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindMarcaVehiculoById" message="tns:IService_FindMarcaVehiculoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindMarcaVehiculoByIdResponse" message="tns:IService_FindMarcaVehiculoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindModeloVehiculoById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindModeloVehiculoById" message="tns:IService_FindModeloVehiculoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindModeloVehiculoByIdResponse" message="tns:IService_FindModeloVehiculoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindModeloVehiculoByMarca">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindModeloVehiculoByMarca" message="tns:IService_FindModeloVehiculoByMarca_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindModeloVehiculoByMarcaResponse" message="tns:IService_FindModeloVehiculoByMarca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindClienteByCI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindClienteByCI" message="tns:IService_FindClienteByCI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindClienteByCIResponse" message="tns:IService_FindClienteByCI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAdminByCI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindAdminByCI" message="tns:IService_FindAdminByCI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindAdminByCIResponse" message="tns:IService_FindAdminByCI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAdminByCorreo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindAdminByCorreo" message="tns:IService_FindAdminByCorreo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindAdminByCorreoResponse" message="tns:IService_FindAdminByCorreo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FindAdminByID">
+      <soap:operation soapAction="http://tempuri.org/IService/FindAdminByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindClienteByCorreo">
+      <soap:operation soapAction="http://tempuri.org/IService/FindClienteByCorreo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindClienteByTelefono">
+      <soap:operation soapAction="http://tempuri.org/IService/FindClienteByTelefono" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindConductorByTelefono">
+      <soap:operation soapAction="http://tempuri.org/IService/FindConductorByTelefono" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRecorridoById">
+      <soap:operation soapAction="http://tempuri.org/IService/FindRecorridoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindAñoVehiculoByIdAño">
+      <soap:operation soapAction="http://tempuri.org/IService/FindAñoVehiculoByIdAño" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindModeloVehiculoByModelo">
+      <soap:operation soapAction="http://tempuri.org/IService/FindModeloVehiculoByModelo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindTipoVehiculoByTipo">
+      <soap:operation soapAction="http://tempuri.org/IService/FindTipoVehiculoByTipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarPass">
+      <soap:operation soapAction="http://tempuri.org/IService/GenerarPass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarUbicaciones">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarUbicaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindUbicacionByNombre">
+      <soap:operation soapAction="http://tempuri.org/IService/FindUbicacionByNombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindUbicacionByID">
+      <soap:operation soapAction="http://tempuri.org/IService/FindUbicacionByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUbicacionesTemporales">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarUbicacionesTemporales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecorridos">
+      <soap:operation soapAction="http://tempuri.org/IService/GetRecorridos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarUbicaciones">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarUbicaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRecorridosByCliente">
+      <soap:operation soapAction="http://tempuri.org/IService/FindRecorridosByCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRecorridosByConductor">
+      <soap:operation soapAction="http://tempuri.org/IService/FindRecorridosByConductor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SenMail">
+      <soap:operation soapAction="http://tempuri.org/IService/SenMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUbicaciones">
+      <soap:operation soapAction="http://tempuri.org/IService/BuscarUbicaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/BuscarVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarRecorrido">
+      <soap:operation soapAction="http://tempuri.org/IService/BuscarRecorrido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarRecorridoCo">
+      <soap:operation soapAction="http://tempuri.org/IService/BuscarRecorridoCo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUbicaciones">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarUbicaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUbicaciones">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarUbicaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindMarcaVehiculoByMarca">
+      <soap:operation soapAction="http://tempuri.org/IService/FindMarcaVehiculoByMarca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindConductorByMail">
+      <soap:operation soapAction="http://tempuri.org/IService/FindConductorByMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCliente">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarClientes">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCliente">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCliente">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarConductores">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarConductores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarConductores">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarConductores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarConductor">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarConductor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarConductor">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarConductor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAdmin">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAdmin">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAdmin">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAdmin">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTipo">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarTipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarModelo">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarModelo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMarca">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarMarca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAnio">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarAnio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarRecorrido">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarRecorrido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarRecorrido">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarRecorrido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarRecorrido">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarRecorrido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarRecorrido">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarRecorrido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindClienteByID">
+      <soap:operation soapAction="http://tempuri.org/IService/FindClienteByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sha512_hash">
+      <soap:operation soapAction="http://tempuri.org/IService/sha512_hash" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sha256_hash">
+      <soap:operation soapAction="http://tempuri.org/IService/sha256_hash" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindConductorByCI">
+      <soap:operation soapAction="http://tempuri.org/IService/FindConductorByCI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindConductorByID">
+      <soap:operation soapAction="http://tempuri.org/IService/FindConductorByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindVehiculoByID">
+      <soap:operation soapAction="http://tempuri.org/IService/FindVehiculoByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarTipoVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarTipoVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTipoVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarTipoVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTipoVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarTipoVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarMarcaVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarMarcaVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMarcaVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarMarcaVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAñoVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarAñoVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAnioVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarAnioVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAñoVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarAñoVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarModeloVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarModeloVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarMarcaVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarMarcaVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarModeloVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarModeloVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarModeloVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarModeloVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindTipoVehiculoById">
+      <soap:operation soapAction="http://tempuri.org/IService/FindTipoVehiculoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindAñoVehiculoById">
+      <soap:operation soapAction="http://tempuri.org/IService/FindAñoVehiculoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindMarcaVehiculoById">
+      <soap:operation soapAction="http://tempuri.org/IService/FindMarcaVehiculoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindModeloVehiculoById">
+      <soap:operation soapAction="http://tempuri.org/IService/FindModeloVehiculoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindModeloVehiculoByMarca">
+      <soap:operation soapAction="http://tempuri.org/IService/FindModeloVehiculoByMarca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindClienteByCI">
+      <soap:operation soapAction="http://tempuri.org/IService/FindClienteByCI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindAdminByCI">
+      <soap:operation soapAction="http://tempuri.org/IService/FindAdminByCI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindAdminByCorreo">
+      <soap:operation soapAction="http://tempuri.org/IService/FindAdminByCorreo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpsBinding_IService" type="tns:IService">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_IService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FindAdminByID">
+      <soap:operation soapAction="http://tempuri.org/IService/FindAdminByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindClienteByCorreo">
+      <soap:operation soapAction="http://tempuri.org/IService/FindClienteByCorreo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindClienteByTelefono">
+      <soap:operation soapAction="http://tempuri.org/IService/FindClienteByTelefono" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindConductorByTelefono">
+      <soap:operation soapAction="http://tempuri.org/IService/FindConductorByTelefono" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRecorridoById">
+      <soap:operation soapAction="http://tempuri.org/IService/FindRecorridoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindAñoVehiculoByIdAño">
+      <soap:operation soapAction="http://tempuri.org/IService/FindAñoVehiculoByIdAño" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindModeloVehiculoByModelo">
+      <soap:operation soapAction="http://tempuri.org/IService/FindModeloVehiculoByModelo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindTipoVehiculoByTipo">
+      <soap:operation soapAction="http://tempuri.org/IService/FindTipoVehiculoByTipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarPass">
+      <soap:operation soapAction="http://tempuri.org/IService/GenerarPass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarUbicaciones">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarUbicaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindUbicacionByNombre">
+      <soap:operation soapAction="http://tempuri.org/IService/FindUbicacionByNombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindUbicacionByID">
+      <soap:operation soapAction="http://tempuri.org/IService/FindUbicacionByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUbicacionesTemporales">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarUbicacionesTemporales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecorridos">
+      <soap:operation soapAction="http://tempuri.org/IService/GetRecorridos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarUbicaciones">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarUbicaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRecorridosByCliente">
+      <soap:operation soapAction="http://tempuri.org/IService/FindRecorridosByCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRecorridosByConductor">
+      <soap:operation soapAction="http://tempuri.org/IService/FindRecorridosByConductor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SenMail">
+      <soap:operation soapAction="http://tempuri.org/IService/SenMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUbicaciones">
+      <soap:operation soapAction="http://tempuri.org/IService/BuscarUbicaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/BuscarVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarRecorrido">
+      <soap:operation soapAction="http://tempuri.org/IService/BuscarRecorrido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarRecorridoCo">
+      <soap:operation soapAction="http://tempuri.org/IService/BuscarRecorridoCo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUbicaciones">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarUbicaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUbicaciones">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarUbicaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindMarcaVehiculoByMarca">
+      <soap:operation soapAction="http://tempuri.org/IService/FindMarcaVehiculoByMarca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindConductorByMail">
+      <soap:operation soapAction="http://tempuri.org/IService/FindConductorByMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCliente">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarClientes">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCliente">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCliente">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarConductores">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarConductores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarConductores">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarConductores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarConductor">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarConductor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarConductor">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarConductor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAdmin">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAdmin">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAdmin">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAdmin">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTipo">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarTipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarModelo">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarModelo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMarca">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarMarca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAnio">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarAnio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarRecorrido">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarRecorrido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarRecorrido">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarRecorrido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarRecorrido">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarRecorrido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarRecorrido">
+      <soap:operation soapAction="http://tempuri.org/IService/ActualizarRecorrido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindClienteByID">
+      <soap:operation soapAction="http://tempuri.org/IService/FindClienteByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sha512_hash">
+      <soap:operation soapAction="http://tempuri.org/IService/sha512_hash" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sha256_hash">
+      <soap:operation soapAction="http://tempuri.org/IService/sha256_hash" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindConductorByCI">
+      <soap:operation soapAction="http://tempuri.org/IService/FindConductorByCI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindConductorByID">
+      <soap:operation soapAction="http://tempuri.org/IService/FindConductorByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindVehiculoByID">
+      <soap:operation soapAction="http://tempuri.org/IService/FindVehiculoByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarTipoVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarTipoVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTipoVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarTipoVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTipoVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarTipoVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarMarcaVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarMarcaVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMarcaVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarMarcaVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAñoVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarAñoVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAnioVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarAnioVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAñoVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarAñoVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarModeloVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarModeloVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarMarcaVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/AgregarMarcaVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarModeloVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarModeloVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarModeloVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarModeloVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindTipoVehiculoById">
+      <soap:operation soapAction="http://tempuri.org/IService/FindTipoVehiculoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindAñoVehiculoById">
+      <soap:operation soapAction="http://tempuri.org/IService/FindAñoVehiculoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindMarcaVehiculoById">
+      <soap:operation soapAction="http://tempuri.org/IService/FindMarcaVehiculoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindModeloVehiculoById">
+      <soap:operation soapAction="http://tempuri.org/IService/FindModeloVehiculoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindModeloVehiculoByMarca">
+      <soap:operation soapAction="http://tempuri.org/IService/FindModeloVehiculoByMarca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindClienteByCI">
+      <soap:operation soapAction="http://tempuri.org/IService/FindClienteByCI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindAdminByCI">
+      <soap:operation soapAction="http://tempuri.org/IService/FindAdminByCI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindAdminByCorreo">
+      <soap:operation soapAction="http://tempuri.org/IService/FindAdminByCorreo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://wcfserviceappinterciti.azurewebsites.net/Service.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpsBinding_IService" binding="tns:BasicHttpsBinding_IService">
+      <soap:address location="https://wcfserviceappinterciti.azurewebsites.net/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

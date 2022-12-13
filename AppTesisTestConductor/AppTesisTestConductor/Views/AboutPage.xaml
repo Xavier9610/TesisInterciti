@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppTesisTestConductor.Views.AboutPage"
+             xmlns:fonts="clr-namespace:AppTesisTestConductor.Models"
+             xmlns:Map="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             Title="{Binding Title}">
+
+    <RelativeLayout x:Name="layMapaMain"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+
+        
+        <!--                                                       MAPA   -->                                                                         
+        <Map:Map x:Name="mapaApp" VerticalOptions="FillAndExpand" IsVisible="true" HorizontalOptions="FillAndExpand" 
+                     RelativeLayout.WidthConstraint=
+         "{ConstraintExpression Type=RelativeToParent,
+                                Property=Width,
+                                Factor=1}"
+     RelativeLayout.HeightConstraint=
+         "{ConstraintExpression Type=RelativeToParent,
+                                Property=Height,
+                                Factor=1}" IsEnabled="True"></Map:Map>
+<!--                                                                escuchar            -->
+        <StackLayout IsVisible="true" x:Name="layoutActivar" Orientation="Vertical"  RelativeLayout.XConstraint="0" 
+         RelativeLayout.YConstraint="40" 
+         RelativeLayout.WidthConstraint=
+            "{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=1}" BackgroundColor="Transparent">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                    <Label x:Name="lblTiempo" Text="0:00" HorizontalOptions="Start"></Label>
+                </StackLayout>
+                <StackLayout HorizontalOptions="End" Orientation="Horizontal">
+                    <Label x:Name="lblinfo"  Text="Escuchar Solicitudes" HorizontalOptions="End"></Label>
+                    <Label x:Name="lblDistancia" Text="" HorizontalOptions="Start"></Label>
+                    <Switch x:Name="switchEscucharSolicitudes" HorizontalOptions="End"></Switch>
+
+
+                </StackLayout>
+            </StackLayout>
+            <StackLayout x:Name="layoutListaRecorrido" IsVisible="false" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <ListView x:Name="lstListaRecorrido" RowHeight="150" SeparatorVisibility="None" ItemsSource="{Binding Models.Recorrido}"
+                              Margin="10,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+                        <ListView.ItemTemplate >
+                            <DataTemplate >
+                                <ViewCell>
+                                    <Frame BackgroundColor="White" BorderColor="#F0F0F0" HasShadow="True">
+                                        <Grid  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0">
+                                            <!--MinimumHeightRequest="150"-->
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+                                                <Label Text="Punto de partida:" VerticalOptions="Center" FontSize="Micro"></Label>
+                                                <Label  Text="{Binding Origen}" TextColor="Black" FontSize="Micro"  VerticalOptions="Center" HorizontalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="2" Orientation="Vertical" VerticalOptions="StartAndExpand">
+                                                <Label Text="Destino:" FontSize="Micro" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                                <Label  Text="{Binding Destino}" TextColor="Black" FontSize="Micro"  VerticalOptions="Center" HorizontalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="3" WidthRequest="80" >
+                                                <Label Text=" Cliente:" FontSize="Micro" HorizontalOptions="Start"></Label>
+                                                <Image Source="{Binding IdCliente.Picture.Source}" HeightRequest="25" WidthRequest="25" Aspect="AspectFit"  ></Image>
+                                                <Label  Text="{Binding IdCliente.Nombre}" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                                <Label  Text="{Binding IdCliente.Apellido}" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                                <Label Text="Precio Ofertado:" FontSize="Micro" HorizontalOptions="Center"></Label>
+                                                <Label  Text="{Binding ValorRecorrido}" TextColor="Black" FontSize="Micro"  FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                            </StackLayout>
+                                        </Grid>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                    </ListView>
+                </StackLayout>
+
+            </StackLayout>
+        <StackLayout HorizontalOptions="Start" BackgroundColor="Transparent" Orientation="Vertical" RelativeLayout.XConstraint="100" 
+         RelativeLayout.YConstraint="550" HeightRequest="100"
+         RelativeLayout.WidthConstraint=
+            "{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=0.3}">
+            <Button x:Name="btnLlegue"  FontFamily="fontello"
+                       Text="{x:Static fonts:IconFont.FlagCheckered}" BackgroundColor="White"
+                       FontSize="Small"
+                       TextColor="Red"  IsVisible="false"
+                       HeightRequest="40"
+                                        HorizontalOptions="End"
+                       VerticalOptions="Center" WidthRequest="40"       
+                        ></Button>
+            <Label x:Name="lblLlegue" Text="Fin" HorizontalOptions="Center" IsVisible="false"></Label>
+        </StackLayout>
+    </RelativeLayout>
+
+</ContentPage>

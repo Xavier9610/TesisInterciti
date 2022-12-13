@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AppTesisTestConductor.ViewModels"
+             xmlns:fonts="clr-namespace:AppTesisTestConductor.Models"
+             xmlns:local="clr-namespace:AppTesisTestConductor.Services"
+             x:Class="AppTesisTestConductor.Views.LoginAppCPage"
+             BackgroundColor="{x:Static fonts:IconFont.ColorFondo}"
+              >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#228B22" />
+            </Style>
+        </ResourceDictionary>
+        
+    </ContentPage.Resources>
+    <RelativeLayout VerticalOptions="Center" BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" HorizontalOptions="Center">
+
+        <StackLayout x:Name="layoutCalificarRecorrido" IsVisible="true"  HorizontalOptions="Center"  BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" Opacity="1" RelativeLayout.XConstraint="25" 
+         RelativeLayout.YConstraint="25"         RelativeLayout.HeightConstraint="{ConstraintExpression 
+            Type=RelativeToParent,
+            Property=Height,
+            Factor=1}" 
+         RelativeLayout.WidthConstraint=
+            "{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=0.8}">
+            <Image x:Name="logo" Source="logoInterciti.png" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="150" WidthRequest="150"></Image>
+            <Label x:Name="lblInfo" TextColor="Red" ></Label>
+            <StackLayout  Spacing="5" Orientation="Vertical">
+                <Label Text="Correo electrónico:" FontSize="Title"></Label>
+                <Entry x:Name="txtAuth" HorizontalOptions="FillAndExpand" Placeholder="ej. patricio.garcia@epn.edu.ec" ></Entry>
+            </StackLayout>
+            <StackLayout  Spacing="5" Orientation="Vertical">
+                <Label Text="Contraseña:" FontSize="Title"></Label>
+                <Entry x:Name="txtAuthPass" IsPassword="True" HorizontalOptions="FillAndExpand"></Entry>
+            </StackLayout>
+            <StackLayout  Spacing="5" Orientation="Vertical">
+                <Button x:Name="btnLogin" IsEnabled="True" Text="Iniciar sesión"  HorizontalOptions="FillAndExpand" CornerRadius="10"></Button>
+                <Button x:Name="btnRegister" IsEnabled="True" Text="Registrarme" HorizontalOptions="FillAndExpand" CornerRadius="10"></Button>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Iniciar sesión con:" FontSize="Subtitle"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnGoogle" IsEnabled="True" FontFamily="fontello" BackgroundColor="Transparent"
+                       Text="{x:Static fonts:IconFont.Google}"
+                       FontSize="50"
+                       TextColor="IndianRed"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                    Clicked="OnGoogleLoginClicked" ></Button>
+
+                <Button x:Name="btnFacebook" IsEnabled="True" FontFamily="fontello" BackgroundColor="Transparent"
+                       Text="{x:Static fonts:IconFont.Facebook}"
+                       FontSize="50"
+                       TextColor="Blue"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                    Clicked="OnFacebookLoginClicked"></Button>
+            </StackLayout>
+            <StackLayout HorizontalOptions="End" >
+                <Button x:Name="btnOlvidePass" HorizontalOptions="End" TextColor="{x:Static fonts:IconFont.ColorTexto}"  BackgroundColor="Transparent" Text =" olvidé mi contraseña. Restablecer"></Button>
+            </StackLayout>
+        </StackLayout>
+    </RelativeLayout>
+</ContentPage>

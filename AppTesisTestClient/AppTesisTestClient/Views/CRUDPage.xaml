@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fonts="clr-namespace:AppTesisTestClient.Models"
+             x:Class="AppTesisTestClient.Views.CRUDPage" BackgroundColor="White"
+             xmlns:Map="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps">
+    <RelativeLayout  Padding="20,20,20,20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Padding="20" HorizontalOptions="FillAndExpand" RelativeLayout.YConstraint="25" x:Name="layoutRecorridos">
+            <Map:Map x:Name="mapaRecorridos"  WidthRequest="330" HeightRequest="330"></Map:Map>
+            <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand" >
+
+                <StackLayout Orientation="Vertical" >
+
+                    <Label Text="" x:Name="lblInfoRecorridos"></Label>
+                    <StackLayout Orientation="Horizontal" >
+                        <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.Location}"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                   ></Label>
+                        <Label FontFamily="fontello"
+                   Text="Origen:"
+                   FontSize="Subtitle"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                ></Label>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" >
+                        <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.Location}"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" Opacity="0" HeightRequest="40"
+                   ></Label>
+                        <Label FontFamily="fontello"
+                   Text="Destino:"
+                   FontSize="Subtitle"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center" HeightRequest="40"
+                   VerticalOptions="Center"
+                ></Label>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" >
+                        <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.User}"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" Opacity="0" HeightRequest="40"
+                   ></Label>
+                        <Label FontFamily="fontello"
+                   Text="Cliente:"
+                   FontSize="Subtitle"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center" HeightRequest="40"
+                   VerticalOptions="Center"
+                ></Label>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" >
+                        <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.Cab}"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center" HeightRequest="40"
+                   VerticalOptions="Center"
+                   ></Label>
+                        <Label FontFamily="fontello"
+                   Text="Conductor:"
+                   FontSize="Subtitle"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                ></Label>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" >
+                        <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.Dollar}"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                   ></Label>
+                        <Label
+                   Text="Valor:"
+                   FontSize="Subtitle"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                ></Label>
+                    </StackLayout>
+                </StackLayout>
+
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Label HeightRequest="8"></Label>
+                    <Entry x:Name="txtOrigen"   HeightRequest="40" HorizontalOptions="FillAndExpand" ></Entry>
+                    <Entry x:Name="txtDestino" HeightRequest="40" HorizontalOptions="FillAndExpand"></Entry>
+                    <Entry x:Name="txtCliente" HeightRequest="40" HorizontalOptions="FillAndExpand"></Entry>
+                    <Entry x:Name="txtConductor" HeightRequest="40" HorizontalOptions="FillAndExpand"></Entry>
+                    <Entry x:Name="txtMoney" HeightRequest="40" HorizontalOptions="FillAndExpand"></Entry>
+                </StackLayout>
+
+
+            </StackLayout>
+            
+        </StackLayout>
+
+
+
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" x:Name="layoutUbicaciones" Padding="20">
+            <StackLayout IsVisible="TRUE" x:Name="layoutBarraBu" Orientation="Vertical"  BackgroundColor="Transparent" VerticalOptions="Start">
+                <Label Text="Buscar:" FontSize="Title"></Label>
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                    <SearchBar x:Name="txtSearch" IsEnabled="true" HorizontalOptions="FillAndExpand" HeightRequest="40"
+                           BackgroundColor="{x:Static fonts:IconFont.ColorFondo}">
+
+                    </SearchBar>
+                    <ListView x:Name="lstVResultados" IsVisible="FALSE">
+
+                    </ListView>
+                </StackLayout>
+
+            </StackLayout>
+            <Map:Map x:Name="mapaUbi"  HorizontalOptions="Start" WidthRequest="330" HeightRequest="330" RelativeLayout.XConstraint="50"></Map:Map>
+            <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand">
+
+                <StackLayout Orientation="Vertical" >
+
+                    <Label Text="" x:Name="lblInfoUbicaciones"></Label>
+                    <StackLayout Orientation="Horizontal" >
+                        <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.Location}"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="60"
+                   ></Label>
+                        <Label FontFamily="fontello"
+                   Text="Direccion:"
+                   FontSize="Subtitle"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="60"
+                ></Label>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" >
+                        <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.Location}"
+                   FontSize="Micro"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" Opacity="0" HeightRequest="15"
+                   ></Label>
+                        <Label FontFamily="fontello"
+                   Text="Coordenadas:"
+                   FontSize="Subtitle"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="15"
+                ></Label>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" >
+                        <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.User}"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" Opacity="0" HeightRequest="40"
+                   ></Label>
+                        <Label FontFamily="fontello"
+                   Text="Latitud:"
+                   FontSize="Subtitle"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center" HeightRequest="40"
+                   VerticalOptions="Center"
+                ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" >
+                        <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.User}"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" Opacity="0" HeightRequest="40"
+                   ></Label>
+                        <Label FontFamily="fontello"
+                   Text="Longitud:"
+                   FontSize="Subtitle"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                ></Label>
+                    </StackLayout>
+
+
+
+                </StackLayout>
+
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Entry x:Name="txtDireccionUbi" HeightRequest="60" HorizontalOptions="FillAndExpand"></Entry>
+                    <Label Text="" HeightRequest="15"></Label>
+                    <Entry x:Name="txtLatUbi" HeightRequest="40" HorizontalOptions="FillAndExpand"></Entry>
+                    <Entry x:Name="txtLngUbi" HeightRequest="40" HorizontalOptions="FillAndExpand"></Entry>
+                </StackLayout>
+
+
+
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Vertical"    >
+                    <Button x:Name="btnAddLugar"  FontFamily="fontello"
+                       Text="{x:Static fonts:IconFont.Save}"
+                       FontSize="26"
+                       TextColor="#2196F3"
+                                    HeightRequest="48"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                            ></Button>
+                    <Label Text="Guardar" FontSize="Micro"
+                                   HorizontalOptions="Center">
+
+                    </Label>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Button x:Name="btnDeleteLugar"  FontFamily="fontello"
+                                   Text="{x:Static fonts:IconFont.Delete}"
+                                   FontSize="Title"
+                                   TextColor="Red"
+                                   HorizontalOptions="Center"
+                                    HeightRequest="48"
+                                   VerticalOptions="Center"
+                           ></Button>
+                    <Label Text="Eliminar" FontSize="Micro"
+                                   HorizontalOptions="Center">
+
+                    </Label>
+
+                </StackLayout>
+
+            </StackLayout>
+        </StackLayout>
+
+    </RelativeLayout>
+</ContentPage>

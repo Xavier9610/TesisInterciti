@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:vm="clr-namespace:AppTesisTestConductor"
+             xmlns:fonts="clr-namespace:AppTesisTestConductor.Models"
+             x:Class="AppTesisTestConductor.Views.PerfilPage" BarBackground="White">
+
+    <!--Pages can be added as references or inline-->
+    <ContentPage Title="Datos Personales" BackgroundColor="White" >
+             <RelativeLayout x:Name="layoutPerfil"  Padding="12,12,12,12" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsEnabled="True">
+                <StackLayout VerticalOptions="Start" RelativeLayout.XConstraint="240" RelativeLayout.YConstraint="10" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                    <Image x:Name="fotoPerfil" BackgroundColor="Transparent" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="150" WidthRequest="120" IsVisible="true" ></Image>
+                </StackLayout >
+            <StackLayout VerticalOptions="FillAndExpand" Spacing="5" Orientation="Vertical" Padding="15" HorizontalOptions="Center"  >
+                <Button x:Name="btnEditPerfil"
+                   Text="Editar Perfil"
+                   FontSize="Subtitle"
+                   TextColor="{x:Static fonts:IconFont.ColorFondo}"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="Center"></Button>
+                <StackLayout x:Name="layoutIsEditing" Orientation="Horizontal" HorizontalOptions="FillAndExpand" IsVisible="false">
+                    <StackLayout Orientation="Vertical">
+                        <Button x:Name="btnSave" FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.Save}"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                   ></Button>
+                        <Label Text="Guardar" HorizontalOptions="Center" FontSize="Small"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <Button x:Name="btnCambiarFoto" FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.Camera}"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                   ></Button>
+                        <Label Text="Cambiar Foto" HorizontalOptions="Center" FontSize="Small"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout x:Name="layoutDatos" Orientation="Horizontal" VerticalOptions="End" RelativeLayout.YConstraint="400">
+                    <StackLayout Orientation="Vertical" >
+
+                        <StackLayout Orientation="Horizontal" >
+                            <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.User}"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                   ></Label>
+                            <Label FontFamily="fontello"
+                   Text="Nombre:"
+                   FontSize="Subtitle"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                ></Label>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" >
+                            <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.User}"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" Opacity="0" HeightRequest="40"
+                   ></Label>
+                            <Label FontFamily="fontello"
+                   Text="Apellido:"
+                   FontSize="Subtitle"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                ></Label>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" >
+                            <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.Vcard}"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                   ></Label>
+                            <Label FontFamily="fontello"
+                   Text="Cedula:"
+                   FontSize="Subtitle"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                ></Label>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" >
+                            <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.Mail}"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                   ></Label>
+                            <Label FontFamily="fontello"
+                   Text="Correo:"
+                   FontSize="Subtitle"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                ></Label>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" >
+                            <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.Phone}"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                   ></Label>
+                            <Label FontFamily="fontello"
+                   Text="Telefono:"
+                   FontSize="Subtitle"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                ></Label>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" >
+                            <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.CalendarCheckO}"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                   ></Label>
+                            <Label FontFamily="fontello"
+                   Text="Fecha de Nacimiento:"
+                   FontSize="Subtitle"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                ></Label>
+                        </StackLayout>
+
+
+
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Vertical">
+                    <Entry x:Name="txtName" Placeholder="ej. Patricio" HeightRequest="40"></Entry>
+                    <Entry x:Name="txtApellido" Placeholder="ej. Garcia" HeightRequest="40"></Entry>
+                    <Entry x:Name="txtCI" Placeholder="ej. 1724718182" HeightRequest="40"></Entry>
+                    <Entry x:Name="txtCorreo" Placeholder="ej. ga-xavier@live.com" HeightRequest="40"></Entry>
+                    <Entry x:Name="txtTelefono" Placeholder="ej. 0960400373" HeightRequest="40"></Entry>
+                    <DatePicker x:Name="txtFecha" HeightRequest="40"></DatePicker>
+                </StackLayout>
+                </StackLayout>
+
+            </RelativeLayout>
+
+
+
+        
+
+
+
+
+    </ContentPage>
+    <ContentPage Title="Inicio de sesion" BackgroundColor="White">
+        <StackLayout VerticalOptions="Center" Orientation="Vertical" HorizontalOptions="FillAndExpand" x:Name="layoutInicioSesion">
+            <StackLayout  Padding="20,20,20,20" HorizontalOptions="Center" VerticalOptions="Center">
+                
+
+                <StackLayout x:Name="lblSesion" Orientation="Horizontal" VerticalOptions="Center" RelativeLayout.YConstraint="400">
+                    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+
+                        <StackLayout Orientation="Horizontal" HeightRequest="40">
+                            <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.Whatsapp}"
+                   FontSize="30"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                   ></Label>
+                            <Label FontFamily="fontello"
+                   Text="Telefono:"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                ></Label>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" HeightRequest="40" >
+                            <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.Mail}"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                   ></Label>
+                            <Label FontFamily="fontello"
+                   Text="Correo:"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                ></Label>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                            <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.Facebook}"
+                   FontSize="30"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                   ></Label>
+                            <Label FontFamily="fontello"
+                   Text="Facebook:"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" HeightRequest="40"
+                ></Label>
+                        </StackLayout>
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                        <Entry x:Name="txtTelefonoSesion" Placeholder="ej. 0960400373" HeightRequest="40"></Entry>
+                        <Entry x:Name="txtMailSesion" Placeholder="ej. ga-xavier@live.com" HeightRequest="40"></Entry>
+                        <Entry x:Name="txtFacebookSesion" HeightRequest="40"></Entry>
+                    </StackLayout>
+                </StackLayout>
+
+            </StackLayout>
+            <StackLayout VerticalOptions="End">
+                <Button x:Name="btnCambiarPass"
+                   Text="Cambiar Contraseña"
+                   FontSize="Subtitle"
+                   TextColor="{x:Static fonts:IconFont.ColorFondo}"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="Center"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Informacion conductor" BackgroundColor="White">
+        <StackLayout x:Name="layoutInfoVehiculo" VerticalOptions="Center" Orientation="Vertical" HorizontalOptions="FillAndExpand" IsEnabled="False">
+            <StackLayout>
+                <Image x:Name="fotoVehiculo" IsVisible="true" HeightRequest="150" WidthRequest="120"></Image>
+            </StackLayout>
+            <StackLayout  Padding="20,20,20,20" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+
+                <Label x:Name="lblInfoVehiculo" TextColor="Red"></Label>
+                
+                    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+
+                        <StackLayout Orientation="Horizontal" HeightRequest="40">
+                            <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.Cab}"
+                   FontSize="30"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center" HeightRequest="40"
+                   ></Label>
+                            <Label FontFamily="fontello"
+                   Text="Modelo:"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center" HeightRequest="40"
+                ></Label>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" HeightRequest="40">
+                            <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.Whatsapp}"
+                   FontSize="30" Opacity="0"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center" HeightRequest="40"
+                   ></Label>
+                            <Label FontFamily="fontello"
+                   Text="Marca:"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center" HeightRequest="40"
+                ></Label>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" HeightRequest="40" >
+                            <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.Mail}"
+                   FontSize="Large" Opacity="0"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center" HeightRequest="40"
+                   ></Label>
+                            <Label FontFamily="fontello"
+                   Text="Año:"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center" HeightRequest="40"
+                ></Label>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                            <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.Facebook}"
+                   FontSize="30" Opacity="0"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center" HeightRequest="40"
+                   ></Label>
+                            <Label FontFamily="fontello"
+                   Text="Tipo:"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center" HeightRequest="40"
+                ></Label>
+                        </StackLayout>
+
+                    <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                        <Label FontFamily="fontello"
+                   Text="{x:Static fonts:IconFont.Facebook}"
+                   FontSize="30" Opacity="0"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center" HeightRequest="40"
+                   ></Label>
+                        <Label FontFamily="fontello"
+                   Text="Placa:"
+                   FontSize="Large"
+                   TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center" HeightRequest="40"
+                ></Label>
+                    </StackLayout>
+                </StackLayout>
+                   
+        
+
+                <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+
+                    <Picker x:Name="txtMarca" HeightRequest="40"></Picker>
+                    <Picker x:Name="txtModelo" HeightRequest="40"></Picker>
+                    <Picker x:Name="txtAño" HeightRequest="40"></Picker>
+                    <Picker x:Name="txtTipo" HeightRequest="40"></Picker>
+                    <Entry x:Name="txtPlaca" Placeholder="ej. ABCD-0123" HeightRequest="40"></Entry>
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>

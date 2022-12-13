@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fonts="clr-namespace:AppTesisTestClient.Models"
+             x:Class="AppTesisTestClient.Views.RegisterPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" >
+
+                <StackLayout Orientation="Vertical">
+                    <Label FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.CreditCard}"
+                           FontSize="Title"
+                           TextColor="{x:Static fonts:IconFont.ColorIcono}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           ></Label>
+                    <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="Title" Text="Formulario de Registro"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" >
+                    <Label Text="Foto de perfil:" FontSize="Subtitle"></Label>
+                    <Image x:Name="fotoPerfil"  HeightRequest="120" WidthRequest="80" HorizontalOptions="Center" Source="logoInterciti.png" >
+                    </Image>
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <Button x:Name="btnCambiarFoto" Text="Cambiar Foto"></Button>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Label Text="Datos de Usuario:" FontSize="Subtitle"></Label>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Label FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.User}"
+                           FontSize="Title"
+                           TextColor="{x:Static fonts:IconFont.ColorIcono}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           ></Label>
+                        <Label Text="Nombre:" VerticalOptions="Center"></Label>
+                        <Entry x:Name="txtNombre" HorizontalOptions="FillAndExpand" Placeholder="ej. Patricio"></Entry>
+                        <Label Text="Apellido:" VerticalOptions="Center"></Label>
+                        <Entry x:Name="txtApellido" Placeholder="ej. Garcia" HorizontalOptions="FillAndExpand"></Entry>
+                    </StackLayout>
+
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.Mail}"
+                           FontSize="Title"
+                           TextColor="{x:Static fonts:IconFont.ColorIcono}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           ></Label>
+                    <Label Text="Correo electrónico:" VerticalOptions="Center" ></Label>
+                    <Entry x:Name="txtMail" Keyboard="Email" Placeholder="ej. patricio.garcia@epn.edu.ec" HorizontalOptions="FillAndExpand"></Entry>
+
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.Whatsapp}"
+                           FontSize="Title"
+                           TextColor="{x:Static fonts:IconFont.ColorIcono}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           ></Label>
+                    <Label Text="Teléfono:" VerticalOptions="Center" ></Label>
+                    <Entry x:Name="txtTelf" Placeholder="ej. 0960400373" Keyboard="Telephone" HorizontalOptions="FillAndExpand" ></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Cédula:" VerticalOptions="Center"></Label>
+                    <Entry x:Name="txtCI" Keyboard="Numeric" Placeholder="1724718182" HorizontalOptions="FillAndExpand"></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.CalendarCheckO}"
+                           FontSize="Title"
+                           TextColor="{x:Static fonts:IconFont.ColorIcono}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           ></Label>
+                    <Label Text="Fecha de Nacimiento:" VerticalOptions="Center"></Label>
+                    <DatePicker x:Name="pickerBirth" HorizontalOptions="StartAndExpand"></DatePicker>
+                </StackLayout >
+
+                <Label Text="Contraseña: " FontSize="Title"></Label>
+                <StackLayout x:Name="layoutCalificarRecorrido" IsVisible="true"  HorizontalOptions="Center" Padding="5" Orientation="Vertical" BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" Opacity="1" RelativeLayout.XConstraint="25" 
+         RelativeLayout.YConstraint="50"         RelativeLayout.HeightConstraint="{ConstraintExpression 
+            Type=RelativeToParent,
+            Property=Height,
+            Factor=1}" 
+         RelativeLayout.WidthConstraint=
+            "{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=1}">
+                    <StackLayout Orientation="Horizontal">
+                        <Entry x:Name="txtPass" IsPassword="True" Placeholder="Contraseña" HorizontalOptions="FillAndExpand"></Entry>
+                        <Button x:Name="btnOjo1" IsVisible="False"  FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.Eye}"
+                           FontSize="Small"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Entry x:Name="txtPassConfirm" IsPassword="True" Placeholder=" Confirmacion Contraseña"></Entry>
+                        <Button x:Name="btnOjo2" IsVisible="False"  FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.Eye}"
+                           FontSize="Small"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="lblCoinciden" IsVisible="false"  FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.CancelCircled2}"
+                           FontSize="Small"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center" />
+                        <Label x:Name="lblInfo" FontSize="Small" TextColor="Red"></Label>
+                    </StackLayout>
+
+                    <Button x:Name="btnRegistrar" FontSize="Medium" Text="Registrarme!" HorizontalOptions="Center" BackgroundColor="ForestGreen"  TextColor="White"></Button>
+
+                </StackLayout>
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

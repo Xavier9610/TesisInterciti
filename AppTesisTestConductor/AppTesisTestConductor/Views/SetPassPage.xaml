@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fonts="clr-namespace:AppTesisTestConductor.Models"
+             x:Class="AppTesisTestConductor.Views.SetPassPage">
+    <ContentPage.Content>
+        <StackLayout x:Name="layoutCalificarRecorrido" IsVisible="true"  HorizontalOptions="Center" Padding="12" Orientation="Vertical" BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" Opacity="1" RelativeLayout.XConstraint="25" 
+         RelativeLayout.YConstraint="50"         RelativeLayout.HeightConstraint="{ConstraintExpression 
+            Type=RelativeToParent,
+            Property=Height,
+            Factor=1}" 
+         RelativeLayout.WidthConstraint=
+            "{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=1}">
+            <Image x:Name="logo" Source="logoInterciti.png" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="150" WidthRequest="150"></Image>
+            <Label Text="Nueva Contraseña"
+                FontSize="Subtitle"
+                HorizontalOptions="Start" />
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="txtPass" IsPassword="True" Placeholder="Contraseña" HorizontalOptions="FillAndExpand"></Entry>
+                <Button x:Name="btnOjo1" IsVisible="True"  FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.Eye}"
+                           FontSize="Small"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center" />
+            </StackLayout>
+            
+            <Label Text="Confirmar Contraseña"
+                FontSize="Subtitle"
+                HorizontalOptions="Start" />
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="txtPassConfirm" IsPassword="True" Placeholder=" Confirmacion Contraseña"></Entry>
+                <Button x:Name="btnOjo2" IsVisible="True"  FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.Eye}"
+                           FontSize="Small"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblCoinciden" IsVisible="false"  FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.CancelCircled2}"
+                           FontSize="Small"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="Center" />
+                <Label x:Name="lblInfo" FontSize="Small"></Label>
+            </StackLayout>
+            
+            <Button x:Name="btnRegistrar" Text="Registrarme!" HorizontalOptions="Center" BackgroundColor="ForestGreen"  TextColor="White"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

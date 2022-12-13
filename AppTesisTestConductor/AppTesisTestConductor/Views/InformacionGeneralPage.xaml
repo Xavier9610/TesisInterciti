@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fonts="clr-namespace:AppTesisTestConductor.Models"
+             x:Class="AppTesisTestConductor.Views.InformacionGeneralPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="260"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Image Source="logoInterciti.png" Aspect="AspectFit" HeightRequest="220" WidthRequest="10" BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" VerticalOptions="StartAndExpand"/>
+            <StackLayout IsVisible="true" Orientation="Horizontal" Spacing="20" HorizontalOptions="Start" BackgroundColor="{x:Static fonts:IconFont.ColorFondo}"  VerticalOptions="Start" Margin="20,50">
+
+                <Label x:Name="txtBienvenida"  Text="" FontSize="16" VerticalOptions="Center" TextColor="Black"/>
+            </StackLayout>
+
+            <Frame Grid.Row="1" HasShadow="True" CornerRadius="10" Margin="20,-40,20,0" Padding="0" HeightRequest="120" VerticalOptions="Start">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                        <Button x:Name="btnRecorridos"  FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.CalendarCheckO}"
+                           FontSize="Title"
+                           TextColor="Black"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           ></Button>
+                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                            <Label Text="Mis Viajes" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Column="2" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                        <Button x:Name="btnVehiculos"  FontFamily="fontello"
+                           Text="{x:Static fonts:IconFont.Cab}"
+                           FontSize="Title"
+                           TextColor="Black"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           ></Button>
+                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                            <Label Text="Mis vehiculos" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            <StackLayout Grid.Row="2" BackgroundColor="Transparent" Orientation="Horizontal" Margin="20" HorizontalOptions="End">
+                <SearchBar x:Name="txtBusqueda" HorizontalOptions="Start" WidthRequest="256"></SearchBar>
+                <StackLayout WidthRequest="40" >
+                    <Button x:Name="btnBuscar"  FontFamily="fontello"  WidthRequest="40
+                            "
+                       Text="{x:Static fonts:IconFont.Siguiente}"
+                       FontSize="Subtitle"
+                       TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                        ></Button>
+                </StackLayout>
+                <StackLayout  WidthRequest="40">
+                    <Button x:Name="btnFiltrar"  FontFamily="fontello"  WidthRequest="40"
+                       Text="{x:Static fonts:IconFont.Filter}"
+                       FontSize="Subtitle"
+                       TextColor="{x:Static fonts:IconFont.ColorTexto}"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                            
+               ></Button>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Grid.Row="3" Orientation="Vertical">
+                <StackLayout x:Name="layoutVehiculo" Padding="12" IsVisible="false">
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Vertical"    >
+                            <Button x:Name="btnAddVehiculo"  FontFamily="fontello"
+                       Text="{x:Static fonts:IconFont.Cab}"
+                       HorizontalOptions="Center" FontSize="26"
+                       TextColor="#2196F3"
+                                    HeightRequest="48"
+                       VerticalOptions="Center" WidthRequest="90"
+               ></Button>
+                            <Label Text="Agregar" FontSize="Micro"
+                                   HorizontalOptions="Center">
+
+                            </Label>
+                        </StackLayout>
+
+                    </StackLayout>
+                    <ListView x:Name="lstVehiculos" RowHeight="130" SeparatorVisibility="None" ItemsSource="{Binding Models.Vehiculo}"
+                              Margin="20,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <ListView.ItemTemplate>
+                            <DataTemplate >
+                                <ViewCell>
+                                    <Frame BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
+                                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <StackLayout Grid.Column="1" Orientation="Vertical" Margin="20,0" HorizontalOptions="Start" VerticalOptions="Center">
+                                                <Image Source="{Binding Picture.Source}" Aspect="AspectFit" HeightRequest="100" ></Image>
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="2" Orientation="Vertical" HorizontalOptions="Start" VerticalOptions="Center">
+                                                <Label Text="Marca:" FontSize="Micro"></Label>
+                                                <Label  Text="{Binding Marca}" TextColor="Black" FontSize="Small"  FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="Start" />
+                                                <Label Text="Modelo:" FontSize="Micro"></Label>
+                                                <Label  Text="{Binding Modelo}" TextColor="Black" FontSize="Small"  FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                                
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="3" Orientation="Vertical"  Margin="20,0" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                                                <Label Text="Tipo: " FontSize="Micro"></Label>
+                                                <Label  Text="{Binding Tipo}" TextColor="Black" FontSize="Micro"  FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                                <Label Text="Modelo:" FontSize="Micro"></Label>
+                                                <Label  Text="{Binding Año}" TextColor="Black" FontSize="Small"  FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
+
+                                            </StackLayout>
+                                        </Grid>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                    </ListView>
+                </StackLayout>
+                <StackLayout x:Name="layoutViajes" Padding="12" IsVisible="false">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Vertical"    >
+                            <Button x:Name="btnAddViaje"  FontFamily="fontello"
+                       Text="{x:Static fonts:IconFont.Map}"
+                       FontSize="26"
+                       TextColor="#2196F3"
+                                    HeightRequest="48"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+               ></Button>
+                            <Label Text="Agregar" FontSize="Micro"
+                                   HorizontalOptions="Center">
+
+                            </Label>
+                        </StackLayout>
+
+                    </StackLayout>
+                    <ListView x:Name="lstRecorridos" RowHeight="130" ItemsSource="{Binding Models.Recorrido}"
+                              Margin="20,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <ListView.ItemTemplate>
+                            <DataTemplate >
+                                <ViewCell>
+                                    <Frame BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
+                                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="60"/>
+                                            </Grid.ColumnDefinitions>
+                                            <StackLayout Orientation="Vertical" Margin="0" HorizontalOptions="Start" VerticalOptions="Start">
+
+                                                <Label Text="Punto de partida:" VerticalOptions="Center" FontSize="Micro" HorizontalOptions="Start"></Label>
+                                                <Label  Text="{Binding Origen}" TextColor="Black" FontSize="Micro"  VerticalOptions="Center" HorizontalOptions="Start"/>
+                                                <Label Text="Destino:" VerticalOptions="Center" FontSize="Micro" HorizontalOptions="Start"></Label>
+                                                <Label  Text="{Binding Destino}" TextColor="Black" FontSize="Micro"  VerticalOptions="Center" HorizontalOptions="Start"/>
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="1" Orientation="Vertical" Margin="0" HorizontalOptions="Start" VerticalOptions="Center">
+                                                <Label Text="Datos de Cliente:" FontSize="Micro" HorizontalTextAlignment="Center" TextColor="Black"></Label>
+                                                <Label  Text="{Binding IdCliente.Nombre}" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                                <Label  Text="{Binding IdCliente.Apellido}" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                                <Label Text="Valor:" FontSize="Micro" HorizontalTextAlignment="Center" TextColor="Black"></Label>
+                                                <Label  Text="{Binding ValorRecorrido}" TextColor="ForestGreen"  FontSize="Micro" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+                                            </StackLayout>
+                                        </Grid>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                <StackLayout x:Name="layoutLugares" IsVisible="false" Padding="12" Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Vertical"    >
+                            <Button x:Name="btnAddLugar"  FontFamily="fontello"
+                       Text="{x:Static fonts:IconFont.DirectionArrow}"
+                       FontSize="26"
+                       TextColor="#2196F3"
+                                    HeightRequest="48"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                            ></Button>
+                            <Label Text="Agregar" FontSize="Micro"
+                                   HorizontalOptions="Center">
+
+                            </Label>
+                        </StackLayout>
+
+
+                    </StackLayout>
+                    <ListView x:Name="lstUbicaciones" RowHeight="130" SeparatorVisibility="Default" ItemsSource="{Binding Models.MisUbicaciones}"
+                              Margin="20,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <ListView.ItemTemplate>
+                            <DataTemplate >
+                                <ViewCell>
+                                    <Frame BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
+                                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label  Text="{Binding Direccion}" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
+                                            <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
+                                                <Label  Text="{Binding Latitud}" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
+                                                <Label  Text="{Binding Longitud}" TextColor="Black" FontSize="15" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                        </Grid>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+        </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Archive>
+  <Name>AppTesisTestConductor.Android</Name>
+  <PackageName>com.companyname.apptesistestconductor</PackageName>
+  <PackageVersionCode>1</PackageVersionCode>
+  <PackageVersionName>1.0</PackageVersionName>
+  <PackageFormat>aab</PackageFormat>
+  <CreationDate>637965192308536396</CreationDate>
+  <SolutionName>SolutionTesisInterciti</SolutionName>
+  <SolutionPath>C:\SolutionTesisInterciti-con-app-conductor-semi-funcional\SolutionTesisInterciti.sln</SolutionPath>
+  <Status></Status>
+  <Configuration>
+    <DebugMode>false</DebugMode>
+  </Configuration>
+  <Comment />
+  <LastUsedKeystore>C:\Users\Pato\AppData\Local\Xamarin\Mono for Android\Keystore\interciti\interciti.keystore</LastUsedKeystore>
+  <TimeStampingAuthority />
+  <LastInsightsUploadDate>0</LastInsightsUploadDate>
+</Archive>
