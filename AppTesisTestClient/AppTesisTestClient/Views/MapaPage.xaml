@@ -88,7 +88,7 @@
             </StackLayout>
         </StackLayout>
 <!-- -->
-        <StackLayout IsVisible="false" x:Name="layoutBarraBu" Orientation="Vertical" RelativeLayout.XConstraint="25" 
+        <StackLayout IsVisible="True" x:Name="layoutBarraBu" Orientation="Vertical" RelativeLayout.XConstraint="25" 
          RelativeLayout.YConstraint="50"
          RelativeLayout.HeightConstraint="{ConstraintExpression 
             Type=RelativeToParent,

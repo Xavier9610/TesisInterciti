@@ -4,7 +4,7 @@
              x:Class="AppTesisTestConductor.Views.AboutPage"
              xmlns:fonts="clr-namespace:AppTesisTestConductor.Models"
              xmlns:Map="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
-             Title="{Binding Title}">
+             Title="{Binding Title}" >
 
     <RelativeLayout x:Name="layMapaMain"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
 
@@ -31,8 +31,8 @@
                     <Label x:Name="lblTiempo" Text="0:00" HorizontalOptions="Start" TextColor="Black"></Label>
                 </StackLayout>
                 <StackLayout HorizontalOptions="End" Orientation="Horizontal">
-                    <Label x:Name="lblinfo"  Text="Escuchar Solicitudes" HorizontalOptions="End"></Label>
-                    <Label x:Name="lblDistancia" Text="" HorizontalOptions="Start"></Label>
+                    <Label x:Name="lblinfo"  Text="Escuchar Solicitudes" HorizontalOptions="End" TextColor="Black"></Label>
+                    <Label x:Name="lblDistancia" Text="" HorizontalOptions="Start" TextColor="Black"></Label>
                     <Switch x:Name="switchEscucharSolicitudes" HorizontalOptions="End"></Switch>
 
 
@@ -51,19 +51,19 @@
                                                 <ColumnDefinition Width="Auto"/>
                                             </Grid.ColumnDefinitions>
                                             <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
-                                                <Label Text="Punto de partida:" VerticalOptions="Center" FontSize="Micro"></Label>
+                                            <Label Text="Punto de partida:" TextColor="Black" VerticalOptions="Center" FontSize="Micro"></Label>
                                                 <Label  Text="{Binding Origen}" TextColor="Black" FontSize="Micro"  VerticalOptions="Center" HorizontalOptions="Center"/>
                                             </StackLayout>
                                             <StackLayout Grid.Column="2" Orientation="Vertical" VerticalOptions="StartAndExpand">
-                                                <Label Text="Destino:" FontSize="Micro" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                            <Label Text="Destino:" FontSize="Micro" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Start"/>
                                                 <Label  Text="{Binding Destino}" TextColor="Black" FontSize="Micro"  VerticalOptions="Center" HorizontalOptions="Center"/>
                                             </StackLayout>
                                             <StackLayout Grid.Column="3" WidthRequest="80" >
-                                                <Label Text=" Cliente:" FontSize="Micro" HorizontalOptions="Start"></Label>
+                                            <Label Text=" Cliente:" FontSize="Micro" TextColor="Black" HorizontalOptions="Start"></Label>
                                                 <Image Source="{Binding IdCliente.Picture.Source}" HeightRequest="25" WidthRequest="25" Aspect="AspectFit"  ></Image>
                                                 <Label  Text="{Binding IdCliente.Nombre}" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                                                 <Label  Text="{Binding IdCliente.Apellido}" TextColor="Black" FontSize="Micro" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-                                                <Label Text="Precio Ofertado:" FontSize="Micro" HorizontalOptions="Center"></Label>
+                                            <Label Text="Precio Ofertado:" FontSize="Micro" TextColor="Black" HorizontalOptions="Center"></Label>
                                                 <Label  Text="{Binding ValorRecorrido}" TextColor="Black" FontSize="Micro"  FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
                                             </StackLayout>
                                         </Grid>
@@ -90,7 +90,7 @@
                                         HorizontalOptions="End"
                        VerticalOptions="Center" WidthRequest="40"       
                         ></Button>
-            <Label x:Name="lblLlegue" Text="Fin" HorizontalOptions="Center" IsVisible="false"></Label>
+            <Label x:Name="lblLlegue" Text="Fin" HorizontalOptions="Center" TextColor="Black" IsVisible="false"></Label>
         </StackLayout>
     </RelativeLayout>
 

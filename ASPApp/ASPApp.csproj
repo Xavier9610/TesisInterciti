@@ -370,8 +370,11 @@
     <None Include="Connected Services\ServiceReferenceInterciti\Service2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServiceReferenceInterciti\Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
-    <None Include="Properties\PublishProfiles\appwebinterciti - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\admininterciti - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -27,11 +27,24 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="https://wcfserviceappinterciti.azurewebsites.net/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="https://wcfserviceappinterciti.azurewebsites.net/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="https://wcfserviceappinterciti.azurewebsites.net/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="https://wcfappservice.azurewebsites.net/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://wcfappservice.azurewebsites.net/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://wcfappservice.azurewebsites.net/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="https://wcfappservice.azurewebsites.net/Service.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService_ListarMarcaVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMarcaVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarMarcaVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMarcaVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarMarcaVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarMarcaVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarMarcaVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarMarcaVehiculoResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_AgregarAñoVehiculo_InputMessage">
     <wsdl:part name="parameters" element="tns:AgregarAñoVehiculo" />
   </wsdl:message>
@@ -127,6 +140,18 @@
   </wsdl:message>
   <wsdl:message name="IService_FindAdminByID_OutputMessage">
     <wsdl:part name="parameters" element="tns:FindAdminByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLatLngForAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLatLngForAddress" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLatLngForAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLatLngForAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddress" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressResponse" />
   </wsdl:message>
   <wsdl:message name="IService_ListarClientesCedula_InputMessage">
     <wsdl:part name="parameters" element="tns:ListarClientesCedula" />
@@ -620,19 +645,15 @@
   <wsdl:message name="IService_EliminarTipoVehiculo_OutputMessage">
     <wsdl:part name="parameters" element="tns:EliminarTipoVehiculoResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_ListarMarcaVehiculo_InputMessage">
-    <wsdl:part name="parameters" element="tns:ListarMarcaVehiculo" />
-  </wsdl:message>
-  <wsdl:message name="IService_ListarMarcaVehiculo_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ListarMarcaVehiculoResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_EliminarMarcaVehiculo_InputMessage">
-    <wsdl:part name="parameters" element="tns:EliminarMarcaVehiculo" />
-  </wsdl:message>
-  <wsdl:message name="IService_EliminarMarcaVehiculo_OutputMessage">
-    <wsdl:part name="parameters" element="tns:EliminarMarcaVehiculoResponse" />
-  </wsdl:message>
   <wsdl:portType name="IService">
+    <wsdl:operation name="ListarMarcaVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarMarcaVehiculo" message="tns:IService_ListarMarcaVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarMarcaVehiculoResponse" message="tns:IService_ListarMarcaVehiculo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMarcaVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarMarcaVehiculo" message="tns:IService_EliminarMarcaVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarMarcaVehiculoResponse" message="tns:IService_EliminarMarcaVehiculo_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AgregarAñoVehiculo">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/AgregarAñoVehiculo" message="tns:IService_AgregarAñoVehiculo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/AgregarAñoVehiculoResponse" message="tns:IService_AgregarAñoVehiculo_OutputMessage" />
@@ -696,6 +717,14 @@
     <wsdl:operation name="FindAdminByID">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/FindAdminByID" message="tns:IService_FindAdminByID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/FindAdminByIDResponse" message="tns:IService_FindAdminByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatLngForAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetLatLngForAddress" message="tns:IService_GetLatLngForAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetLatLngForAddressResponse" message="tns:IService_GetLatLngForAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAddress" message="tns:IService_GetAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAddressResponse" message="tns:IService_GetAddress_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ListarClientesCedula">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarClientesCedula" message="tns:IService_ListarClientesCedula_InputMessage" />
@@ -1025,17 +1054,27 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarTipoVehiculo" message="tns:IService_EliminarTipoVehiculo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarTipoVehiculoResponse" message="tns:IService_EliminarTipoVehiculo_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ListarMarcaVehiculo">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarMarcaVehiculo" message="tns:IService_ListarMarcaVehiculo_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarMarcaVehiculoResponse" message="tns:IService_ListarMarcaVehiculo_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="EliminarMarcaVehiculo">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarMarcaVehiculo" message="tns:IService_EliminarMarcaVehiculo_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarMarcaVehiculoResponse" message="tns:IService_EliminarMarcaVehiculo_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarMarcaVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarMarcaVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMarcaVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarMarcaVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AgregarAñoVehiculo">
       <soap:operation soapAction="http://tempuri.org/IService/AgregarAñoVehiculo" style="document" />
       <wsdl:input>
@@ -1173,6 +1212,24 @@
     </wsdl:operation>
     <wsdl:operation name="FindAdminByID">
       <soap:operation soapAction="http://tempuri.org/IService/FindAdminByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatLngForAddress">
+      <soap:operation soapAction="http://tempuri.org/IService/GetLatLngForAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddress">
+      <soap:operation soapAction="http://tempuri.org/IService/GetAddress" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1911,24 +1968,6 @@
     </wsdl:operation>
     <wsdl:operation name="EliminarTipoVehiculo">
       <soap:operation soapAction="http://tempuri.org/IService/EliminarTipoVehiculo" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListarMarcaVehiculo">
-      <soap:operation soapAction="http://tempuri.org/IService/ListarMarcaVehiculo" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EliminarMarcaVehiculo">
-      <soap:operation soapAction="http://tempuri.org/IService/EliminarMarcaVehiculo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1940,6 +1979,24 @@
   <wsdl:binding name="BasicHttpsBinding_IService" type="tns:IService">
     <wsp:PolicyReference URI="#BasicHttpsBinding_IService_policy" />
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarMarcaVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarMarcaVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMarcaVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarMarcaVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AgregarAñoVehiculo">
       <soap:operation soapAction="http://tempuri.org/IService/AgregarAñoVehiculo" style="document" />
       <wsdl:input>
@@ -2077,6 +2134,24 @@
     </wsdl:operation>
     <wsdl:operation name="FindAdminByID">
       <soap:operation soapAction="http://tempuri.org/IService/FindAdminByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatLngForAddress">
+      <soap:operation soapAction="http://tempuri.org/IService/GetLatLngForAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddress">
+      <soap:operation soapAction="http://tempuri.org/IService/GetAddress" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2822,31 +2897,13 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ListarMarcaVehiculo">
-      <soap:operation soapAction="http://tempuri.org/IService/ListarMarcaVehiculo" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EliminarMarcaVehiculo">
-      <soap:operation soapAction="http://tempuri.org/IService/EliminarMarcaVehiculo" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="Service">
     <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
-      <soap:address location="http://wcfserviceappinterciti.azurewebsites.net/Service.svc" />
+      <soap:address location="http://wcfappservice.azurewebsites.net/Service.svc" />
     </wsdl:port>
     <wsdl:port name="BasicHttpsBinding_IService" binding="tns:BasicHttpsBinding_IService">
-      <soap:address location="https://wcfserviceappinterciti.azurewebsites.net/Service.svc" />
+      <soap:address location="https://wcfappservice.azurewebsites.net/Service.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -13,7 +13,17 @@ namespace ASPApp.Sources.Validaciones
 {
     public static class Servicio
     {
-        public static ServiceClient client = new ServiceClient("BasicHttpsBinding_IService", "https://wcfserviceappinterciti.azurewebsites.net/Service.svc");
+        public static System.ServiceModel.BasicHttpBinding result = new System.ServiceModel.BasicHttpBinding
+        {
+            MaxBufferPoolSize = int.MaxValue,
+            ReaderQuotas = System.Xml.XmlDictionaryReaderQuotas.Max,
+            MaxReceivedMessageSize = int.MaxValue,
+            AllowCookies = true,
+            OpenTimeout = new System.TimeSpan(10, 10, 0),
+            ReceiveTimeout = new System.TimeSpan(10, 10, 0),
+            SendTimeout = new System.TimeSpan(10, 10, 0)
+        };
+        public static ServiceClient client = new ServiceClient(result,new System.ServiceModel.EndpointAddress( "http://wcfappservice.azurewebsites.net/Service.svc"));
         //fb login prueba erronea
         public static string FBClienteID = "490712609134847";
         public static string FBScope = "email";
@@ -62,7 +72,7 @@ namespace ASPApp.Sources.Validaciones
         {
             // ServicePointManager.Expect100Continue = true;
 
-            client = new ServiceClient("BasicHttpsBinding_IService", "https://wcfserviceappinterciti.azurewebsites.net/Service.svc");
+            client = new ServiceClient(result, new System.ServiceModel.EndpointAddress("http://wcfappservice.azurewebsites.net/Service.svc"));
             Admin cliente = null;
             //  string passEncryp = client.sha256_hash(pass);
             Admin clienteQuery = (client.FindAdminByCI(ci));
@@ -110,7 +120,7 @@ namespace ASPApp.Sources.Validaciones
         //correo
         public static Admin GetLoginCorreo(string ci, string pass)
         {
-            client = new ServiceClient("BasicHttpsBinding_IService", "https://wcfserviceappinterciti.azurewebsites.net/Service.svc");
+            client = new ServiceClient("BasicHttpBinding_IService", "https://wcfappservice.azurewebsites.net/Service.svc");
 
             Admin cliente = null;
             //  string passEncryp = client.sha256_hash(pass);

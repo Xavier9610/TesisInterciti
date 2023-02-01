@@ -407,6 +407,12 @@ namespace AppTesisTestClient.Views
                                     layoutCalificarRecorrido.IsVisible = true;
                                     mapaAppCliente.Pins.Clear();
                                     mapaAppCliente.Polylines.Clear();
+                                    btnUbicacionInicio.Text = "Punto de Partida";
+                                    btnUbicacionFin.Text = "Destino";
+                                    txtOferta.Text = "";
+                                    btnTipoVehiculo.SelectedIndex = -1;
+                                    layoutBarraBu.IsVisible = true;
+                                    txtSearch.Text = "";
                                 });
                                 break;
                             case -1:
@@ -697,7 +703,7 @@ namespace AppTesisTestClient.Views
             Device.BeginInvokeOnMainThread(async () => {
                 await ubicacion.GetUbicacionGPS();
                 Position position = new Position(ubicacion.UbicacionV.Latitude, ubicacion.UbicacionV.Longitude);
-                mapaAppCliente.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromKilometers(1))
+                mapaAppCliente.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromKilometers(0.01))
                     );
                  mapaAppCliente.Pins.Clear();
 
@@ -720,7 +726,7 @@ namespace AppTesisTestClient.Views
         {
             Device.BeginInvokeOnMainThread(() => {
                 mapaAppCliente.MoveToRegion(MapSpan.FromCenterAndRadius(
-                                        new Position(ubicacion.UbicacionV.Latitude, ubicacion.UbicacionV.Longitude), Distance.FromKilometers(1))
+                                        new Position(ubicacion.UbicacionV.Latitude, ubicacion.UbicacionV.Longitude), Distance.FromKilometers(0.01))
                     );
                 mapaAppCliente.Pins.Clear();
 

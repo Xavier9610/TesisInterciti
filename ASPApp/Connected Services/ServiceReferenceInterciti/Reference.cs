@@ -15,6 +15,67 @@ namespace ASPApp.ServiceReferenceInterciti {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MarcaVehiculo", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class MarcaVehiculo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdMarcaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MarcaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdMarca {
+            get {
+                return this.IdMarcaField;
+            }
+            set {
+                if ((this.IdMarcaField.Equals(value) != true)) {
+                    this.IdMarcaField = value;
+                    this.RaisePropertyChanged("IdMarca");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Marca {
+            get {
+                return this.MarcaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MarcaField, value) != true)) {
+                    this.MarcaField = value;
+                    this.RaisePropertyChanged("Marca");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AñoVehiculo", Namespace="http://schemas.datacontract.org/2004/07/")]
     [System.SerializableAttribute()]
     public partial class AñoVehiculo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -198,67 +259,6 @@ namespace ASPApp.ServiceReferenceInterciti {
                 if ((object.ReferenceEquals(this.TipoField, value) != true)) {
                     this.TipoField = value;
                     this.RaisePropertyChanged("Tipo");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MarcaVehiculo", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class MarcaVehiculo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdMarcaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MarcaField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdMarca {
-            get {
-                return this.IdMarcaField;
-            }
-            set {
-                if ((this.IdMarcaField.Equals(value) != true)) {
-                    this.IdMarcaField = value;
-                    this.RaisePropertyChanged("IdMarca");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Marca {
-            get {
-                return this.MarcaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MarcaField, value) != true)) {
-                    this.MarcaField = value;
-                    this.RaisePropertyChanged("Marca");
                 }
             }
         }
@@ -1379,6 +1379,18 @@ namespace ASPApp.ServiceReferenceInterciti {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceInterciti.IService")]
     public interface IService {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/ListarMarcaVehiculoResponse")]
+        System.Collections.Generic.List<ASPApp.ServiceReferenceInterciti.MarcaVehiculo> ListarMarcaVehiculo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/ListarMarcaVehiculoResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ASPApp.ServiceReferenceInterciti.MarcaVehiculo>> ListarMarcaVehiculoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/EliminarMarcaVehiculoResponse")]
+        int EliminarMarcaVehiculo(int idMarcaVehiculo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/EliminarMarcaVehiculoResponse")]
+        System.Threading.Tasks.Task<int> EliminarMarcaVehiculoAsync(int idMarcaVehiculo);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AgregarAñoVehiculo", ReplyAction="http://tempuri.org/IService/AgregarAñoVehiculoResponse")]
         int AgregarAñoVehiculo(string año);
         
@@ -1474,6 +1486,18 @@ namespace ASPApp.ServiceReferenceInterciti {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindAdminByID", ReplyAction="http://tempuri.org/IService/FindAdminByIDResponse")]
         System.Threading.Tasks.Task<ASPApp.ServiceReferenceInterciti.Admin> FindAdminByIDAsync(int ci);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLatLngForAddress", ReplyAction="http://tempuri.org/IService/GetLatLngForAddressResponse")]
+        System.Collections.Generic.List<string> GetLatLngForAddress(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLatLngForAddress", ReplyAction="http://tempuri.org/IService/GetLatLngForAddressResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<string>> GetLatLngForAddressAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAddress", ReplyAction="http://tempuri.org/IService/GetAddressResponse")]
+        string GetAddress(double lat, double lon);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAddress", ReplyAction="http://tempuri.org/IService/GetAddressResponse")]
+        System.Threading.Tasks.Task<string> GetAddressAsync(double lat, double lon);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarClientesCedula", ReplyAction="http://tempuri.org/IService/ListarClientesCedulaResponse")]
         System.Collections.Generic.List<ASPApp.ServiceReferenceInterciti.Cliente> ListarClientesCedula(string value);
@@ -1966,18 +1990,6 @@ namespace ASPApp.ServiceReferenceInterciti {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarTipoVehiculo", ReplyAction="http://tempuri.org/IService/EliminarTipoVehiculoResponse")]
         System.Threading.Tasks.Task<int> EliminarTipoVehiculoAsync(int idTipoVehiculo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/ListarMarcaVehiculoResponse")]
-        System.Collections.Generic.List<ASPApp.ServiceReferenceInterciti.MarcaVehiculo> ListarMarcaVehiculo();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/ListarMarcaVehiculoResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<ASPApp.ServiceReferenceInterciti.MarcaVehiculo>> ListarMarcaVehiculoAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/EliminarMarcaVehiculoResponse")]
-        int EliminarMarcaVehiculo(int idMarcaVehiculo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/EliminarMarcaVehiculoResponse")]
-        System.Threading.Tasks.Task<int> EliminarMarcaVehiculoAsync(int idMarcaVehiculo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2005,6 +2017,22 @@ namespace ASPApp.ServiceReferenceInterciti {
         
         public ServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public System.Collections.Generic.List<ASPApp.ServiceReferenceInterciti.MarcaVehiculo> ListarMarcaVehiculo() {
+            return base.Channel.ListarMarcaVehiculo();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ASPApp.ServiceReferenceInterciti.MarcaVehiculo>> ListarMarcaVehiculoAsync() {
+            return base.Channel.ListarMarcaVehiculoAsync();
+        }
+        
+        public int EliminarMarcaVehiculo(int idMarcaVehiculo) {
+            return base.Channel.EliminarMarcaVehiculo(idMarcaVehiculo);
+        }
+        
+        public System.Threading.Tasks.Task<int> EliminarMarcaVehiculoAsync(int idMarcaVehiculo) {
+            return base.Channel.EliminarMarcaVehiculoAsync(idMarcaVehiculo);
         }
         
         public int AgregarAñoVehiculo(string año) {
@@ -2133,6 +2161,22 @@ namespace ASPApp.ServiceReferenceInterciti {
         
         public System.Threading.Tasks.Task<ASPApp.ServiceReferenceInterciti.Admin> FindAdminByIDAsync(int ci) {
             return base.Channel.FindAdminByIDAsync(ci);
+        }
+        
+        public System.Collections.Generic.List<string> GetLatLngForAddress(string name) {
+            return base.Channel.GetLatLngForAddress(name);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<string>> GetLatLngForAddressAsync(string name) {
+            return base.Channel.GetLatLngForAddressAsync(name);
+        }
+        
+        public string GetAddress(double lat, double lon) {
+            return base.Channel.GetAddress(lat, lon);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetAddressAsync(double lat, double lon) {
+            return base.Channel.GetAddressAsync(lat, lon);
         }
         
         public System.Collections.Generic.List<ASPApp.ServiceReferenceInterciti.Cliente> ListarClientesCedula(string value) {
@@ -2789,22 +2833,6 @@ namespace ASPApp.ServiceReferenceInterciti {
         
         public System.Threading.Tasks.Task<int> EliminarTipoVehiculoAsync(int idTipoVehiculo) {
             return base.Channel.EliminarTipoVehiculoAsync(idTipoVehiculo);
-        }
-        
-        public System.Collections.Generic.List<ASPApp.ServiceReferenceInterciti.MarcaVehiculo> ListarMarcaVehiculo() {
-            return base.Channel.ListarMarcaVehiculo();
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<ASPApp.ServiceReferenceInterciti.MarcaVehiculo>> ListarMarcaVehiculoAsync() {
-            return base.Channel.ListarMarcaVehiculoAsync();
-        }
-        
-        public int EliminarMarcaVehiculo(int idMarcaVehiculo) {
-            return base.Channel.EliminarMarcaVehiculo(idMarcaVehiculo);
-        }
-        
-        public System.Threading.Tasks.Task<int> EliminarMarcaVehiculoAsync(int idMarcaVehiculo) {
-            return base.Channel.EliminarMarcaVehiculoAsync(idMarcaVehiculo);
         }
     }
 }
