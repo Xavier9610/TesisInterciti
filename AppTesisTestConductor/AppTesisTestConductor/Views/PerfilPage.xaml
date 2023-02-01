@@ -152,12 +152,12 @@
 
 
                     <StackLayout Orientation="Vertical">
-                    <Entry x:Name="txtName" Placeholder="ej. Patricio" HeightRequest="40"></Entry>
-                    <Entry x:Name="txtApellido" Placeholder="ej. Garcia" HeightRequest="40"></Entry>
-                    <Entry x:Name="txtCI" Placeholder="ej. 1724718182" HeightRequest="40"></Entry>
-                    <Entry x:Name="txtCorreo" Placeholder="ej. ga-xavier@live.com" HeightRequest="40"></Entry>
-                    <Entry x:Name="txtTelefono" Placeholder="ej. 0960400373" HeightRequest="40"></Entry>
-                    <DatePicker x:Name="txtFecha" HeightRequest="40"></DatePicker>
+                    <Entry x:Name="txtName" Placeholder="ej. Patricio" HeightRequest="40" TextColor="Black"></Entry>
+                    <Entry x:Name="txtApellido" Placeholder="ej. Garcia" HeightRequest="40" TextColor="Black"></Entry>
+                    <Entry x:Name="txtCI" Placeholder="ej. 1724718182" HeightRequest="40" TextColor="Black"></Entry>
+                    <Entry x:Name="txtCorreo" Placeholder="ej. ga-xavier@live.com" HeightRequest="40" TextColor="Black"></Entry>
+                    <Entry x:Name="txtTelefono" Placeholder="ej. 0960400373" HeightRequest="40" TextColor="Black"></Entry>
+                    <DatePicker x:Name="txtFecha" HeightRequest="40" TextColor="Black"></DatePicker>
                 </StackLayout>
                 </StackLayout>
 
@@ -232,10 +232,10 @@
                     </StackLayout>
 
 
-                    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
-                        <Entry x:Name="txtTelefonoSesion" Placeholder="ej. 0960400373" HeightRequest="40"></Entry>
-                        <Entry x:Name="txtMailSesion" Placeholder="ej. ga-xavier@live.com" HeightRequest="40"></Entry>
-                        <Entry x:Name="txtFacebookSesion" HeightRequest="40"></Entry>
+                    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" >
+                        <Entry x:Name="txtTelefonoSesion" Placeholder="ej. 0960400373" HeightRequest="40" TextColor="Black"></Entry>
+                        <Entry x:Name="txtMailSesion" Placeholder="ej. ga-xavier@live.com" HeightRequest="40" TextColor="Black"></Entry>
+                        <Entry x:Name="txtFacebookSesion" HeightRequest="40" TextColor="Black"></Entry>
                     </StackLayout>
                 </StackLayout>
 
@@ -351,11 +351,11 @@
 
                 <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
 
-                    <Picker x:Name="txtMarca" HeightRequest="40"></Picker>
-                    <Picker x:Name="txtModelo" HeightRequest="40"></Picker>
-                    <Picker x:Name="txtAño" HeightRequest="40"></Picker>
-                    <Picker x:Name="txtTipo" HeightRequest="40"></Picker>
-                    <Entry x:Name="txtPlaca" Placeholder="ej. ABCD-0123" HeightRequest="40"></Entry>
+                    <Picker x:Name="txtMarca" HeightRequest="40" TextColor="Black"></Picker>
+                    <Picker x:Name="txtModelo" HeightRequest="40" TextColor="Black"></Picker>
+                    <Picker x:Name="txtAño" HeightRequest="40" TextColor="Black"></Picker>
+                    <Picker x:Name="txtTipo" HeightRequest="40" TextColor="Black"></Picker>
+                    <Entry x:Name="txtPlaca" Placeholder="ej. ABCD-0123" HeightRequest="40" TextColor="Black"></Entry>
                 </StackLayout>
             </StackLayout>
 

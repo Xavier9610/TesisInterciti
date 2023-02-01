@@ -14,6 +14,326 @@ namespace ServiceReferenceInterciti
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MarcaVehiculo", Namespace="http://schemas.datacontract.org/2004/07/")]
+    public partial class MarcaVehiculo : object
+    {
+        
+        private int IdMarcaField;
+        
+        private string MarcaField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdMarca
+        {
+            get
+            {
+                return this.IdMarcaField;
+            }
+            set
+            {
+                this.IdMarcaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Marca
+        {
+            get
+            {
+                return this.MarcaField;
+            }
+            set
+            {
+                this.MarcaField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AñoVehiculo", Namespace="http://schemas.datacontract.org/2004/07/")]
+    public partial class AñoVehiculo : object
+    {
+        
+        private string AñoField;
+        
+        private int IdAñoField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Año
+        {
+            get
+            {
+                return this.AñoField;
+            }
+            set
+            {
+                this.AñoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdAño
+        {
+            get
+            {
+                return this.IdAñoField;
+            }
+            set
+            {
+                this.IdAñoField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ModeloVehiculo", Namespace="http://schemas.datacontract.org/2004/07/")]
+    public partial class ModeloVehiculo : object
+    {
+        
+        private int IdMarcaField;
+        
+        private int IdModeloField;
+        
+        private string ModeloField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdMarca
+        {
+            get
+            {
+                return this.IdMarcaField;
+            }
+            set
+            {
+                this.IdMarcaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdModelo
+        {
+            get
+            {
+                return this.IdModeloField;
+            }
+            set
+            {
+                this.IdModeloField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Modelo
+        {
+            get
+            {
+                return this.ModeloField;
+            }
+            set
+            {
+                this.ModeloField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TipoVehiculo", Namespace="http://schemas.datacontract.org/2004/07/")]
+    public partial class TipoVehiculo : object
+    {
+        
+        private int IdTipoVehiculoField;
+        
+        private string TipoField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdTipoVehiculo
+        {
+            get
+            {
+                return this.IdTipoVehiculoField;
+            }
+            set
+            {
+                this.IdTipoVehiculoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Tipo
+        {
+            get
+            {
+                return this.TipoField;
+            }
+            set
+            {
+                this.TipoField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Cliente", Namespace="http://schemas.datacontract.org/2004/07/")]
+    public partial class Cliente : object
+    {
+        
+        private string ApellidoField;
+        
+        private string CedulaField;
+        
+        private string CorreoField;
+        
+        private System.DateTime FechaNacimientoField;
+        
+        private int IdClienteField;
+        
+        private string NombreField;
+        
+        private string PassField;
+        
+        private byte[] PictureField;
+        
+        private string TelefonoField;
+        
+        private string TokenExternalLoginField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Apellido
+        {
+            get
+            {
+                return this.ApellidoField;
+            }
+            set
+            {
+                this.ApellidoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Cedula
+        {
+            get
+            {
+                return this.CedulaField;
+            }
+            set
+            {
+                this.CedulaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Correo
+        {
+            get
+            {
+                return this.CorreoField;
+            }
+            set
+            {
+                this.CorreoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime FechaNacimiento
+        {
+            get
+            {
+                return this.FechaNacimientoField;
+            }
+            set
+            {
+                this.FechaNacimientoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdCliente
+        {
+            get
+            {
+                return this.IdClienteField;
+            }
+            set
+            {
+                this.IdClienteField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nombre
+        {
+            get
+            {
+                return this.NombreField;
+            }
+            set
+            {
+                this.NombreField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Pass
+        {
+            get
+            {
+                return this.PassField;
+            }
+            set
+            {
+                this.PassField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] Picture
+        {
+            get
+            {
+                return this.PictureField;
+            }
+            set
+            {
+                this.PictureField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Telefono
+        {
+            get
+            {
+                return this.TelefonoField;
+            }
+            set
+            {
+                this.TelefonoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TokenExternalLogin
+        {
+            get
+            {
+                return this.TokenExternalLoginField;
+            }
+            set
+            {
+                this.TokenExternalLoginField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Admin", Namespace="http://schemas.datacontract.org/2004/07/")]
     public partial class Admin : object
     {
@@ -115,163 +435,6 @@ namespace ServiceReferenceInterciti
             set
             {
                 this.IdAdminField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Nombre
-        {
-            get
-            {
-                return this.NombreField;
-            }
-            set
-            {
-                this.NombreField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Pass
-        {
-            get
-            {
-                return this.PassField;
-            }
-            set
-            {
-                this.PassField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] Picture
-        {
-            get
-            {
-                return this.PictureField;
-            }
-            set
-            {
-                this.PictureField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Telefono
-        {
-            get
-            {
-                return this.TelefonoField;
-            }
-            set
-            {
-                this.TelefonoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TokenExternalLogin
-        {
-            get
-            {
-                return this.TokenExternalLoginField;
-            }
-            set
-            {
-                this.TokenExternalLoginField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Cliente", Namespace="http://schemas.datacontract.org/2004/07/")]
-    public partial class Cliente : object
-    {
-        
-        private string ApellidoField;
-        
-        private string CedulaField;
-        
-        private string CorreoField;
-        
-        private System.DateTime FechaNacimientoField;
-        
-        private int IdClienteField;
-        
-        private string NombreField;
-        
-        private string PassField;
-        
-        private byte[] PictureField;
-        
-        private string TelefonoField;
-        
-        private string TokenExternalLoginField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Apellido
-        {
-            get
-            {
-                return this.ApellidoField;
-            }
-            set
-            {
-                this.ApellidoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Cedula
-        {
-            get
-            {
-                return this.CedulaField;
-            }
-            set
-            {
-                this.CedulaField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Correo
-        {
-            get
-            {
-                return this.CorreoField;
-            }
-            set
-            {
-                this.CorreoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime FechaNacimiento
-        {
-            get
-            {
-                return this.FechaNacimientoField;
-            }
-            set
-            {
-                this.FechaNacimientoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdCliente
-        {
-            get
-            {
-                return this.IdClienteField;
-            }
-            set
-            {
-                this.IdClienteField = value;
             }
         }
         
@@ -844,95 +1007,6 @@ namespace ServiceReferenceInterciti
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AñoVehiculo", Namespace="http://schemas.datacontract.org/2004/07/")]
-    public partial class AñoVehiculo : object
-    {
-        
-        private string AñoField;
-        
-        private int IdAñoField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Año
-        {
-            get
-            {
-                return this.AñoField;
-            }
-            set
-            {
-                this.AñoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdAño
-        {
-            get
-            {
-                return this.IdAñoField;
-            }
-            set
-            {
-                this.IdAñoField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ModeloVehiculo", Namespace="http://schemas.datacontract.org/2004/07/")]
-    public partial class ModeloVehiculo : object
-    {
-        
-        private int IdMarcaField;
-        
-        private int IdModeloField;
-        
-        private string ModeloField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdMarca
-        {
-            get
-            {
-                return this.IdMarcaField;
-            }
-            set
-            {
-                this.IdMarcaField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdModelo
-        {
-            get
-            {
-                return this.IdModeloField;
-            }
-            set
-            {
-                this.IdModeloField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Modelo
-        {
-            get
-            {
-                return this.ModeloField;
-            }
-            set
-            {
-                this.ModeloField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.Runtime.Serialization.DataContractAttribute(Name="MisUbicaciones", Namespace="http://schemas.datacontract.org/2004/07/")]
     public partial class MisUbicaciones : object
     {
@@ -1013,90 +1087,268 @@ namespace ServiceReferenceInterciti
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TipoVehiculo", Namespace="http://schemas.datacontract.org/2004/07/")]
-    public partial class TipoVehiculo : object
-    {
-        
-        private int IdTipoVehiculoField;
-        
-        private string TipoField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdTipoVehiculo
-        {
-            get
-            {
-                return this.IdTipoVehiculoField;
-            }
-            set
-            {
-                this.IdTipoVehiculoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Tipo
-        {
-            get
-            {
-                return this.TipoField;
-            }
-            set
-            {
-                this.TipoField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MarcaVehiculo", Namespace="http://schemas.datacontract.org/2004/07/")]
-    public partial class MarcaVehiculo : object
-    {
-        
-        private int IdMarcaField;
-        
-        private string MarcaField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdMarca
-        {
-            get
-            {
-                return this.IdMarcaField;
-            }
-            set
-            {
-                this.IdMarcaField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Marca
-        {
-            get
-            {
-                return this.MarcaField;
-            }
-            set
-            {
-                this.MarcaField = value;
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceInterciti.IService")]
     public interface IService
     {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/ListarMarcaVehiculoResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.MarcaVehiculo> ListarMarcaVehiculo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/ListarMarcaVehiculoResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.MarcaVehiculo>> ListarMarcaVehiculoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/EliminarMarcaVehiculoResponse")]
+        int EliminarMarcaVehiculo(int idMarcaVehiculo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/EliminarMarcaVehiculoResponse")]
+        System.Threading.Tasks.Task<int> EliminarMarcaVehiculoAsync(int idMarcaVehiculo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AgregarAñoVehiculo", ReplyAction="http://tempuri.org/IService/AgregarAñoVehiculoResponse")]
+        int AgregarAñoVehiculo(string año);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AgregarAñoVehiculo", ReplyAction="http://tempuri.org/IService/AgregarAñoVehiculoResponse")]
+        System.Threading.Tasks.Task<int> AgregarAñoVehiculoAsync(string año);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAnioVehiculo", ReplyAction="http://tempuri.org/IService/ListarAnioVehiculoResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.AñoVehiculo> ListarAnioVehiculo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAnioVehiculo", ReplyAction="http://tempuri.org/IService/ListarAnioVehiculoResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.AñoVehiculo>> ListarAnioVehiculoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarAñoVehiculo", ReplyAction="http://tempuri.org/IService/EliminarAñoVehiculoResponse")]
+        int EliminarAñoVehiculo(int idÁñoVehiculo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarAñoVehiculo", ReplyAction="http://tempuri.org/IService/EliminarAñoVehiculoResponse")]
+        System.Threading.Tasks.Task<int> EliminarAñoVehiculoAsync(int idÁñoVehiculo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AgregarModeloVehiculo", ReplyAction="http://tempuri.org/IService/AgregarModeloVehiculoResponse")]
+        int AgregarModeloVehiculo(string año, int idMarca);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AgregarModeloVehiculo", ReplyAction="http://tempuri.org/IService/AgregarModeloVehiculoResponse")]
+        System.Threading.Tasks.Task<int> AgregarModeloVehiculoAsync(string año, int idMarca);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AgregarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/AgregarMarcaVehiculoResponse")]
+        int AgregarMarcaVehiculo(string marca);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AgregarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/AgregarMarcaVehiculoResponse")]
+        System.Threading.Tasks.Task<int> AgregarMarcaVehiculoAsync(string marca);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarModeloVehiculo", ReplyAction="http://tempuri.org/IService/ListarModeloVehiculoResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.ModeloVehiculo> ListarModeloVehiculo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarModeloVehiculo", ReplyAction="http://tempuri.org/IService/ListarModeloVehiculoResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.ModeloVehiculo>> ListarModeloVehiculoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarModeloVehiculo", ReplyAction="http://tempuri.org/IService/EliminarModeloVehiculoResponse")]
+        int EliminarModeloVehiculo(int idÁñoVehiculo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarModeloVehiculo", ReplyAction="http://tempuri.org/IService/EliminarModeloVehiculoResponse")]
+        System.Threading.Tasks.Task<int> EliminarModeloVehiculoAsync(int idÁñoVehiculo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindTipoVehiculoById", ReplyAction="http://tempuri.org/IService/FindTipoVehiculoByIdResponse")]
+        ServiceReferenceInterciti.TipoVehiculo FindTipoVehiculoById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindTipoVehiculoById", ReplyAction="http://tempuri.org/IService/FindTipoVehiculoByIdResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceInterciti.TipoVehiculo> FindTipoVehiculoByIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindAñoVehiculoById", ReplyAction="http://tempuri.org/IService/FindAñoVehiculoByIdResponse")]
+        ServiceReferenceInterciti.AñoVehiculo FindAñoVehiculoById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindAñoVehiculoById", ReplyAction="http://tempuri.org/IService/FindAñoVehiculoByIdResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceInterciti.AñoVehiculo> FindAñoVehiculoByIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindMarcaVehiculoById", ReplyAction="http://tempuri.org/IService/FindMarcaVehiculoByIdResponse")]
+        ServiceReferenceInterciti.MarcaVehiculo FindMarcaVehiculoById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindMarcaVehiculoById", ReplyAction="http://tempuri.org/IService/FindMarcaVehiculoByIdResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceInterciti.MarcaVehiculo> FindMarcaVehiculoByIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindModeloVehiculoById", ReplyAction="http://tempuri.org/IService/FindModeloVehiculoByIdResponse")]
+        ServiceReferenceInterciti.ModeloVehiculo FindModeloVehiculoById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindModeloVehiculoById", ReplyAction="http://tempuri.org/IService/FindModeloVehiculoByIdResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceInterciti.ModeloVehiculo> FindModeloVehiculoByIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindModeloVehiculoByMarca", ReplyAction="http://tempuri.org/IService/FindModeloVehiculoByMarcaResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.ModeloVehiculo> FindModeloVehiculoByMarca(int idMarca);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindModeloVehiculoByMarca", ReplyAction="http://tempuri.org/IService/FindModeloVehiculoByMarcaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.ModeloVehiculo>> FindModeloVehiculoByMarcaAsync(int idMarca);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindClienteByCI", ReplyAction="http://tempuri.org/IService/FindClienteByCIResponse")]
+        ServiceReferenceInterciti.Cliente FindClienteByCI(string cedula);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindClienteByCI", ReplyAction="http://tempuri.org/IService/FindClienteByCIResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceInterciti.Cliente> FindClienteByCIAsync(string cedula);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindAdminByCI", ReplyAction="http://tempuri.org/IService/FindAdminByCIResponse")]
+        ServiceReferenceInterciti.Admin FindAdminByCI(string ci);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindAdminByCI", ReplyAction="http://tempuri.org/IService/FindAdminByCIResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceInterciti.Admin> FindAdminByCIAsync(string ci);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindAdminByCorreo", ReplyAction="http://tempuri.org/IService/FindAdminByCorreoResponse")]
+        ServiceReferenceInterciti.Admin FindAdminByCorreo(string ci);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindAdminByCorreo", ReplyAction="http://tempuri.org/IService/FindAdminByCorreoResponse")]
+        System.Threading.Tasks.Task<ServiceReferenceInterciti.Admin> FindAdminByCorreoAsync(string ci);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindAdminByID", ReplyAction="http://tempuri.org/IService/FindAdminByIDResponse")]
         ServiceReferenceInterciti.Admin FindAdminByID(int ci);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindAdminByID", ReplyAction="http://tempuri.org/IService/FindAdminByIDResponse")]
         System.Threading.Tasks.Task<ServiceReferenceInterciti.Admin> FindAdminByIDAsync(int ci);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLatLngForAddress", ReplyAction="http://tempuri.org/IService/GetLatLngForAddressResponse")]
+        System.Collections.Generic.List<string> GetLatLngForAddress(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLatLngForAddress", ReplyAction="http://tempuri.org/IService/GetLatLngForAddressResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<string>> GetLatLngForAddressAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAddress", ReplyAction="http://tempuri.org/IService/GetAddressResponse")]
+        string GetAddress(double lat, double lon);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAddress", ReplyAction="http://tempuri.org/IService/GetAddressResponse")]
+        System.Threading.Tasks.Task<string> GetAddressAsync(double lat, double lon);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarClientesCedula", ReplyAction="http://tempuri.org/IService/ListarClientesCedulaResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Cliente> ListarClientesCedula(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarClientesCedula", ReplyAction="http://tempuri.org/IService/ListarClientesCedulaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Cliente>> ListarClientesCedulaAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarClientesApellido", ReplyAction="http://tempuri.org/IService/ListarClientesApellidoResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Cliente> ListarClientesApellido(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarClientesApellido", ReplyAction="http://tempuri.org/IService/ListarClientesApellidoResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Cliente>> ListarClientesApellidoAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarClientesNombre", ReplyAction="http://tempuri.org/IService/ListarClientesNombreResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Cliente> ListarClientesNombre(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarClientesNombre", ReplyAction="http://tempuri.org/IService/ListarClientesNombreResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Cliente>> ListarClientesNombreAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarClientesCorreo", ReplyAction="http://tempuri.org/IService/ListarClientesCorreoResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Cliente> ListarClientesCorreo(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarClientesCorreo", ReplyAction="http://tempuri.org/IService/ListarClientesCorreoResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Cliente>> ListarClientesCorreoAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarClientesFecha", ReplyAction="http://tempuri.org/IService/ListarClientesFechaResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Cliente> ListarClientesFecha(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarClientesFecha", ReplyAction="http://tempuri.org/IService/ListarClientesFechaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Cliente>> ListarClientesFechaAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarConductorCedula", ReplyAction="http://tempuri.org/IService/ListarConductorCedulaResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Conductor> ListarConductorCedula(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarConductorCedula", ReplyAction="http://tempuri.org/IService/ListarConductorCedulaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Conductor>> ListarConductorCedulaAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarConductorApellido", ReplyAction="http://tempuri.org/IService/ListarConductorApellidoResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Conductor> ListarConductorApellido(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarConductorApellido", ReplyAction="http://tempuri.org/IService/ListarConductorApellidoResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Conductor>> ListarConductorApellidoAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarConductorNombre", ReplyAction="http://tempuri.org/IService/ListarConductorNombreResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Conductor> ListarConductorNombre(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarConductorNombre", ReplyAction="http://tempuri.org/IService/ListarConductorNombreResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Conductor>> ListarConductorNombreAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarConductorCorreo", ReplyAction="http://tempuri.org/IService/ListarConductorCorreoResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Conductor> ListarConductorCorreo(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarConductorCorreo", ReplyAction="http://tempuri.org/IService/ListarConductorCorreoResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Conductor>> ListarConductorCorreoAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarConductorFecha", ReplyAction="http://tempuri.org/IService/ListarConductorFechaResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Conductor> ListarConductorFecha(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarConductorFecha", ReplyAction="http://tempuri.org/IService/ListarConductorFechaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Conductor>> ListarConductorFechaAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAdminCedula", ReplyAction="http://tempuri.org/IService/ListarAdminCedulaResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Admin> ListarAdminCedula(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAdminCedula", ReplyAction="http://tempuri.org/IService/ListarAdminCedulaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Admin>> ListarAdminCedulaAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAdminApellido", ReplyAction="http://tempuri.org/IService/ListarAdminApellidoResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Admin> ListarAdminApellido(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAdminApellido", ReplyAction="http://tempuri.org/IService/ListarAdminApellidoResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Admin>> ListarAdminApellidoAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAdminNombre", ReplyAction="http://tempuri.org/IService/ListarAdminNombreResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Admin> ListarAdminNombre(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAdminNombre", ReplyAction="http://tempuri.org/IService/ListarAdminNombreResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Admin>> ListarAdminNombreAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAdminCorreo", ReplyAction="http://tempuri.org/IService/ListarAdminCorreoResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Admin> ListarAdminCorreo(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAdminCorreo", ReplyAction="http://tempuri.org/IService/ListarAdminCorreoResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Admin>> ListarAdminCorreoAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAdminFecha", ReplyAction="http://tempuri.org/IService/ListarAdminFechaResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Admin> ListarAdminFecha(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAdminFecha", ReplyAction="http://tempuri.org/IService/ListarAdminFechaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Admin>> ListarAdminFechaAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarVehiculoAnio", ReplyAction="http://tempuri.org/IService/ListarVehiculoAnioResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo> ListarVehiculoAnio(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarVehiculoAnio", ReplyAction="http://tempuri.org/IService/ListarVehiculoAnioResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo>> ListarVehiculoAnioAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarVehiculoTipo", ReplyAction="http://tempuri.org/IService/ListarVehiculoTipoResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo> ListarVehiculoTipo(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarVehiculoTipo", ReplyAction="http://tempuri.org/IService/ListarVehiculoTipoResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo>> ListarVehiculoTipoAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarVehiculoModelo", ReplyAction="http://tempuri.org/IService/ListarVehiculoModeloResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo> ListarVehiculoModelo(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarVehiculoModelo", ReplyAction="http://tempuri.org/IService/ListarVehiculoModeloResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo>> ListarVehiculoModeloAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarVehiculoMarca", ReplyAction="http://tempuri.org/IService/ListarVehiculoMarcaResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo> ListarVehiculoMarca(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarVehiculoMarca", ReplyAction="http://tempuri.org/IService/ListarVehiculoMarcaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo>> ListarVehiculoMarcaAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarVehiculoPlaca", ReplyAction="http://tempuri.org/IService/ListarVehiculoPlacaResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo> ListarVehiculoPlaca(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarVehiculoPlaca", ReplyAction="http://tempuri.org/IService/ListarVehiculoPlacaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo>> ListarVehiculoPlacaAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarRecorridoCliente", ReplyAction="http://tempuri.org/IService/ListarRecorridoClienteResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Recorrido> ListarRecorridoCliente(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarRecorridoCliente", ReplyAction="http://tempuri.org/IService/ListarRecorridoClienteResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Recorrido>> ListarRecorridoClienteAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarRecorridoConductor", ReplyAction="http://tempuri.org/IService/ListarRecorridoConductorResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Recorrido> ListarRecorridoConductor(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarRecorridoConductor", ReplyAction="http://tempuri.org/IService/ListarRecorridoConductorResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Recorrido>> ListarRecorridoConductorAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarRecorridoFecha", ReplyAction="http://tempuri.org/IService/ListarRecorridoFechaResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Recorrido> ListarRecorridoFecha(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarRecorridoFecha", ReplyAction="http://tempuri.org/IService/ListarRecorridoFechaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Recorrido>> ListarRecorridoFechaAsync(string value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindClienteByCorreo", ReplyAction="http://tempuri.org/IService/FindClienteByCorreoResponse")]
         ServiceReferenceInterciti.Cliente FindClienteByCorreo(string correo);
@@ -1121,6 +1373,12 @@ namespace ServiceReferenceInterciti
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindRecorridoById", ReplyAction="http://tempuri.org/IService/FindRecorridoByIdResponse")]
         System.Threading.Tasks.Task<ServiceReferenceInterciti.Recorrido> FindRecorridoByIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindSolicitudRecorrido", ReplyAction="http://tempuri.org/IService/FindSolicitudRecorridoResponse")]
+        System.Collections.Generic.List<ServiceReferenceInterciti.Recorrido> FindSolicitudRecorrido();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindSolicitudRecorrido", ReplyAction="http://tempuri.org/IService/FindSolicitudRecorridoResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Recorrido>> FindSolicitudRecorridoAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindAñoVehiculoByIdAño", ReplyAction="http://tempuri.org/IService/FindAñoVehiculoByIdAñoResponse")]
         ServiceReferenceInterciti.AñoVehiculo FindAñoVehiculoByIdAño(string id);
@@ -1445,108 +1703,6 @@ namespace ServiceReferenceInterciti
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarTipoVehiculo", ReplyAction="http://tempuri.org/IService/EliminarTipoVehiculoResponse")]
         System.Threading.Tasks.Task<int> EliminarTipoVehiculoAsync(int idTipoVehiculo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/ListarMarcaVehiculoResponse")]
-        System.Collections.Generic.List<ServiceReferenceInterciti.MarcaVehiculo> ListarMarcaVehiculo();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/ListarMarcaVehiculoResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.MarcaVehiculo>> ListarMarcaVehiculoAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/EliminarMarcaVehiculoResponse")]
-        int EliminarMarcaVehiculo(int idMarcaVehiculo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/EliminarMarcaVehiculoResponse")]
-        System.Threading.Tasks.Task<int> EliminarMarcaVehiculoAsync(int idMarcaVehiculo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AgregarAñoVehiculo", ReplyAction="http://tempuri.org/IService/AgregarAñoVehiculoResponse")]
-        int AgregarAñoVehiculo(string año);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AgregarAñoVehiculo", ReplyAction="http://tempuri.org/IService/AgregarAñoVehiculoResponse")]
-        System.Threading.Tasks.Task<int> AgregarAñoVehiculoAsync(string año);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAnioVehiculo", ReplyAction="http://tempuri.org/IService/ListarAnioVehiculoResponse")]
-        System.Collections.Generic.List<ServiceReferenceInterciti.AñoVehiculo> ListarAnioVehiculo();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAnioVehiculo", ReplyAction="http://tempuri.org/IService/ListarAnioVehiculoResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.AñoVehiculo>> ListarAnioVehiculoAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarAñoVehiculo", ReplyAction="http://tempuri.org/IService/EliminarAñoVehiculoResponse")]
-        int EliminarAñoVehiculo(int idÁñoVehiculo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarAñoVehiculo", ReplyAction="http://tempuri.org/IService/EliminarAñoVehiculoResponse")]
-        System.Threading.Tasks.Task<int> EliminarAñoVehiculoAsync(int idÁñoVehiculo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AgregarModeloVehiculo", ReplyAction="http://tempuri.org/IService/AgregarModeloVehiculoResponse")]
-        int AgregarModeloVehiculo(string año, int idMarca);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AgregarModeloVehiculo", ReplyAction="http://tempuri.org/IService/AgregarModeloVehiculoResponse")]
-        System.Threading.Tasks.Task<int> AgregarModeloVehiculoAsync(string año, int idMarca);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AgregarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/AgregarMarcaVehiculoResponse")]
-        int AgregarMarcaVehiculo(string marca);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AgregarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/AgregarMarcaVehiculoResponse")]
-        System.Threading.Tasks.Task<int> AgregarMarcaVehiculoAsync(string marca);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarModeloVehiculo", ReplyAction="http://tempuri.org/IService/ListarModeloVehiculoResponse")]
-        System.Collections.Generic.List<ServiceReferenceInterciti.ModeloVehiculo> ListarModeloVehiculo();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarModeloVehiculo", ReplyAction="http://tempuri.org/IService/ListarModeloVehiculoResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.ModeloVehiculo>> ListarModeloVehiculoAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarModeloVehiculo", ReplyAction="http://tempuri.org/IService/EliminarModeloVehiculoResponse")]
-        int EliminarModeloVehiculo(int idÁñoVehiculo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarModeloVehiculo", ReplyAction="http://tempuri.org/IService/EliminarModeloVehiculoResponse")]
-        System.Threading.Tasks.Task<int> EliminarModeloVehiculoAsync(int idÁñoVehiculo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindTipoVehiculoById", ReplyAction="http://tempuri.org/IService/FindTipoVehiculoByIdResponse")]
-        ServiceReferenceInterciti.TipoVehiculo FindTipoVehiculoById(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindTipoVehiculoById", ReplyAction="http://tempuri.org/IService/FindTipoVehiculoByIdResponse")]
-        System.Threading.Tasks.Task<ServiceReferenceInterciti.TipoVehiculo> FindTipoVehiculoByIdAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindAñoVehiculoById", ReplyAction="http://tempuri.org/IService/FindAñoVehiculoByIdResponse")]
-        ServiceReferenceInterciti.AñoVehiculo FindAñoVehiculoById(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindAñoVehiculoById", ReplyAction="http://tempuri.org/IService/FindAñoVehiculoByIdResponse")]
-        System.Threading.Tasks.Task<ServiceReferenceInterciti.AñoVehiculo> FindAñoVehiculoByIdAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindMarcaVehiculoById", ReplyAction="http://tempuri.org/IService/FindMarcaVehiculoByIdResponse")]
-        ServiceReferenceInterciti.MarcaVehiculo FindMarcaVehiculoById(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindMarcaVehiculoById", ReplyAction="http://tempuri.org/IService/FindMarcaVehiculoByIdResponse")]
-        System.Threading.Tasks.Task<ServiceReferenceInterciti.MarcaVehiculo> FindMarcaVehiculoByIdAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindModeloVehiculoById", ReplyAction="http://tempuri.org/IService/FindModeloVehiculoByIdResponse")]
-        ServiceReferenceInterciti.ModeloVehiculo FindModeloVehiculoById(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindModeloVehiculoById", ReplyAction="http://tempuri.org/IService/FindModeloVehiculoByIdResponse")]
-        System.Threading.Tasks.Task<ServiceReferenceInterciti.ModeloVehiculo> FindModeloVehiculoByIdAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindModeloVehiculoByMarca", ReplyAction="http://tempuri.org/IService/FindModeloVehiculoByMarcaResponse")]
-        System.Collections.Generic.List<ServiceReferenceInterciti.ModeloVehiculo> FindModeloVehiculoByMarca(int idMarca);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindModeloVehiculoByMarca", ReplyAction="http://tempuri.org/IService/FindModeloVehiculoByMarcaResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.ModeloVehiculo>> FindModeloVehiculoByMarcaAsync(int idMarca);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindClienteByCI", ReplyAction="http://tempuri.org/IService/FindClienteByCIResponse")]
-        ServiceReferenceInterciti.Cliente FindClienteByCI(string cedula);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindClienteByCI", ReplyAction="http://tempuri.org/IService/FindClienteByCIResponse")]
-        System.Threading.Tasks.Task<ServiceReferenceInterciti.Cliente> FindClienteByCIAsync(string cedula);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindAdminByCI", ReplyAction="http://tempuri.org/IService/FindAdminByCIResponse")]
-        ServiceReferenceInterciti.Admin FindAdminByCI(string ci);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindAdminByCI", ReplyAction="http://tempuri.org/IService/FindAdminByCIResponse")]
-        System.Threading.Tasks.Task<ServiceReferenceInterciti.Admin> FindAdminByCIAsync(string ci);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindAdminByCorreo", ReplyAction="http://tempuri.org/IService/FindAdminByCorreoResponse")]
-        ServiceReferenceInterciti.Admin FindAdminByCorreo(string ci);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindAdminByCorreo", ReplyAction="http://tempuri.org/IService/FindAdminByCorreoResponse")]
-        System.Threading.Tasks.Task<ServiceReferenceInterciti.Admin> FindAdminByCorreoAsync(string ci);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
@@ -1592,6 +1748,176 @@ namespace ServiceReferenceInterciti
         {
         }
         
+        public System.Collections.Generic.List<ServiceReferenceInterciti.MarcaVehiculo> ListarMarcaVehiculo()
+        {
+            return base.Channel.ListarMarcaVehiculo();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.MarcaVehiculo>> ListarMarcaVehiculoAsync()
+        {
+            return base.Channel.ListarMarcaVehiculoAsync();
+        }
+        
+        public int EliminarMarcaVehiculo(int idMarcaVehiculo)
+        {
+            return base.Channel.EliminarMarcaVehiculo(idMarcaVehiculo);
+        }
+        
+        public System.Threading.Tasks.Task<int> EliminarMarcaVehiculoAsync(int idMarcaVehiculo)
+        {
+            return base.Channel.EliminarMarcaVehiculoAsync(idMarcaVehiculo);
+        }
+        
+        public int AgregarAñoVehiculo(string año)
+        {
+            return base.Channel.AgregarAñoVehiculo(año);
+        }
+        
+        public System.Threading.Tasks.Task<int> AgregarAñoVehiculoAsync(string año)
+        {
+            return base.Channel.AgregarAñoVehiculoAsync(año);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.AñoVehiculo> ListarAnioVehiculo()
+        {
+            return base.Channel.ListarAnioVehiculo();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.AñoVehiculo>> ListarAnioVehiculoAsync()
+        {
+            return base.Channel.ListarAnioVehiculoAsync();
+        }
+        
+        public int EliminarAñoVehiculo(int idÁñoVehiculo)
+        {
+            return base.Channel.EliminarAñoVehiculo(idÁñoVehiculo);
+        }
+        
+        public System.Threading.Tasks.Task<int> EliminarAñoVehiculoAsync(int idÁñoVehiculo)
+        {
+            return base.Channel.EliminarAñoVehiculoAsync(idÁñoVehiculo);
+        }
+        
+        public int AgregarModeloVehiculo(string año, int idMarca)
+        {
+            return base.Channel.AgregarModeloVehiculo(año, idMarca);
+        }
+        
+        public System.Threading.Tasks.Task<int> AgregarModeloVehiculoAsync(string año, int idMarca)
+        {
+            return base.Channel.AgregarModeloVehiculoAsync(año, idMarca);
+        }
+        
+        public int AgregarMarcaVehiculo(string marca)
+        {
+            return base.Channel.AgregarMarcaVehiculo(marca);
+        }
+        
+        public System.Threading.Tasks.Task<int> AgregarMarcaVehiculoAsync(string marca)
+        {
+            return base.Channel.AgregarMarcaVehiculoAsync(marca);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.ModeloVehiculo> ListarModeloVehiculo()
+        {
+            return base.Channel.ListarModeloVehiculo();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.ModeloVehiculo>> ListarModeloVehiculoAsync()
+        {
+            return base.Channel.ListarModeloVehiculoAsync();
+        }
+        
+        public int EliminarModeloVehiculo(int idÁñoVehiculo)
+        {
+            return base.Channel.EliminarModeloVehiculo(idÁñoVehiculo);
+        }
+        
+        public System.Threading.Tasks.Task<int> EliminarModeloVehiculoAsync(int idÁñoVehiculo)
+        {
+            return base.Channel.EliminarModeloVehiculoAsync(idÁñoVehiculo);
+        }
+        
+        public ServiceReferenceInterciti.TipoVehiculo FindTipoVehiculoById(int id)
+        {
+            return base.Channel.FindTipoVehiculoById(id);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceInterciti.TipoVehiculo> FindTipoVehiculoByIdAsync(int id)
+        {
+            return base.Channel.FindTipoVehiculoByIdAsync(id);
+        }
+        
+        public ServiceReferenceInterciti.AñoVehiculo FindAñoVehiculoById(int id)
+        {
+            return base.Channel.FindAñoVehiculoById(id);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceInterciti.AñoVehiculo> FindAñoVehiculoByIdAsync(int id)
+        {
+            return base.Channel.FindAñoVehiculoByIdAsync(id);
+        }
+        
+        public ServiceReferenceInterciti.MarcaVehiculo FindMarcaVehiculoById(int id)
+        {
+            return base.Channel.FindMarcaVehiculoById(id);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceInterciti.MarcaVehiculo> FindMarcaVehiculoByIdAsync(int id)
+        {
+            return base.Channel.FindMarcaVehiculoByIdAsync(id);
+        }
+        
+        public ServiceReferenceInterciti.ModeloVehiculo FindModeloVehiculoById(int id)
+        {
+            return base.Channel.FindModeloVehiculoById(id);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceInterciti.ModeloVehiculo> FindModeloVehiculoByIdAsync(int id)
+        {
+            return base.Channel.FindModeloVehiculoByIdAsync(id);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.ModeloVehiculo> FindModeloVehiculoByMarca(int idMarca)
+        {
+            return base.Channel.FindModeloVehiculoByMarca(idMarca);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.ModeloVehiculo>> FindModeloVehiculoByMarcaAsync(int idMarca)
+        {
+            return base.Channel.FindModeloVehiculoByMarcaAsync(idMarca);
+        }
+        
+        public ServiceReferenceInterciti.Cliente FindClienteByCI(string cedula)
+        {
+            return base.Channel.FindClienteByCI(cedula);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceInterciti.Cliente> FindClienteByCIAsync(string cedula)
+        {
+            return base.Channel.FindClienteByCIAsync(cedula);
+        }
+        
+        public ServiceReferenceInterciti.Admin FindAdminByCI(string ci)
+        {
+            return base.Channel.FindAdminByCI(ci);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceInterciti.Admin> FindAdminByCIAsync(string ci)
+        {
+            return base.Channel.FindAdminByCIAsync(ci);
+        }
+        
+        public ServiceReferenceInterciti.Admin FindAdminByCorreo(string ci)
+        {
+            return base.Channel.FindAdminByCorreo(ci);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReferenceInterciti.Admin> FindAdminByCorreoAsync(string ci)
+        {
+            return base.Channel.FindAdminByCorreoAsync(ci);
+        }
+        
         public ServiceReferenceInterciti.Admin FindAdminByID(int ci)
         {
             return base.Channel.FindAdminByID(ci);
@@ -1600,6 +1926,256 @@ namespace ServiceReferenceInterciti
         public System.Threading.Tasks.Task<ServiceReferenceInterciti.Admin> FindAdminByIDAsync(int ci)
         {
             return base.Channel.FindAdminByIDAsync(ci);
+        }
+        
+        public System.Collections.Generic.List<string> GetLatLngForAddress(string name)
+        {
+            return base.Channel.GetLatLngForAddress(name);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<string>> GetLatLngForAddressAsync(string name)
+        {
+            return base.Channel.GetLatLngForAddressAsync(name);
+        }
+        
+        public string GetAddress(double lat, double lon)
+        {
+            return base.Channel.GetAddress(lat, lon);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetAddressAsync(double lat, double lon)
+        {
+            return base.Channel.GetAddressAsync(lat, lon);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Cliente> ListarClientesCedula(string value)
+        {
+            return base.Channel.ListarClientesCedula(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Cliente>> ListarClientesCedulaAsync(string value)
+        {
+            return base.Channel.ListarClientesCedulaAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Cliente> ListarClientesApellido(string value)
+        {
+            return base.Channel.ListarClientesApellido(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Cliente>> ListarClientesApellidoAsync(string value)
+        {
+            return base.Channel.ListarClientesApellidoAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Cliente> ListarClientesNombre(string value)
+        {
+            return base.Channel.ListarClientesNombre(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Cliente>> ListarClientesNombreAsync(string value)
+        {
+            return base.Channel.ListarClientesNombreAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Cliente> ListarClientesCorreo(string value)
+        {
+            return base.Channel.ListarClientesCorreo(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Cliente>> ListarClientesCorreoAsync(string value)
+        {
+            return base.Channel.ListarClientesCorreoAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Cliente> ListarClientesFecha(string value)
+        {
+            return base.Channel.ListarClientesFecha(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Cliente>> ListarClientesFechaAsync(string value)
+        {
+            return base.Channel.ListarClientesFechaAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Conductor> ListarConductorCedula(string value)
+        {
+            return base.Channel.ListarConductorCedula(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Conductor>> ListarConductorCedulaAsync(string value)
+        {
+            return base.Channel.ListarConductorCedulaAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Conductor> ListarConductorApellido(string value)
+        {
+            return base.Channel.ListarConductorApellido(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Conductor>> ListarConductorApellidoAsync(string value)
+        {
+            return base.Channel.ListarConductorApellidoAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Conductor> ListarConductorNombre(string value)
+        {
+            return base.Channel.ListarConductorNombre(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Conductor>> ListarConductorNombreAsync(string value)
+        {
+            return base.Channel.ListarConductorNombreAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Conductor> ListarConductorCorreo(string value)
+        {
+            return base.Channel.ListarConductorCorreo(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Conductor>> ListarConductorCorreoAsync(string value)
+        {
+            return base.Channel.ListarConductorCorreoAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Conductor> ListarConductorFecha(string value)
+        {
+            return base.Channel.ListarConductorFecha(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Conductor>> ListarConductorFechaAsync(string value)
+        {
+            return base.Channel.ListarConductorFechaAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Admin> ListarAdminCedula(string value)
+        {
+            return base.Channel.ListarAdminCedula(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Admin>> ListarAdminCedulaAsync(string value)
+        {
+            return base.Channel.ListarAdminCedulaAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Admin> ListarAdminApellido(string value)
+        {
+            return base.Channel.ListarAdminApellido(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Admin>> ListarAdminApellidoAsync(string value)
+        {
+            return base.Channel.ListarAdminApellidoAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Admin> ListarAdminNombre(string value)
+        {
+            return base.Channel.ListarAdminNombre(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Admin>> ListarAdminNombreAsync(string value)
+        {
+            return base.Channel.ListarAdminNombreAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Admin> ListarAdminCorreo(string value)
+        {
+            return base.Channel.ListarAdminCorreo(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Admin>> ListarAdminCorreoAsync(string value)
+        {
+            return base.Channel.ListarAdminCorreoAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Admin> ListarAdminFecha(string value)
+        {
+            return base.Channel.ListarAdminFecha(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Admin>> ListarAdminFechaAsync(string value)
+        {
+            return base.Channel.ListarAdminFechaAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo> ListarVehiculoAnio(string value)
+        {
+            return base.Channel.ListarVehiculoAnio(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo>> ListarVehiculoAnioAsync(string value)
+        {
+            return base.Channel.ListarVehiculoAnioAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo> ListarVehiculoTipo(string value)
+        {
+            return base.Channel.ListarVehiculoTipo(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo>> ListarVehiculoTipoAsync(string value)
+        {
+            return base.Channel.ListarVehiculoTipoAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo> ListarVehiculoModelo(string value)
+        {
+            return base.Channel.ListarVehiculoModelo(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo>> ListarVehiculoModeloAsync(string value)
+        {
+            return base.Channel.ListarVehiculoModeloAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo> ListarVehiculoMarca(string value)
+        {
+            return base.Channel.ListarVehiculoMarca(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo>> ListarVehiculoMarcaAsync(string value)
+        {
+            return base.Channel.ListarVehiculoMarcaAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo> ListarVehiculoPlaca(string value)
+        {
+            return base.Channel.ListarVehiculoPlaca(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Vehiculo>> ListarVehiculoPlacaAsync(string value)
+        {
+            return base.Channel.ListarVehiculoPlacaAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Recorrido> ListarRecorridoCliente(string value)
+        {
+            return base.Channel.ListarRecorridoCliente(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Recorrido>> ListarRecorridoClienteAsync(string value)
+        {
+            return base.Channel.ListarRecorridoClienteAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Recorrido> ListarRecorridoConductor(string value)
+        {
+            return base.Channel.ListarRecorridoConductor(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Recorrido>> ListarRecorridoConductorAsync(string value)
+        {
+            return base.Channel.ListarRecorridoConductorAsync(value);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Recorrido> ListarRecorridoFecha(string value)
+        {
+            return base.Channel.ListarRecorridoFecha(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Recorrido>> ListarRecorridoFechaAsync(string value)
+        {
+            return base.Channel.ListarRecorridoFechaAsync(value);
         }
         
         public ServiceReferenceInterciti.Cliente FindClienteByCorreo(string correo)
@@ -1640,6 +2216,16 @@ namespace ServiceReferenceInterciti
         public System.Threading.Tasks.Task<ServiceReferenceInterciti.Recorrido> FindRecorridoByIdAsync(int id)
         {
             return base.Channel.FindRecorridoByIdAsync(id);
+        }
+        
+        public System.Collections.Generic.List<ServiceReferenceInterciti.Recorrido> FindSolicitudRecorrido()
+        {
+            return base.Channel.FindSolicitudRecorrido();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.Recorrido>> FindSolicitudRecorridoAsync()
+        {
+            return base.Channel.FindSolicitudRecorridoAsync();
         }
         
         public ServiceReferenceInterciti.AñoVehiculo FindAñoVehiculoByIdAño(string id)
@@ -2182,176 +2768,6 @@ namespace ServiceReferenceInterciti
             return base.Channel.EliminarTipoVehiculoAsync(idTipoVehiculo);
         }
         
-        public System.Collections.Generic.List<ServiceReferenceInterciti.MarcaVehiculo> ListarMarcaVehiculo()
-        {
-            return base.Channel.ListarMarcaVehiculo();
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.MarcaVehiculo>> ListarMarcaVehiculoAsync()
-        {
-            return base.Channel.ListarMarcaVehiculoAsync();
-        }
-        
-        public int EliminarMarcaVehiculo(int idMarcaVehiculo)
-        {
-            return base.Channel.EliminarMarcaVehiculo(idMarcaVehiculo);
-        }
-        
-        public System.Threading.Tasks.Task<int> EliminarMarcaVehiculoAsync(int idMarcaVehiculo)
-        {
-            return base.Channel.EliminarMarcaVehiculoAsync(idMarcaVehiculo);
-        }
-        
-        public int AgregarAñoVehiculo(string año)
-        {
-            return base.Channel.AgregarAñoVehiculo(año);
-        }
-        
-        public System.Threading.Tasks.Task<int> AgregarAñoVehiculoAsync(string año)
-        {
-            return base.Channel.AgregarAñoVehiculoAsync(año);
-        }
-        
-        public System.Collections.Generic.List<ServiceReferenceInterciti.AñoVehiculo> ListarAnioVehiculo()
-        {
-            return base.Channel.ListarAnioVehiculo();
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.AñoVehiculo>> ListarAnioVehiculoAsync()
-        {
-            return base.Channel.ListarAnioVehiculoAsync();
-        }
-        
-        public int EliminarAñoVehiculo(int idÁñoVehiculo)
-        {
-            return base.Channel.EliminarAñoVehiculo(idÁñoVehiculo);
-        }
-        
-        public System.Threading.Tasks.Task<int> EliminarAñoVehiculoAsync(int idÁñoVehiculo)
-        {
-            return base.Channel.EliminarAñoVehiculoAsync(idÁñoVehiculo);
-        }
-        
-        public int AgregarModeloVehiculo(string año, int idMarca)
-        {
-            return base.Channel.AgregarModeloVehiculo(año, idMarca);
-        }
-        
-        public System.Threading.Tasks.Task<int> AgregarModeloVehiculoAsync(string año, int idMarca)
-        {
-            return base.Channel.AgregarModeloVehiculoAsync(año, idMarca);
-        }
-        
-        public int AgregarMarcaVehiculo(string marca)
-        {
-            return base.Channel.AgregarMarcaVehiculo(marca);
-        }
-        
-        public System.Threading.Tasks.Task<int> AgregarMarcaVehiculoAsync(string marca)
-        {
-            return base.Channel.AgregarMarcaVehiculoAsync(marca);
-        }
-        
-        public System.Collections.Generic.List<ServiceReferenceInterciti.ModeloVehiculo> ListarModeloVehiculo()
-        {
-            return base.Channel.ListarModeloVehiculo();
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.ModeloVehiculo>> ListarModeloVehiculoAsync()
-        {
-            return base.Channel.ListarModeloVehiculoAsync();
-        }
-        
-        public int EliminarModeloVehiculo(int idÁñoVehiculo)
-        {
-            return base.Channel.EliminarModeloVehiculo(idÁñoVehiculo);
-        }
-        
-        public System.Threading.Tasks.Task<int> EliminarModeloVehiculoAsync(int idÁñoVehiculo)
-        {
-            return base.Channel.EliminarModeloVehiculoAsync(idÁñoVehiculo);
-        }
-        
-        public ServiceReferenceInterciti.TipoVehiculo FindTipoVehiculoById(int id)
-        {
-            return base.Channel.FindTipoVehiculoById(id);
-        }
-        
-        public System.Threading.Tasks.Task<ServiceReferenceInterciti.TipoVehiculo> FindTipoVehiculoByIdAsync(int id)
-        {
-            return base.Channel.FindTipoVehiculoByIdAsync(id);
-        }
-        
-        public ServiceReferenceInterciti.AñoVehiculo FindAñoVehiculoById(int id)
-        {
-            return base.Channel.FindAñoVehiculoById(id);
-        }
-        
-        public System.Threading.Tasks.Task<ServiceReferenceInterciti.AñoVehiculo> FindAñoVehiculoByIdAsync(int id)
-        {
-            return base.Channel.FindAñoVehiculoByIdAsync(id);
-        }
-        
-        public ServiceReferenceInterciti.MarcaVehiculo FindMarcaVehiculoById(int id)
-        {
-            return base.Channel.FindMarcaVehiculoById(id);
-        }
-        
-        public System.Threading.Tasks.Task<ServiceReferenceInterciti.MarcaVehiculo> FindMarcaVehiculoByIdAsync(int id)
-        {
-            return base.Channel.FindMarcaVehiculoByIdAsync(id);
-        }
-        
-        public ServiceReferenceInterciti.ModeloVehiculo FindModeloVehiculoById(int id)
-        {
-            return base.Channel.FindModeloVehiculoById(id);
-        }
-        
-        public System.Threading.Tasks.Task<ServiceReferenceInterciti.ModeloVehiculo> FindModeloVehiculoByIdAsync(int id)
-        {
-            return base.Channel.FindModeloVehiculoByIdAsync(id);
-        }
-        
-        public System.Collections.Generic.List<ServiceReferenceInterciti.ModeloVehiculo> FindModeloVehiculoByMarca(int idMarca)
-        {
-            return base.Channel.FindModeloVehiculoByMarca(idMarca);
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.ModeloVehiculo>> FindModeloVehiculoByMarcaAsync(int idMarca)
-        {
-            return base.Channel.FindModeloVehiculoByMarcaAsync(idMarca);
-        }
-        
-        public ServiceReferenceInterciti.Cliente FindClienteByCI(string cedula)
-        {
-            return base.Channel.FindClienteByCI(cedula);
-        }
-        
-        public System.Threading.Tasks.Task<ServiceReferenceInterciti.Cliente> FindClienteByCIAsync(string cedula)
-        {
-            return base.Channel.FindClienteByCIAsync(cedula);
-        }
-        
-        public ServiceReferenceInterciti.Admin FindAdminByCI(string ci)
-        {
-            return base.Channel.FindAdminByCI(ci);
-        }
-        
-        public System.Threading.Tasks.Task<ServiceReferenceInterciti.Admin> FindAdminByCIAsync(string ci)
-        {
-            return base.Channel.FindAdminByCIAsync(ci);
-        }
-        
-        public ServiceReferenceInterciti.Admin FindAdminByCorreo(string ci)
-        {
-            return base.Channel.FindAdminByCorreo(ci);
-        }
-        
-        public System.Threading.Tasks.Task<ServiceReferenceInterciti.Admin> FindAdminByCorreoAsync(string ci)
-        {
-            return base.Channel.FindAdminByCorreoAsync(ci);
-        }
-        
         public virtual System.Threading.Tasks.Task OpenAsync()
         {
             return System.Threading.Tasks.Task.Factory.FromAsync(((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(null, null), new System.Action<System.IAsyncResult>(((System.ServiceModel.ICommunicationObject)(this)).EndOpen));
@@ -2390,11 +2806,11 @@ namespace ServiceReferenceInterciti
         {
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IService))
             {
-                return new System.ServiceModel.EndpointAddress("http://wcfserviceappinterciti.azurewebsites.net/Service.svc");
+                return new System.ServiceModel.EndpointAddress("http://wcfappservice.azurewebsites.net/Service.svc");
             }
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpsBinding_IService))
             {
-                return new System.ServiceModel.EndpointAddress("https://wcfserviceappinterciti.azurewebsites.net/Service.svc");
+                return new System.ServiceModel.EndpointAddress("https://wcfappservice.azurewebsites.net/Service.svc");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

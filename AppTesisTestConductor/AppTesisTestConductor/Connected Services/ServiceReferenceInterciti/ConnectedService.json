@@ -1,7 +1,7 @@
 {
   "ExtendedData": {
     "inputs": [
-      "https://wcfserviceappinterciti.azurewebsites.net/Service.svc"
+      "https://wcfappservice.azurewebsites.net/Service.svc"
     ],
     "collectionTypes": [
       "System.Collections.Generic.Dictionary`2",

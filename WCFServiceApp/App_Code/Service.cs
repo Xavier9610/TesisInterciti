@@ -45,13 +45,7 @@ public class Service : IService
 
         public int ActualizarRecorrido(Recorrido recorrido)
         {
-            if (recorrido.EstadoRecorrido == 2)
-            {
-                recorridosSolicitados.Add(recorrido);
-            }else if (recorrido.EstadoRecorrido == 5)
-            {
-                recorridosAtendidos.Add(recorrido);
-            }
+            
             return metodos.ActualizarRecorrido(RecorridoABase(recorrido));
         }
 
@@ -445,11 +439,12 @@ public class Service : IService
         iter.EstadoRecorrido = recorrido.IdEstadoRecorrido;
         iter.Comentario=recorrido.Comentario;
         iter.Calificacion=recorrido.Calificacion;
-        iter.Destino = GetAddress(Convert.ToDouble(recorrido.LatitudDestino), Convert.ToDouble(recorrido.LongitudDestino)).display_name;
-        iter.Origen = GetAddress(Convert.ToDouble(recorrido.LatitudOrigen), Convert.ToDouble(recorrido.LongitudOrigen)).display_name;
+        iter.Destino = GetAddress(Convert.ToDouble(recorrido.LatitudDestino), Convert.ToDouble(recorrido.LongitudDestino));
+        iter.Origen = GetAddress(Convert.ToDouble(recorrido.LatitudOrigen), Convert.ToDouble(recorrido.LongitudOrigen));
         return iter;
         }
-    public static RootObject GetAddress(double lat, double lon)
+    
+    public  string GetAddress(double lat, double lon)
     {
         WebClient webClient = new WebClient();
         webClient.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
@@ -457,7 +452,19 @@ public class Service : IService
         var jsonData = webClient.DownloadData("https://nominatim.openstreetmap.org/reverse?format=json&lat=" + lat + "&lon=" + lon);
         DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(RootObject));
         RootObject rootObject = (RootObject)ser.ReadObject(new MemoryStream(jsonData));
-        return rootObject;
+        return rootObject.display_name;
+    }
+    public IEnumerable<string> GetLatLngForAddress(string name)
+    {
+        WebClient webClient = new WebClient();
+        webClient.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
+        webClient.Headers.Add("Referer", "https://www.microsoft.com");
+        var jsonData = webClient.DownloadData("http://nominatim.openstreetmap.org/search?q="+name.Replace(" ","+")+"&format=json&polygon=1&addressdetails=1");
+        DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(RootObject));
+        List<RootObject> rootObject = (List<RootObject>)ser.ReadObject(new MemoryStream(jsonData));
+        List<string> aux = new List<string>();
+        aux.Add(rootObject[0].lat + ":" + rootObject[0].lon);
+        return aux;
     }
     public static byte[] Compress(byte[] data)
     {
@@ -840,13 +847,6 @@ public class Service : IService
 
     public List<Recorrido> GetRecorridos(int op)
     {
-        switch (op)
-        {
-            case 2:
-                return recorridosSolicitados;
-            case 5:
-                return recorridosAtendidos;
-        }
         return null;
     }
 

@@ -19,14 +19,14 @@ namespace AppTesisTestClient.Services
 {
     public static class Servicio
     {
-        public static Geocoder geocoder = new Geocoder();
+        public static  Geocoder geocoder = new Geocoder();
         //   System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
         public static System.ServiceModel.BasicHttpsBinding result = new System.ServiceModel.BasicHttpsBinding {
             MaxBufferPoolSize = int.MaxValue, ReaderQuotas = System.Xml.XmlDictionaryReaderQuotas.Max, MaxReceivedMessageSize = int.MaxValue,
             AllowCookies = true, OpenTimeout = new System.TimeSpan(10, 10, 0), ReceiveTimeout = new System.TimeSpan(10, 10, 0), SendTimeout = new System.TimeSpan(10, 10, 0)
         };
 
-        public static ServiceClient client = new ServiceClient(result, new System.ServiceModel.EndpointAddress("https://wcfserviceappinterciti.azurewebsites.net/Service.svc"));
+        public static ServiceClient client = new ServiceClient(result, new System.ServiceModel.EndpointAddress("https://wcfappservice.azurewebsites.net/Service.svc"));
         public static Models.Cliente usuarioConectado;
         public static Models.Cliente UsuarioConectado { get => usuarioConectado; set => usuarioConectado = value; }
         //fb login prueba erronea

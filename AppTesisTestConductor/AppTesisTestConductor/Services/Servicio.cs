@@ -19,7 +19,6 @@ using System.Drawing;
 namespace AppTesisTestConductor.Services
 {
     public static class Servicio    {
-        public static Geocoder geocoder = new Geocoder();
         public static System.ServiceModel.BasicHttpsBinding result = new System.ServiceModel.BasicHttpsBinding
         {
             MaxBufferPoolSize = int.MaxValue,
@@ -30,7 +29,7 @@ namespace AppTesisTestConductor.Services
             ReceiveTimeout = new System.TimeSpan(10, 10, 0),
             SendTimeout = new System.TimeSpan(10, 10, 0)
         };
-        public static ServiceClient client = new ServiceClient(result, new System.ServiceModel.EndpointAddress("https://wcfserviceappinterciti.azurewebsites.net/Service.svc"));
+        public static ServiceClient client = new ServiceClient(result, new System.ServiceModel.EndpointAddress("https://wcfappservice.azurewebsites.net/Service.svc"));
 
         public static Models.Conductor usuarioConectado;
         public static Models.Conductor UsuarioConectado { get => usuarioConectado; set => usuarioConectado = value; }
@@ -329,12 +328,9 @@ namespace AppTesisTestConductor.Services
 
         private static string GetAddressByQuery(Position position)
         {
-            var x = geocoder.GetAddressesForPositionAsync(position);
-            foreach (var iter in x.Result)
-            {
-                return iter;
-            }
-            return null;
+            var x = client.GetAddress(position.Latitude,position.Longitude);
+
+            return x;
         }
 
         public static Models.TipoVehiculo WCFToApp(ServiceReferenceInterciti.TipoVehiculo clienteQuery)
@@ -446,6 +442,7 @@ namespace AppTesisTestConductor.Services
                 recorrido.Tipo = clienteQuery.Tipo1;
                 recorrido.Placa = clienteQuery.Placa;
                 recorrido.Picture = new Image();
+                recorrido.Marca = client.FindMarcaVehiculoById(client.FindModeloVehiculoByModelo(clienteQuery.Modelo1).IdMarca).Marca;
                 recorrido.Picture.Source = ImageSource.FromStream(() =>
                 {
                     if (clienteQuery.Picture != null)

@@ -14,6 +14,10 @@ public interface IService
     [OperationContract]
     Admin FindAdminByID(int ci);
     [OperationContract]
+    IEnumerable<string> GetLatLngForAddress(string name);
+    [OperationContract]
+    string GetAddress(double lat, double lon);
+    [OperationContract]
     List<Cliente> ListarClientesCedula(string value);
     [OperationContract]
     List<Cliente> ListarClientesApellido(string value);

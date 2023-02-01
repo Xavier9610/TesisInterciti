@@ -28,7 +28,7 @@
             Factor=1}" BackgroundColor="Transparent">
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="White">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                    <Label x:Name="lblTiempo" Text="0:00" HorizontalOptions="Start"></Label>
+                    <Label x:Name="lblTiempo" Text="0:00" HorizontalOptions="Start" TextColor="Black"></Label>
                 </StackLayout>
                 <StackLayout HorizontalOptions="End" Orientation="Horizontal">
                     <Label x:Name="lblinfo"  Text="Escuchar Solicitudes" HorizontalOptions="End"></Label>

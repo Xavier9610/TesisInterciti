@@ -103,16 +103,16 @@
                                                 <Image Source="{Binding Picture.Source}" Aspect="AspectFit" HeightRequest="100" ></Image>
                                             </StackLayout>
                                             <StackLayout Grid.Column="2" Orientation="Vertical" HorizontalOptions="Start" VerticalOptions="Center">
-                                                <Label Text="Marca:" FontSize="Micro"></Label>
+                                                <Label Text="Marca:" FontSize="Micro" TextColor="Black"></Label>
                                                 <Label  Text="{Binding Marca}" TextColor="Black" FontSize="Small"  FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="Start" />
-                                                <Label Text="Modelo:" FontSize="Micro"></Label>
+                                                <Label Text="Modelo:" FontSize="Micro" TextColor="Black"></Label>
                                                 <Label  Text="{Binding Modelo}" TextColor="Black" FontSize="Small"  FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
                                                 
                                             </StackLayout>
                                             <StackLayout Grid.Column="3" Orientation="Vertical"  Margin="20,0" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
-                                                <Label Text="Tipo: " FontSize="Micro"></Label>
+                                                <Label Text="Tipo: " FontSize="Micro" TextColor="Black"></Label>
                                                 <Label  Text="{Binding Tipo}" TextColor="Black" FontSize="Micro"  FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
-                                                <Label Text="Modelo:" FontSize="Micro"></Label>
+                                                <Label Text="Modelo:" FontSize="Micro" TextColor="Black"></Label>
                                                 <Label  Text="{Binding Año}" TextColor="Black" FontSize="Small"  FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
 
                                             </StackLayout>

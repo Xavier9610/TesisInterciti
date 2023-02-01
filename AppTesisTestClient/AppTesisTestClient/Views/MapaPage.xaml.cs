@@ -13,11 +13,12 @@ using Plugin.LocalNotification;
 using Plugin.LocalNotification.EventArgs;
 using System.Threading;
 using System.Timers;
+using NPOI.SS.Formula.Functions;
+
 namespace AppTesisTestClient.Views
 {
     public partial class AboutPage : ContentPage
     {
-        Geocoder geocoder = new Geocoder();
         Location ubicacionInicial = new Location();
         Location ubicacionFinal = new Location();
         Ubicacion ubicacion = new Ubicacion();
@@ -93,8 +94,6 @@ namespace AppTesisTestClient.Views
 
             mapaAppCliente.IsTrafficEnabled = true;
             mapaAppCliente.UiSettings.CompassEnabled = true;
-            mapaAppCliente.UiSettings.MyLocationButtonEnabled = true;
-            mapaAppCliente.UiSettings.MapToolbarEnabled = true;
          
             layoutCalificarRecorrido.IsVisible = false;
             layoutDirecciones.IsVisible = true;//inicia el realizar la reserva
@@ -108,6 +107,7 @@ namespace AppTesisTestClient.Views
             thread.DoWork += Escuchar;
             threadTracking.DoWork += Tracking;
             dateRecorrido.MinimumDate = DateTime.Now;
+            MoveToActualUbicacion();
         }
 
         private async void CancelarRecorrido(object sender, EventArgs e)
@@ -559,32 +559,32 @@ namespace AppTesisTestClient.Views
 
         private async void UbicacionSeleccionada(object sender, SelectedItemChangedEventArgs e)
         {
-            var p = await geocoder.GetPositionsForAddressAsync(lstVResultados.SelectedItem.ToString());
-            ubicacion.UbicacionV = new Location(p.First().Latitude, p.First().Longitude);
+            var p =  Servicio.client.GetLatLngForAddress(lstVResultados.SelectedItem.ToString());
+            ubicacion.UbicacionV = new Location(Convert.ToDouble(p.First().Split(":")[0]), Convert.ToDouble(p.First().Split(":")[1]));
             MoveToActualUbicacion(ubicacion);
             layoutBusquedaResult.IsVisible = false;
         }
 
-        private async void BuscarUbicacionByText(object sender, EventArgs e)
+        private void BuscarUbicacionByText(object sender, EventArgs e)
         {
             if (txtSearch.Text != "")
             {
-                var p = await geocoder.GetPositionsForAddressAsync(txtSearch.Text + " , Ecuador");
+                var p = Servicio.client.GetLatLngForAddress(txtSearch.Text + "+Ecuador");
                 MostrarResultados(p);
             }
             
 
         }
 
-        private async void MostrarResultados(IEnumerable<Position> p)
+        private async void MostrarResultados(IEnumerable<string> p)
         {
             layoutBusquedaResult.IsVisible = true;
             List<string> vs = new List<string>();
             vs.Clear();
             foreach (var iter in p.ToList())
             {
-                var aux = await geocoder.GetAddressesForPositionAsync(iter);
-                vs.Add(aux.First());
+                var aux = Servicio.client.GetAddress(Convert.ToDouble(iter.Split(":")[0]) , Convert.ToDouble(iter.Split(":")[1]));
+                vs.Add(aux);
             }
             lstVResultados.ItemsSource = vs;
         }
@@ -616,11 +616,12 @@ namespace AppTesisTestClient.Views
             if (sourceSelected)
             {
                 ubicacionInicial = ubicacion.UbicacionV;
+                
                 rBtnInicio.IsChecked = true;
                 sourceSelected = false;
                 txtSearch.IsEnabled = false;
-                var direccion = await geocoder.GetAddressesForPositionAsync(new Position(ubicacionInicial.Latitude, ubicacionInicial.Longitude));
-                btnUbicacionInicio.Text = direccion.First();
+                var direccion = Servicio.client.GetAddress(ubicacionInicial.Latitude, ubicacionInicial.Longitude);
+                btnUbicacionInicio.Text = direccion;
                 MostrarMainDirecciones();
                 return;
             }
@@ -629,8 +630,8 @@ namespace AppTesisTestClient.Views
                 
                 rBtnFin.IsChecked = true;
                 ubicacionFinal = ubicacion.UbicacionV;
-                var direccion = await geocoder.GetAddressesForPositionAsync(new Position(ubicacionFinal.Latitude, ubicacionFinal.Longitude));
-                btnUbicacionFin.Text = direccion.First();
+                var direccion = Servicio.client.GetAddress(ubicacionFinal.Latitude, ubicacionFinal.Longitude);
+                btnUbicacionFin.Text = direccion;
                 MostrarMainDirecciones();
             }
             txtSearch.IsEnabled = false;
@@ -653,14 +654,15 @@ namespace AppTesisTestClient.Views
             rBtnReserva.IsChecked = true;
         }
 
-        private void SeleccionarInicio(object sender, EventArgs e)
+        private async void SeleccionarInicio(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new LoadingApp());
+            await Navigation.PushAsync(new LoadingApp());
             sourceSelected = true;
             txtSearch.IsEnabled = true;
             txtSearch.Focus();
             MoveToActualUbicacion();
             MostrarSeleccionarDirecciones();
+            await Navigation.PopAsync();
         }
 
         private void MostrarSeleccionarDirecciones()
@@ -670,14 +672,15 @@ namespace AppTesisTestClient.Views
             layoutBarraBu.IsVisible = true;
         }
 
-        private void SeleccionarFin(object sender, EventArgs e)
+        private async void SeleccionarFin(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new LoadingApp());
+            await Navigation.PushAsync(new LoadingApp());
             MoveToActualUbicacion();
             sourceSelected = false;
             txtSearch.IsEnabled = true;
             txtSearch.Focus();
             MostrarSeleccionarDirecciones();
+            await Navigation.PopAsync();
         }
 
         private void UbicacionPin(object sender, PinDragEventArgs e)
@@ -688,29 +691,27 @@ namespace AppTesisTestClient.Views
         }
 
 
-        void MoveToActualUbicacion()
+        async void MoveToActualUbicacion()
         {
 
             Device.BeginInvokeOnMainThread(async () => {
                 await ubicacion.GetUbicacionGPS();
-                mapaAppCliente.MoveToRegion(MapSpan.FromCenterAndRadius(
-                                        new Position(ubicacion.UbicacionV.Latitude, ubicacion.UbicacionV.Longitude), Distance.FromKilometers(1))
+                Position position = new Position(ubicacion.UbicacionV.Latitude, ubicacion.UbicacionV.Longitude);
+                mapaAppCliente.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromKilometers(1))
                     );
-                mapaAppCliente.Pins.Clear();
+                 mapaAppCliente.Pins.Clear();
 
-                Pin pin = new Pin
-                {
-                    Type = PinType.Place,
-                    Address = "Mi ubicacion",
-                    Label = "Direccion",
-                    Position = new Position(ubicacion.UbicacionV.Latitude, ubicacion.UbicacionV.Longitude)
-                    ,Icon = BitmapDescriptorFactory.FromBundle("user.png")
-                };
-                var direccion = await geocoder.GetAddressesForPositionAsync(pin.Position);
-
-                pin.IsDraggable = true;
-                mapaAppCliente.Pins.Add(pin);
-                await Navigation.PopAsync();
+                  Pin pin = new Pin
+                  {
+                //      Type = PinType.Place,
+                      Address = "Mi ubicacion",
+                      Label = "Direccion",
+                      Position = position, IsDraggable=true//, Icon=BitmapDescriptorFactory.DefaultMarker(Color.Azure)
+                      ,Icon = BitmapDescriptorFactory.FromBundle("user.png")
+                  };
+               
+               mapaAppCliente.Pins.Add(pin);
+               
             });
 
 
@@ -733,7 +734,7 @@ namespace AppTesisTestClient.Views
                 };
                 pin.IsDraggable = true;
                 mapaAppCliente.Pins.Add(pin);
-                Navigation.PopAsync();
+              
             });
 
         }
