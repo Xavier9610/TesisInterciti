@@ -12,7 +12,7 @@ namespace ASPApp.Sources.Pages
     public partial class frmVehiculoCRUD : System.Web.UI.Page
     {
         private Vehiculo cliente;
-        private ServiceClient client = new ServiceClient("BasicHttpsBinding_IService", "https://wcfserviceappinterciti.azurewebsites.net/Service.svc");
+        private ServiceClient client = new ServiceClient("BasicHttpBinding_IService", "https://wcfappservice.azurewebsites.net/Service.svc");
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -103,9 +103,9 @@ namespace ASPApp.Sources.Pages
                             break;
                         case "Actualizar Vehiculo":
                             cliente = client.FindVehiculoByID(Convert.ToInt32(Request.QueryString["id"].ToString()));
-                            if (FUImage.FileName != "")
+                            if (FUImage.FileBytes != null)
                             {
-                                cliente.Picture = Servicio.Compress( FUImage.FileBytes);
+                                cliente.Picture = Servicio.Compress(FUImage.FileBytes);
                             }
                             cliente.Año1 = client.FindAñoVehiculoById(Convert.ToInt32(anio.Text)).Año;
                             cliente.Modelo1 = client.FindModeloVehiculoById(Convert.ToInt32(txtModelo.Text)).Modelo;

@@ -12,7 +12,7 @@ namespace ASPApp.Sources.Pages
     public partial class frmConductorCRUD : System.Web.UI.Page
     {
         private Conductor cliente;
-        private ServiceClient client = new ServiceClient("BasicHttpsBinding_IService", "https://wcfserviceappinterciti.azurewebsites.net/Service.svc");
+        private ServiceClient client = new ServiceClient("BasicHttpBinding_IService", "https://wcfappservice.azurewebsites.net/Service.svc");
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)

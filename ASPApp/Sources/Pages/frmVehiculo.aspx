@@ -50,7 +50,7 @@
                     <asp:TemplateField HeaderText="Opciones de administrador">
                         <ItemTemplate>
                          <button id="bntSelect" onserverclick="bntSelect_Click" runat="server"><i class="fa-solid fa-eye" style="color:forestgreen"></i></button>
-                            <button id="btnEliminar" onclick="return confirm('Are you certain you want to delete this product?');" onserverclick="btnEliminar_Click" runat="server"> <i class="fa-solid fa-trash"  style="color:red"></i> </button>  
+                            <button id="btnEliminar" onserverclick="btnEliminar_Click" runat="server"> <i class="fa-solid fa-trash"  style="color:red"></i> </button>  
                             <button id="btnModificar" onserverclick="btnModificar_Click" runat="server"> <i class="fa-solid fa-pen-to-square"  style="color:cornflowerblue"></i></button>
 
                         </ItemTemplate>
