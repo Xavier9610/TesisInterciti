@@ -13,12 +13,8 @@
             <div aria-orientation="horizontal" >
             <label class="align-content-center">Buscar por:</label>
             <asp:DropDownList class="align-content-center" ID="ddlFiltro" runat="server">
-                <asp:ListItem Text="Tipo" Value="Tipo"></asp:ListItem>
+             
                 <asp:ListItem Text="Año" Value="Año"></asp:ListItem>
-                <asp:ListItem Text="Modelo" Value="Modelo"></asp:ListItem>
-                <asp:ListItem Text="Marca" Value="Marca"></asp:ListItem>
-                <asp:ListItem Text="Placa" Value="Placa"></asp:ListItem>
-                 <asp:ListItem Text="Todo" Value="Todo"></asp:ListItem>
 
             </asp:DropDownList>
             <label></label>

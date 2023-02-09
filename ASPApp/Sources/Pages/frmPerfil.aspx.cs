@@ -13,7 +13,7 @@ namespace ASPApp.Sources.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ServiceClient client = new ServiceClient("BasicHttpsBinding_IService", "https://wcfserviceappinterciti.azurewebsites.net/Service.svc");
+            ServiceClient client = new ServiceClient("BasicHttpBinding_IService", "https://wcfappservice.azurewebsites.net/Service.svc");
             var user = client.FindAdminByID(Convert.ToInt32(Session["usuarioId"].ToString()));
             txtNombre.Value = user.Nombre;
             txtApellido.Value = user.Apellido;

@@ -60,7 +60,13 @@ namespace ASPApp.Sources.Pages
                         break;
 
                     case "Fecha":
-                        lista = Servicio.client.ListarRecorridoFecha(txtSearch.Value);
+                        foreach (var iterator in aux)
+                        {
+                            if (iterator.FechaRecorrido.ToString().Contains(txtSearch.Value))
+                            {
+                                lista.Add(iterator);
+                            }
+                        }
                         break;
                     case "Todo":
 

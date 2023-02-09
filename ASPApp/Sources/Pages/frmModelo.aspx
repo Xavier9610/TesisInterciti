@@ -14,17 +14,13 @@
             <div aria-orientation="horizontal" >
             <label class="align-content-center">Buscar por:</label>
             <asp:DropDownList class="align-content-center" ID="ddlFiltro" runat="server">
-                <asp:ListItem Text="Tipo" Value="Tipo"></asp:ListItem>
-                <asp:ListItem Text="Año" Value="Año"></asp:ListItem>
+                
                 <asp:ListItem Text="Modelo" Value="Modelo"></asp:ListItem>
-                <asp:ListItem Text="Marca" Value="Marca"></asp:ListItem>
-                <asp:ListItem Text="Placa" Value="Placa"></asp:ListItem>
-                 <asp:ListItem Text="Todo" Value="Todo"></asp:ListItem>
 
             </asp:DropDownList>
             <label></label>
             <input type="search" placeholder="Buscar..." id="txtSearch" runat="server" />
-            <button id="btnSearch" runat="server" style="align-content:center" onserverclick="btnSearch_ServerClick"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button id="btnSearch" runat="server" style="align-content:center" onserverclick="bntSelect_Click"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
             </div>
         <br />
