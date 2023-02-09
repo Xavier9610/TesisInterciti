@@ -8,8 +8,8 @@
 
             </ActivityIndicator>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Cargando" />
-                <Label x:Name="lblLoading"  Text="."></Label>
+                <Label Text="Cargando" TextColor="Black" />
+                <Label x:Name="lblLoading"  Text="." TextColor="Black"></Label>
             </StackLayout>
 
         </StackLayout>

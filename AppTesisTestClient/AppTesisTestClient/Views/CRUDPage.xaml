@@ -12,7 +12,7 @@
 
                 <StackLayout Orientation="Vertical" >
 
-                    <Label Text="" x:Name="lblInfoRecorridos"></Label>
+                    <Label Text="" TextColor="Black" x:Name="lblInfoRecorridos"></Label>
                     <StackLayout Orientation="Horizontal" >
                         <Label FontFamily="fontello"
                    Text="{x:Static fonts:IconFont.Location}"
@@ -102,11 +102,11 @@
 
                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
                     <Label HeightRequest="8"></Label>
-                    <Entry x:Name="txtOrigen"   HeightRequest="40" HorizontalOptions="FillAndExpand" ></Entry>
-                    <Entry x:Name="txtDestino" HeightRequest="40" HorizontalOptions="FillAndExpand"></Entry>
-                    <Entry x:Name="txtCliente" HeightRequest="40" HorizontalOptions="FillAndExpand"></Entry>
-                    <Entry x:Name="txtConductor" HeightRequest="40" HorizontalOptions="FillAndExpand"></Entry>
-                    <Entry x:Name="txtMoney" HeightRequest="40" HorizontalOptions="FillAndExpand"></Entry>
+                    <Entry x:Name="txtOrigen" PlaceholderColor="Black"   HeightRequest="40" HorizontalOptions="FillAndExpand" ></Entry>
+                    <Entry x:Name="txtDestino" PlaceholderColor="Black" HeightRequest="40" HorizontalOptions="FillAndExpand"></Entry>
+                    <Entry x:Name="txtCliente" PlaceholderColor="Black" HeightRequest="40" HorizontalOptions="FillAndExpand"></Entry>
+                    <Entry x:Name="txtConductor" PlaceholderColor="Black" HeightRequest="40" HorizontalOptions="FillAndExpand"></Entry>
+                    <Entry x:Name="txtMoney" PlaceholderColor="Black" HeightRequest="40" HorizontalOptions="FillAndExpand"></Entry>
                 </StackLayout>
 
 

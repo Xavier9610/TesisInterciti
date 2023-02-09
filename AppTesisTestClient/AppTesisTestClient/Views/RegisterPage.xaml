@@ -18,15 +18,15 @@
                     <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="Title" Text="Formulario de Registro"></Label>
                 </StackLayout>
                 <StackLayout Orientation="Vertical" >
-                    <Label Text="Foto de perfil:" FontSize="Subtitle"></Label>
+                    <Label Text="Foto de perfil:" TextColor="Black" FontSize="Subtitle"></Label>
                     <Image x:Name="fotoPerfil"  HeightRequest="120" WidthRequest="80" HorizontalOptions="Center" Source="logoInterciti.png" >
                     </Image>
                     <StackLayout HorizontalOptions="FillAndExpand">
-                        <Button x:Name="btnCambiarFoto" Text="Cambiar Foto"></Button>
+                        <Button x:Name="btnCambiarFoto" TextColor="Black" Text="Cambiar Foto"></Button>
                     </StackLayout>
                 </StackLayout>
                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                    <Label Text="Datos de Usuario:" FontSize="Subtitle"></Label>
+                    <Label Text="Datos de Usuario:" TextColor="Black" FontSize="Subtitle"></Label>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                         <Label FontFamily="fontello"
                            Text="{x:Static fonts:IconFont.User}"
@@ -35,10 +35,10 @@
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
                            ></Label>
-                        <Label Text="Nombre:" VerticalOptions="Center"></Label>
-                        <Entry x:Name="txtNombre" HorizontalOptions="FillAndExpand" Placeholder="ej. Patricio"></Entry>
-                        <Label Text="Apellido:" VerticalOptions="Center"></Label>
-                        <Entry x:Name="txtApellido" Placeholder="ej. Garcia" HorizontalOptions="FillAndExpand"></Entry>
+                        <Label Text="Nombre:" TextColor="Black" VerticalOptions="Center"></Label>
+                        <Entry x:Name="txtNombre" PlaceholderColor="Black" HorizontalOptions="FillAndExpand" Placeholder="ej. Patricio"></Entry>
+                        <Label Text="Apellido:" TextColor="Black" VerticalOptions="Center"></Label>
+                        <Entry x:Name="txtApellido" PlaceholderColor="Black" Placeholder="ej. Garcia" HorizontalOptions="FillAndExpand"></Entry>
                     </StackLayout>
 
                 </StackLayout>
@@ -51,7 +51,7 @@
                            VerticalOptions="Center"
                            ></Label>
                     <Label Text="Correo electrónico:" VerticalOptions="Center" ></Label>
-                    <Entry x:Name="txtMail" Keyboard="Email" Placeholder="ej. patricio.garcia@epn.edu.ec" HorizontalOptions="FillAndExpand"></Entry>
+                    <Entry x:Name="txtMail" PlaceholderColor="Black" Keyboard="Email" Placeholder="ej. patricio.garcia@epn.edu.ec" HorizontalOptions="FillAndExpand"></Entry>
 
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
@@ -62,12 +62,12 @@
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
                            ></Label>
-                    <Label Text="Teléfono:" VerticalOptions="Center" ></Label>
-                    <Entry x:Name="txtTelf" Placeholder="ej. 0960400373" Keyboard="Telephone" HorizontalOptions="FillAndExpand" ></Entry>
+                    <Label Text="Teléfono:" TextColor="Black" VerticalOptions="Center" ></Label>
+                    <Entry x:Name="txtTelf" PlaceholderColor="Black" Placeholder="ej. 0960400373" Keyboard="Telephone" HorizontalOptions="FillAndExpand" ></Entry>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Cédula:" VerticalOptions="Center"></Label>
-                    <Entry x:Name="txtCI" Keyboard="Numeric" Placeholder="1724718182" HorizontalOptions="FillAndExpand"></Entry>
+                    <Label Text="Cédula:" TextColor="Black" VerticalOptions="Center"></Label>
+                    <Entry x:Name="txtCI" PlaceholderColor="Black" Keyboard="Numeric" Placeholder="1724718182" HorizontalOptions="FillAndExpand"></Entry>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                     <Label FontFamily="fontello"
@@ -77,8 +77,8 @@
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
                            ></Label>
-                    <Label Text="Fecha de Nacimiento:" VerticalOptions="Center"></Label>
-                    <DatePicker x:Name="pickerBirth" HorizontalOptions="StartAndExpand"></DatePicker>
+                    <Label Text="Fecha de Nacimiento:" TextColor="Black" VerticalOptions="Center"></Label>
+                    <DatePicker x:Name="pickerBirth" TextColor="Black" HorizontalOptions="StartAndExpand"></DatePicker>
                 </StackLayout >
 
                 <Label Text="Contraseña: " FontSize="Title"></Label>
@@ -92,19 +92,21 @@
             Property=Width,
             Factor=1}">
                     <StackLayout Orientation="Horizontal">
-                        <Entry x:Name="txtPass" IsPassword="True" Placeholder="Contraseña" HorizontalOptions="FillAndExpand"></Entry>
+                        <Entry x:Name="txtPass" TextColor="Black" PlaceholderColor="Black" IsPassword="True" Placeholder="Contraseña" HorizontalOptions="FillAndExpand"></Entry>
                         <Button x:Name="btnOjo1" IsVisible="False"  FontFamily="fontello"
                            Text="{x:Static fonts:IconFont.Eye}"
                            FontSize="Small"
+                                TextColor="White"
                            HorizontalOptions="End"
                            VerticalOptions="Center" />
                     </StackLayout>
 
                     <StackLayout Orientation="Horizontal">
-                        <Entry x:Name="txtPassConfirm" IsPassword="True" Placeholder=" Confirmacion Contraseña"></Entry>
+                        <Entry x:Name="txtPassConfirm" PlaceholderColor="Black" TextColor="Black" IsPassword="True" Placeholder=" Confirmacion Contraseña"></Entry>
                         <Button x:Name="btnOjo2" IsVisible="False"  FontFamily="fontello"
                            Text="{x:Static fonts:IconFont.Eye}"
                            FontSize="Small"
+                                TextColor="White"
                            HorizontalOptions="Start"
                            VerticalOptions="Center" />
                     </StackLayout>
@@ -119,7 +121,7 @@
                         <Label x:Name="lblInfo" FontSize="Small" TextColor="Red"></Label>
                     </StackLayout>
 
-                    <Button x:Name="btnRegistrar" FontSize="Medium" Text="Registrarme!" HorizontalOptions="Center" BackgroundColor="ForestGreen"  TextColor="White"></Button>
+                    <Button x:Name="btnRegistrar"  FontSize="Medium" Text="Registrarme!" HorizontalOptions="Center" BackgroundColor="ForestGreen"  TextColor="White"></Button>
 
                 </StackLayout>
             </StackLayout>

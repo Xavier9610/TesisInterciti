@@ -28,9 +28,9 @@
             Factor=1}" BackgroundColor="Transparent">
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="White">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center">
-                    <Label x:Name="lblTiempo" Text="0:00" HorizontalOptions="Start"></Label>
-                    <Label x:Name="lblRecorrido"  Text="Esperando respuestas" HorizontalOptions="End"></Label>
-                    <Label x:Name="lblDistancia"  Text="" HorizontalOptions="End"></Label>
+                    <Label x:Name="lblTiempo" TextColor="Black" Text="0:00" HorizontalOptions="Start"></Label>
+                    <Label x:Name="lblRecorrido" TextColor="Black"  Text="Esperando respuestas" HorizontalOptions="End"></Label>
+                    <Label x:Name="lblDistancia" TextColor="Black"  Text="" HorizontalOptions="End"></Label>
                 </StackLayout>
                 <StackLayout HorizontalOptions="EndAndExpand" Orientation="Horizontal">
                     
@@ -42,7 +42,7 @@
                            HorizontalOptions="End"
                            VerticalOptions="Center"
                            ></Button>
-                        <Label FontSize="Micro" HorizontalOptions="Center" Text="Cancelar"
+                        <Label FontSize="Micro" TextColor="Black" HorizontalOptions="Center" Text="Cancelar"
                            ></Label>
                     </StackLayout>
                     
@@ -62,14 +62,14 @@
                                             
                                         </Grid.ColumnDefinitions>
                                         <StackLayout Grid.Column="1" Orientation="Vertical" Margin="20,0" HorizontalOptions="Start" VerticalOptions="Center">
-                                            <Label Text="Conductor:"></Label>
+                                            <Label Text="Conductor:" TextColor="Black"></Label>
                                             <Image Source="{Binding IdConductor.Picture.Source}" Aspect="AspectFit"></Image>
                                             <Label  Text="{Binding IdConductor.Nombre}" TextColor="Black" FontSize="Subtitle"  FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
                                             <Label  Text="{Binding IdConductor.Apellido}" TextColor="Black" FontSize="Subtitle"  FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
                                             
                                         </StackLayout>
                                         <StackLayout Grid.Column="2" Orientation="Vertical" Margin="20,0" HorizontalOptions="Start" VerticalOptions="Center">
-                                            <Label Text="Vehiculo:"></Label>
+                                            <Label Text="Vehiculo:" TextColor="Black"></Label>
                                             <Label  Text="{Binding IdConductor.Vehiculo.Marca}" TextColor="Black" FontSize="Subtitle"  FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
                                             <Label  Text="{Binding IdConductor.Vehiculo.Modelo}" TextColor="Black" FontSize="Subtitle"  FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
                                             <Label  Text="{Binding IdConductor.Vehiculo.Placa}" TextColor="Black" FontSize="Subtitle"  FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
@@ -100,7 +100,7 @@
             Factor=0.9}" BackgroundColor="Transparent">
             <Label Text="Datos de ruta:" FontSize="Title" TextColor="Black"></Label>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <SearchBar x:Name="txtSearch" IsEnabled="False" HorizontalOptions="Center"
+                <SearchBar x:Name="txtSearch" IsEnabled="False" PlaceholderColor="Black" HorizontalOptions="Center"
                            VerticalOptions="Center" BackgroundColor="{x:Static fonts:IconFont.ColorFondo}">
 
                 </SearchBar>
@@ -115,7 +115,7 @@
             "{ConstraintExpression Type=RelativeToParent,
             Property=Width,
             Factor=0.85}" >
-            <Label Text="Resultados:" FontSize="Subtitle" ></Label>
+            <Label Text="Resultados:" TextColor="Black" FontSize="Subtitle" ></Label>
             <ListView x:Name="lstVResultados" VerticalOptions="StartAndExpand" >
             </ListView>
         </StackLayout>
@@ -342,7 +342,7 @@
                 </StackLayout>
             </StackLayout>
             <StackLayout x:Name="comentario" VerticalOptions="Center">
-                <Label Text="Envianos un comentario:" FontSize="Title"></Label>
+                <Label Text="Envianos un comentario:" TextColor="Black" FontSize="Title"></Label>
                 <Editor x:Name="txtComentario" TextColor="Black" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Text="" RelativeLayout.WidthConstraint="{ConstraintExpression 
                     Type=RelativeToView, 
                     ElementName=comentario, 

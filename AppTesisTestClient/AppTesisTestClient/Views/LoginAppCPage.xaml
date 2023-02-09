@@ -24,16 +24,16 @@
             Factor=0.8}">
             <Image x:Name="logo" Source="logoInterciti.png" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="150" WidthRequest="150"></Image>
             <StackLayout  Spacing="5" Orientation="Vertical">
-                <Label Text="Cédula:" FontSize="Title"></Label>
-                <Entry x:Name="txtAuth" HorizontalOptions="FillAndExpand" Placeholder="ej. patricio.garcia@epn.edu.ec" ></Entry>
+                <Label Text="Cédula:" FontSize="Title" TextColor="Black"></Label>
+                <Entry x:Name="txtAuth" HorizontalOptions="FillAndExpand" Placeholder="ej. patricio.garcia@epn.edu.ec" PlaceholderColor="Black"></Entry>
             </StackLayout>
             <StackLayout  Spacing="5" Orientation="Vertical">
-                <Label Text="Contraseña:" FontSize="Title"></Label>
-                <Entry x:Name="txtAuthPass" IsPassword="True" HorizontalOptions="FillAndExpand"></Entry>
+                <Label Text="Contraseña:" FontSize="Title" TextColor="Black"></Label>
+                <Entry x:Name="txtAuthPass" IsPassword="True" HorizontalOptions="FillAndExpand" PlaceholderColor="Black"></Entry>
             </StackLayout>
             <StackLayout  Spacing="5" Orientation="Vertical">
-                <Button x:Name="btnLogin" IsEnabled="True" Text="Iniciar sesión"  HorizontalOptions="FillAndExpand" CornerRadius="10"></Button>
-                <Button x:Name="btnRegister" IsEnabled="True" Text="Registrarme" HorizontalOptions="FillAndExpand" CornerRadius="10"></Button>
+                <Button x:Name="btnLogin" IsEnabled="True" TextColor="Black" Text="Iniciar sesión"  HorizontalOptions="FillAndExpand" CornerRadius="10"></Button>
+                <Button x:Name="btnRegister" IsEnabled="True" TextColor="Black" Text="Registrarme" HorizontalOptions="FillAndExpand" CornerRadius="10"></Button>
             </StackLayout>
             <StackLayout>
                 <Label Text="Iniciar sesión con:" FontSize="Subtitle"></Label>

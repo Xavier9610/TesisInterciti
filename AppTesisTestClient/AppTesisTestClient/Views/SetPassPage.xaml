@@ -15,11 +15,11 @@
             Factor=1}">
             <Image x:Name="logo" Source="logoInterciti.png" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="150" WidthRequest="150"></Image>
             <Label Text="Nueva Contraseña"
-                FontSize="Subtitle"
+                FontSize="Subtitle" TextColor="Black"
                 HorizontalOptions="Start" />
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="txtPass" IsPassword="True" Placeholder="Contraseña" HorizontalOptions="FillAndExpand"></Entry>
-                <Button x:Name="btnOjo1" IsVisible="True"  FontFamily="fontello"
+                <Entry x:Name="txtPass" PlaceholderColor="Black" IsPassword="True" Placeholder="Contraseña" HorizontalOptions="FillAndExpand"></Entry>
+                <Button x:Name="btnOjo1" IsVisible="True" TextColor="White"  FontFamily="fontello"
                            Text="{x:Static fonts:IconFont.Eye}"
                            FontSize="Small"
                            HorizontalOptions="End"
@@ -30,8 +30,8 @@
                 FontSize="Subtitle"
                 HorizontalOptions="Start" />
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="txtPassConfirm" IsPassword="True" Placeholder=" Confirmacion Contraseña"></Entry>
-                <Button x:Name="btnOjo2" IsVisible="True"  FontFamily="fontello"
+                <Entry x:Name="txtPassConfirm" PlaceholderColor="Black" IsPassword="True" Placeholder=" Confirmacion Contraseña"></Entry>
+                <Button x:Name="btnOjo2" IsVisible="True" TextColor="White"  FontFamily="fontello"
                            Text="{x:Static fonts:IconFont.Eye}"
                            FontSize="Small"
                            HorizontalOptions="End"

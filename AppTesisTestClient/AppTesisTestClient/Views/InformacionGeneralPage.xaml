@@ -50,7 +50,7 @@
                 </Grid>
             </Frame>
             <StackLayout Grid.Row="2" BackgroundColor="Transparent" Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="FillAndExpand">
-                <SearchBar x:Name="txtBusqueda" HorizontalOptions="Start" WidthRequest="256"></SearchBar>
+                <SearchBar x:Name="txtBusqueda" PlaceholderColor="Black" HorizontalOptions="Start" WidthRequest="256"></SearchBar>
                 <StackLayout WidthRequest="40" >
                     <Button x:Name="btnBuscar"  FontFamily="fontello"  WidthRequest="40
                             "
@@ -84,7 +84,7 @@
                        HorizontalOptions="Center"
                        VerticalOptions="Center"
                ></Button>
-                            <Label Text="Agregar" FontSize="Micro"
+                            <Label Text="Agregar" TextColor="Black" FontSize="Micro"
                                    HorizontalOptions="Center">
 
                             </Label>
@@ -105,16 +105,16 @@
                                             <StackLayout Orientation="Vertical" Margin="0" HorizontalOptions="Start" VerticalOptions="Start">
 
                                                 <Label  Text="{Binding IdConductor.Nombre}" TextColor="ForestGreen" FontSize="12" VerticalOptions="Start" HorizontalOptions="Start"/>
-                                                <Label Text="Punto de partida:" VerticalOptions="Center" HorizontalOptions="Start"></Label>
+                                                <Label Text="Punto de partida:" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Start"></Label>
                                                 <Label  Text="{Binding Origen}" TextColor="Black" FontSize="10" VerticalOptions="Center" HorizontalOptions="Start"/>
-                                                <Label Text="Destino:" VerticalOptions="Center" HorizontalOptions="Start"></Label>
+                                                <Label Text="Destino:" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Start"></Label>
                                                 <Label  Text="{Binding Destino}" TextColor="Black" FontSize="10" VerticalOptions="Center" HorizontalOptions="Start"/>
                                             </StackLayout>
                                             <StackLayout Grid.Column="1" Orientation="Vertical" Margin="0" HorizontalOptions="Start" VerticalOptions="Center">
-                                                <Label Text="Datos de Conductor:" FontSize="12"></Label>
+                                                <Label Text="Datos de Conductor:" TextColor="Black" FontSize="12"></Label>
                                                 <Label  Text="{Binding IdConductor.Nombre}" TextColor="Black" FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                                                 <Label  Text="{Binding IdConductor.Apellido}" TextColor="Black" FontSize="15" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-                                                <Label Text="Valor:" FontSize="12"></Label>
+                                                <Label Text="Valor:" TextColor="Black" FontSize="12"></Label>
                                                 <Label  Text="{Binding ValorRecorrido}" TextColor="Black" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
 
                                             </StackLayout>
@@ -136,7 +136,7 @@
                        HorizontalOptions="Center"
                        VerticalOptions="Center"
                             ></Button>
-                            <Label Text="Agregar" FontSize="Micro"
+                            <Label Text="Agregar" TextColor="Black" FontSize="Micro"
                                    HorizontalOptions="Center">
 
                             </Label>
@@ -155,13 +155,13 @@
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
                                             <StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="FillAndExpand"  VerticalOptions="Center">
-                                                <Label Text="Dirección" FontSize="Medium" FontAttributes="Bold" TextColor="Black"></Label>
+                                                <Label Text="Dirección"  FontSize="Medium" FontAttributes="Bold" TextColor="Black"></Label>
                                                 <Label  Text="{Binding Direccion}" TextColor="#757575" FontSize="Small"  VerticalOptions="Center"/>
                                             </StackLayout>
                                             <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="Center"  VerticalOptions="Center">
-                                                <Label Text="Latitud:"></Label>
+                                                <Label Text="Latitud:" TextColor="Black"></Label>
                                                 <Label  Text="{Binding Latitud}" TextColor="Black" FontSize="Small"  FontAttributes="Bold" VerticalOptions="Center"/>
-                                                <Label Text="Longitud:"></Label>
+                                                <Label Text="Longitud:" TextColor="Black"></Label>
                                                 <Label  Text="{Binding Longitud}" TextColor="Black" FontSize="Small" FontAttributes="Bold" VerticalOptions="Center"/>
                                             </StackLayout>
                                         </Grid>

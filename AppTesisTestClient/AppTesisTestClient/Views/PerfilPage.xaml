@@ -152,12 +152,12 @@
 
 
                 <StackLayout Orientation="Vertical">
-                    <Entry x:Name="txtName" Placeholder="ej. Patricio" HeightRequest="40"></Entry>
-                    <Entry x:Name="txtApellido" Placeholder="ej. Garcia" HeightRequest="40"></Entry>
-                    <Entry x:Name="txtCI" Placeholder="ej. 1724718182" HeightRequest="40"></Entry>
-                    <Entry x:Name="txtCorreo" Placeholder="ej. ga-xavier@live.com" HeightRequest="40"></Entry>
-                    <Entry x:Name="txtTelefono" Placeholder="ej. 0960400373" HeightRequest="40"></Entry>
-                    <DatePicker x:Name="txtFecha" HeightRequest="40"></DatePicker>
+                    <Entry x:Name="txtName" Placeholder="ej. Patricio" PlaceholderColor="Black" HeightRequest="40"></Entry>
+                    <Entry x:Name="txtApellido" Placeholder="ej. Garcia" PlaceholderColor="Black" HeightRequest="40"></Entry>
+                    <Entry x:Name="txtCI" Placeholder="ej. 1724718182" PlaceholderColor="Black" HeightRequest="40"></Entry>
+                    <Entry x:Name="txtCorreo" Placeholder="ej. ga-xavier@live.com" PlaceholderColor="Black" HeightRequest="40"></Entry>
+                    <Entry x:Name="txtTelefono" Placeholder="ej. 0960400373" PlaceholderColor="Black" HeightRequest="40"></Entry>
+                    <DatePicker x:Name="txtFecha" HeightRequest="40" TextColor="Black"></DatePicker>
                 </StackLayout>
             </StackLayout>
 
