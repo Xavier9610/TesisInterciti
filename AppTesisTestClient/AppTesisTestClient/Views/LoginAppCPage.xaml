@@ -24,7 +24,7 @@
             Factor=0.8}">
             <Image x:Name="logo" Source="logoInterciti.png" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="150" WidthRequest="150"></Image>
             <StackLayout  Spacing="5" Orientation="Vertical">
-                <Label Text="Correo electrónico:" FontSize="Title"></Label>
+                <Label Text="Cédula:" FontSize="Title"></Label>
                 <Entry x:Name="txtAuth" HorizontalOptions="FillAndExpand" Placeholder="ej. patricio.garcia@epn.edu.ec" ></Entry>
             </StackLayout>
             <StackLayout  Spacing="5" Orientation="Vertical">

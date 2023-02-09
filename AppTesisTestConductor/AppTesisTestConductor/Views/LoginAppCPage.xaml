@@ -28,7 +28,7 @@
             <Image x:Name="logo" Source="logoInterciti.png" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="150" WidthRequest="150"></Image>
             <Label x:Name="lblInfo" TextColor="Red" ></Label>
             <StackLayout  Spacing="5" Orientation="Vertical">
-                <Label Text="Correo electrónico:" FontSize="Title" TextColor="Black"></Label>
+                <Label Text="Cédula:" FontSize="Title" TextColor="Black"></Label>
                 <Entry x:Name="txtAuth" HorizontalOptions="FillAndExpand" Placeholder="ej. patricio.garcia@epn.edu.ec" PlaceholderColor="Gray" TextColor="Black" ></Entry>
             </StackLayout>
             <StackLayout  Spacing="5" Orientation="Vertical">

@@ -160,10 +160,10 @@
                            VerticalOptions="Center"
                            ></Label>
                 </StackLayout>
-                <Label Text="Fecha del recorrido:" BackgroundColor="Transparent" TextColor="Black" FontSize="Title"></Label>
+                <Label Text="Fecha del recorrido:" IsEnabled="False" BackgroundColor="Transparent" TextColor="Black" FontSize="Title"></Label>
                 <StackLayout BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" Orientation="Horizontal" x:Name="lReserva">
                     <RadioButton x:Name="rBtnReserva" BackgroundColor="{x:Static fonts:IconFont.ColorFondo}" IsEnabled="False"></RadioButton>
-                    <Button x:Name="btnDateRecorrido" IsEnabled="True" TextColor="{x:Static fonts:IconFont.ColorTexto}" HorizontalOptions="StartAndExpand" BackgroundColor="Transparent" Text="Reservar" RelativeLayout.WidthConstraint="{ConstraintExpression 
+                    <Button x:Name="btnDateRecorrido" IsEnabled="True" TextColor="{x:Static fonts:IconFont.ColorTexto}" HorizontalOptions="StartAndExpand" BackgroundColor="Transparent" Text="Fecha:" RelativeLayout.WidthConstraint="{ConstraintExpression 
                     Type=RelativeToView, 
                     ElementName=lReserva, 
                     Property=Y}"></Button>

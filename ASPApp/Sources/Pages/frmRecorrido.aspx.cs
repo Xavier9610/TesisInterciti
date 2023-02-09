@@ -40,17 +40,30 @@ namespace ASPApp.Sources.Pages
                         break;
 
                     case "Origen":
-                        lista = Servicio.client.ListarRecorridoFecha(txtSearch.Value);
+                        foreach (var iterator in aux)
+                        {
+                            if (iterator.Origen.Contains(txtSearch.Value))
+                            {
+                                lista.Add(iterator);
+                            }
+                        }
                         break;
 
                     case "Destino":
-                        lista = Servicio.client.ListarRecorridoFecha(txtSearch.Value);
+                        foreach (var iterator in aux)
+                        {
+                            if (iterator.Destino.Contains(txtSearch.Value))
+                            {
+                                lista.Add(iterator);
+                            }
+                        }
                         break;
 
                     case "Fecha":
                         lista = Servicio.client.ListarRecorridoFecha(txtSearch.Value);
                         break;
                     case "Todo":
+
                         break;
                     default:
                         break;

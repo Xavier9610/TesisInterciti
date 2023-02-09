@@ -600,7 +600,7 @@ namespace AppTesisTestClient.Views
             layoutDirecciones.IsVisible = false;
             layoutBarraBu.IsVisible = false;
             layoutRecorrido.IsVisible = true;
-            if (Servicio.client.AgregarRecorrido((decimal)ubicacionInicial.Latitude, (decimal)ubicacionInicial.Longitude, (decimal)ubicacionFinal.Longitude, (decimal)ubicacionFinal.Latitude, dateRecorrido.Date, Convert.ToDecimal(txtOferta.Text), null, Servicio.usuarioConectado.IdCliente,1, 0,"") != 0) {
+            if (Servicio.client.AgregarRecorrido((decimal)ubicacionInicial.Latitude, (decimal)ubicacionInicial.Longitude, (decimal)ubicacionFinal.Longitude, (decimal)ubicacionFinal.Latitude, DateTime.Now, Convert.ToDecimal(txtOferta.Text), null, Servicio.usuarioConectado.IdCliente,1, 0,"") != 0) {
                 await DisplayAlert("Error!", "No se logro crear la solicitud. Intente nuevamente", "OK");
                 return;
             }
