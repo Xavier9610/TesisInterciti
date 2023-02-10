@@ -14,6 +14,9 @@ using System.Threading.Tasks;
 using System.IO;
 using Android.Graphics;
 using System.IO.Compression;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace AppTesisTestClient.Services
 {
@@ -295,16 +298,34 @@ namespace AppTesisTestClient.Services
             return recorrido;
         }
 
-        private static string GetAddressByQuery(Position position)
+        public static string GetAddressByQuery(Position position)
         {
-            var x = geocoder.GetAddressesForPositionAsync(position);
-            foreach (var iter in x.Result)
-            {
-                return iter;
-            }
-            return null;
+            var x = client.GetAddress(position.Latitude, position.Longitude);
+
+            return x;
         }
 
+        public static async Task<List<string>> GetSimilarPlacesAsync(string searchTerm)
+        {
+            string apiKey = "AIzaSyDx_OtPiqWQxc4vckTk_8T0wEuCFtuFTl4";
+            string url = $"http://nominatim.openstreetmap.org/search?q=" + searchTerm.Replace(" ", "+") + "&format=json";
+
+            using (HttpClient client = new HttpClient())
+            {
+   
+                HttpResponseMessage response = await client.GetAsync(url);
+                string responseString = await response.Content.ReadAsStringAsync();
+                List< RootObject> result = JsonConvert.DeserializeObject<List< RootObject>>(responseString);
+
+                List<string> similarPlaces = new List<string>();
+                foreach (RootObject prediction in result)
+                {
+                    similarPlaces.Add(prediction.display_name);
+                }
+
+                return similarPlaces;
+            }
+        }
         public static Models.TipoVehiculo WCFToApp(ServiceReferenceInterciti.TipoVehiculo clienteQuery)
         {
             Models.TipoVehiculo recorrido = new Models.TipoVehiculo();
@@ -750,6 +771,81 @@ namespace AppTesisTestClient.Services
             }
             return ImageSource.FromResource(source, typeof(ImagenesEnApp).GetType());
         }
+
     }
+    //
+
+
+public class PlacesApiResult
+{
+    public List<Prediction> predictions { get; set; }
+    public string status { get; set; }
+}
+
+    public class Prediction
+    {
+        public string description { get; set; }
+        public string id { get; set; }
+        public List<MatchedSubstring> matched_substrings { get; set; }
+        public string place_id { get; set; }
+        public string reference { get; set; }
+        public List<Term> terms { get; set; }
+        public List<string> types { get; set; }
+    }
+
+    public class MatchedSubstring
+    {
+        public int length { get; set; }
+        public int offset { get; set; }
+    }
+
+    public class Term
+    {
+        public int offset { get; set; }
+        public string value { get; set; }
+    }
+
+    [DataContract]
+    public class Address
+    {
+        [DataMember]
+        public string road { get; set; }
+        [DataMember]
+        public string suburb { get; set; }
+        [DataMember]
+        public string city { get; set; }
+        [DataMember]
+        public string state_district { get; set; }
+        [DataMember]
+        public string state { get; set; }
+        [DataMember]
+        public string postcode { get; set; }
+        [DataMember]
+        public string country { get; set; }
+        [DataMember]
+        public string country_code { get; set; }
+    }
+
+    [DataContract]
+    public class RootObject
+    {
+        [DataMember]
+        public string place_id { get; set; }
+        [DataMember]
+        public string licence { get; set; }
+        [DataMember]
+        public string osm_type { get; set; }
+        [DataMember]
+        public string osm_id { get; set; }
+        [DataMember]
+        public string lat { get; set; }
+        [DataMember]
+        public string lon { get; set; }
+        [DataMember]
+        public string display_name { get; set; }
+        [DataMember]
+        public Address address { get; set; }
+    }
+
 }
 

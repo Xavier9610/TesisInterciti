@@ -326,7 +326,7 @@ namespace AppTesisTestConductor.Services
             return  recorrido;
         }
 
-        private static string GetAddressByQuery(Position position)
+        public static string GetAddressByQuery(Position position)
         {
             var x = client.GetAddress(position.Latitude,position.Longitude);
 

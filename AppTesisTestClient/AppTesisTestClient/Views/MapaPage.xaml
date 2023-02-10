@@ -219,7 +219,7 @@
         </StackLayout>
         <!---->
         <StackLayout IsVisible="False" x:Name="layoutSeleccionDirecciones" Padding="40" BackgroundColor="White" RelativeLayout.XConstraint="0" 
-         RelativeLayout.YConstraint="550" Orientation="Horizontal" HeightRequest="100"
+         RelativeLayout.YConstraint="400" Orientation="Horizontal" HeightRequest="100"
          RelativeLayout.WidthConstraint=
             "{ConstraintExpression Type=RelativeToParent,
             Property=Width,

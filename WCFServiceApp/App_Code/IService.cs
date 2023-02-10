@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 public interface IService
 {
     [OperationContract]
+    IEnumerable<string> GetPlacesForAddress(string name);
+    [OperationContract]
     Admin FindAdminByID(int ci);
     [OperationContract]
     IEnumerable<string> GetLatLngForAddress(string name);

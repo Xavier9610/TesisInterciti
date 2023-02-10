@@ -16,7 +16,6 @@ namespace AppTesisTestClient.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CRUDPage : ContentPage
     {
-        Geocoder geocoder = new Geocoder();
         Vehiculo vehiculo;
         Recorrido recorrido;
         MisUbicaciones misUbicaciones;
@@ -65,10 +64,10 @@ namespace AppTesisTestClient.Views
                 Label = "Direccion",
                 Position = new Position(ltd, lng)
             };
-            var direccion = await geocoder.GetAddressesForPositionAsync(pin.Position);
+            var direccion = Servicio.GetAddressByQuery(pin.Position);
             txtLatUbi.Text = ltd.ToString();
             txtLngUbi.Text = lng.ToString();
-            txtDireccionUbi.Text = direccion.FirstOrDefault();
+            txtDireccionUbi.Text = direccion;
             pin.IsDraggable = true;
             mapa.Pins.Add(pin);
         }
@@ -94,24 +93,15 @@ namespace AppTesisTestClient.Views
         {
             if (txtSearch.Text != "")
             {
-                var p = await geocoder.GetPositionsForAddressAsync(txtSearch.Text + " , Ecuador");
-                MostrarResultados(p);
+                List<string> similarPlaces = Servicio.client.GetPlacesForAddress(txtSearch.Text + "+Ecuador");
+
+                lstVResultados.ItemsSource = similarPlaces;
+                lstVResultados.IsVisible = true;
             }
 
 
         }
-        private async void MostrarResultados(IEnumerable<Position> p)
-        {
-            List<string> vs = new List<string>();
-            vs.Clear();
-            foreach (var iter in p.ToList())
-            {
-                var aux = await geocoder.GetAddressesForPositionAsync(iter);
-                vs.Add(aux.First());
-            }
-            lstVResultados.ItemsSource = vs;
-            lstVResultados.IsVisible = true;
-        }
+        
         
         public CRUDPage(Recorrido recorrido, bool data)
         {
@@ -144,9 +134,9 @@ namespace AppTesisTestClient.Views
         private async void UbiSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var s = lstVResultados.SelectedItem.ToString();
-            var p = await geocoder.GetPositionsForAddressAsync(s);
+            var p = Servicio.client.GetLatLngForAddress(txtSearch.Text + "+Ecuador");
             Ubicacion ubicacion = new Ubicacion();
-            ubicacion.UbicacionV = new Location(p.First().Latitude, p.First().Longitude);
+            ubicacion.UbicacionV = new Location(Convert.ToDouble(p.FirstOrDefault().Split(":")[0], System.Globalization.CultureInfo.InvariantCulture), Convert.ToDouble(p.FirstOrDefault().Split(":")[1], System.Globalization.CultureInfo.InvariantCulture));
 
             MostrarUbi(ubicacion.UbicacionV.Latitude, ubicacion.UbicacionV.Longitude, mapaUbi);
             txtLatUbi.Text = ubicacion.UbicacionV.Latitude.ToString();

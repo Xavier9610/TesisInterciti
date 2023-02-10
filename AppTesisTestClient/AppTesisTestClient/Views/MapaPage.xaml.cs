@@ -563,10 +563,10 @@ namespace AppTesisTestClient.Views
 
 
 
-        private async void UbicacionSeleccionada(object sender, SelectedItemChangedEventArgs e)
+        private void UbicacionSeleccionada(object sender, SelectedItemChangedEventArgs e)
         {
             var p =  Servicio.client.GetLatLngForAddress(lstVResultados.SelectedItem.ToString());
-            ubicacion.UbicacionV = new Location(Convert.ToDouble(p.First().Split(":")[0]), Convert.ToDouble(p.First().Split(":")[1]));
+            ubicacion.UbicacionV = new Location(double.Parse(p.FirstOrDefault().Split(":")[0],System.Globalization.CultureInfo.InvariantCulture), double.Parse(p.FirstOrDefault().Split(":")[1], System.Globalization.CultureInfo.InvariantCulture));
             MoveToActualUbicacion(ubicacion);
             layoutBusquedaResult.IsVisible = false;
         }
@@ -575,25 +575,20 @@ namespace AppTesisTestClient.Views
         {
             if (txtSearch.Text != "")
             {
-                var p = Servicio.client.GetLatLngForAddress(txtSearch.Text + "+Ecuador");
-                MostrarResultados(p);
+                //  var p = Servicio.client.GetLatLngForAddress(txtSearch.Text + "+Ecuador");
+                List<string> similarPlaces =  Servicio. client.GetPlacesForAddress(txtSearch.Text + "+Ecuador");
+
+                layoutBusquedaResult.IsVisible = true;
+                lstVResultados.ItemsSource = similarPlaces;
+                lstVResultados.IsVisible = true;
+                //
+            
+               
             }
             
 
         }
 
-        private async void MostrarResultados(IEnumerable<string> p)
-        {
-            layoutBusquedaResult.IsVisible = true;
-            List<string> vs = new List<string>();
-            vs.Clear();
-            foreach (var iter in p.ToList())
-            {
-                var aux = Servicio.client.GetAddress(Convert.ToDouble(iter.Split(":")[0]) , Convert.ToDouble(iter.Split(":")[1]));
-                vs.Add(aux);
-            }
-            lstVResultados.ItemsSource = vs;
-        }
         
         private async void SolicitarRecorrido(object sender, EventArgs e)
         {
@@ -611,6 +606,7 @@ namespace AppTesisTestClient.Views
      
         private void UbicacionCancelada(object sender, EventArgs e)
         {
+            layoutBusquedaResult.IsVisible = false;
             sourceSelected = false;
             txtSearch.IsEnabled = false;
             MostrarMainDirecciones();
@@ -641,6 +637,7 @@ namespace AppTesisTestClient.Views
                 MostrarMainDirecciones();
             }
             txtSearch.IsEnabled = false;
+            layoutBusquedaResult.IsVisible = false;
         }
 
         private void MostrarMainDirecciones()

@@ -1092,6 +1092,12 @@ namespace ServiceReferenceInterciti
     public interface IService
     {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarTipoVehiculo", ReplyAction="http://tempuri.org/IService/EliminarTipoVehiculoResponse")]
+        int EliminarTipoVehiculo(int idTipoVehiculo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarTipoVehiculo", ReplyAction="http://tempuri.org/IService/EliminarTipoVehiculoResponse")]
+        System.Threading.Tasks.Task<int> EliminarTipoVehiculoAsync(int idTipoVehiculo);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMarcaVehiculo", ReplyAction="http://tempuri.org/IService/ListarMarcaVehiculoResponse")]
         System.Collections.Generic.List<ServiceReferenceInterciti.MarcaVehiculo> ListarMarcaVehiculo();
         
@@ -1193,6 +1199,12 @@ namespace ServiceReferenceInterciti
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindAdminByCorreo", ReplyAction="http://tempuri.org/IService/FindAdminByCorreoResponse")]
         System.Threading.Tasks.Task<ServiceReferenceInterciti.Admin> FindAdminByCorreoAsync(string ci);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetPlacesForAddress", ReplyAction="http://tempuri.org/IService/GetPlacesForAddressResponse")]
+        System.Collections.Generic.List<string> GetPlacesForAddress(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetPlacesForAddress", ReplyAction="http://tempuri.org/IService/GetPlacesForAddressResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<string>> GetPlacesForAddressAsync(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/FindAdminByID", ReplyAction="http://tempuri.org/IService/FindAdminByIDResponse")]
         ServiceReferenceInterciti.Admin FindAdminByID(int ci);
@@ -1697,12 +1709,6 @@ namespace ServiceReferenceInterciti
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarTipoVehiculo", ReplyAction="http://tempuri.org/IService/ListarTipoVehiculoResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.TipoVehiculo>> ListarTipoVehiculoAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarTipoVehiculo", ReplyAction="http://tempuri.org/IService/EliminarTipoVehiculoResponse")]
-        int EliminarTipoVehiculo(int idTipoVehiculo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarTipoVehiculo", ReplyAction="http://tempuri.org/IService/EliminarTipoVehiculoResponse")]
-        System.Threading.Tasks.Task<int> EliminarTipoVehiculoAsync(int idTipoVehiculo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
@@ -1746,6 +1752,16 @@ namespace ServiceReferenceInterciti
         public ServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress)
         {
+        }
+        
+        public int EliminarTipoVehiculo(int idTipoVehiculo)
+        {
+            return base.Channel.EliminarTipoVehiculo(idTipoVehiculo);
+        }
+        
+        public System.Threading.Tasks.Task<int> EliminarTipoVehiculoAsync(int idTipoVehiculo)
+        {
+            return base.Channel.EliminarTipoVehiculoAsync(idTipoVehiculo);
         }
         
         public System.Collections.Generic.List<ServiceReferenceInterciti.MarcaVehiculo> ListarMarcaVehiculo()
@@ -1916,6 +1932,16 @@ namespace ServiceReferenceInterciti
         public System.Threading.Tasks.Task<ServiceReferenceInterciti.Admin> FindAdminByCorreoAsync(string ci)
         {
             return base.Channel.FindAdminByCorreoAsync(ci);
+        }
+        
+        public System.Collections.Generic.List<string> GetPlacesForAddress(string name)
+        {
+            return base.Channel.GetPlacesForAddress(name);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<string>> GetPlacesForAddressAsync(string name)
+        {
+            return base.Channel.GetPlacesForAddressAsync(name);
         }
         
         public ServiceReferenceInterciti.Admin FindAdminByID(int ci)
@@ -2756,16 +2782,6 @@ namespace ServiceReferenceInterciti
         public System.Threading.Tasks.Task<System.Collections.Generic.List<ServiceReferenceInterciti.TipoVehiculo>> ListarTipoVehiculoAsync()
         {
             return base.Channel.ListarTipoVehiculoAsync();
-        }
-        
-        public int EliminarTipoVehiculo(int idTipoVehiculo)
-        {
-            return base.Channel.EliminarTipoVehiculo(idTipoVehiculo);
-        }
-        
-        public System.Threading.Tasks.Task<int> EliminarTipoVehiculoAsync(int idTipoVehiculo)
-        {
-            return base.Channel.EliminarTipoVehiculoAsync(idTipoVehiculo);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

@@ -446,13 +446,25 @@ public class Service : IService
     
     public  string GetAddress(double lat, double lon)
     {
-        WebClient webClient = new WebClient();
-        webClient.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
-        webClient.Headers.Add("Referer", "https://www.microsoft.com");
-        var jsonData = webClient.DownloadData("https://nominatim.openstreetmap.org/reverse?format=json&lat=" + lat + "&lon=" + lon);
-        DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(RootObject));
-        RootObject rootObject = (RootObject)ser.ReadObject(new MemoryStream(jsonData));
-        return rootObject.display_name;
+        try
+        {
+            WebClient webClient = new WebClient();
+            webClient.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
+            webClient.Headers.Add("Referer", "https://www.microsoft.com");
+            var jsonData = webClient.DownloadData("https://nominatim.openstreetmap.org/reverse?format=json&lat=" + lat + "&lon=" + lon);
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(RootObject));
+            RootObject rootObject = (RootObject)ser.ReadObject(new MemoryStream(jsonData));
+            if (rootObject.display_name!="")
+            {
+                return rootObject.display_name;
+            }
+            return "";
+        }
+        catch(Exception e)
+        {
+            return e.Message;
+        }
+        
     }
     public IEnumerable<string> GetLatLngForAddress(string name)
     {
@@ -460,10 +472,31 @@ public class Service : IService
         webClient.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
         webClient.Headers.Add("Referer", "https://www.microsoft.com");
         var jsonData = webClient.DownloadData("http://nominatim.openstreetmap.org/search?q="+name.Replace(" ","+")+"&format=json&polygon=1&addressdetails=1");
-        DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(RootObject));
+        DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(List<RootObject>));
+        List < RootObject> rootObject = (List < RootObject>)ser.ReadObject(new MemoryStream(jsonData));
+        List<string> aux = new List<string>();
+        foreach (var iter in rootObject)
+        {
+            aux.Add(iter.lat + ":" + iter.lon );
+        }
+       // aux.Add(rootObject[0].lat + ":" + rootObject[0].lon+":"+rootObject.Count);
+        return aux;
+    }
+
+    public IEnumerable<string> GetPlacesForAddress(string name)
+    {
+        WebClient webClient = new WebClient();
+        webClient.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
+        webClient.Headers.Add("Referer", "https://www.microsoft.com");
+        var jsonData = webClient.DownloadData("http://nominatim.openstreetmap.org/search?q=" + name.Replace(" ", "+") + "&format=json&polygon=1&addressdetails=1");
+        DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(List<RootObject>));
         List<RootObject> rootObject = (List<RootObject>)ser.ReadObject(new MemoryStream(jsonData));
         List<string> aux = new List<string>();
-        aux.Add(rootObject[0].lat + ":" + rootObject[0].lon);
+        foreach (var iter in rootObject)
+        {
+            aux.Add(iter.display_name);
+        }
+        // aux.Add(rootObject[0].lat + ":" + rootObject[0].lon+":"+rootObject.Count);
         return aux;
     }
     public static byte[] Compress(byte[] data)

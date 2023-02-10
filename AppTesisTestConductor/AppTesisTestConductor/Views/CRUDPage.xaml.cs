@@ -16,7 +16,6 @@ namespace AppTesisTestConductor.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CRUDPage : ContentPage
     {
-        Geocoder geocoder = new Geocoder();
         Vehiculo vehiculo;
         Recorrido recorrido;
         MisUbicaciones misUbicaciones;
@@ -159,18 +158,18 @@ namespace AppTesisTestConductor.Views
         {
             if (txtSearch.Text != "")
             {
-                var p = await geocoder.GetPositionsForAddressAsync(txtSearch.Text + " , Ecuador");
+                var p = Servicio.client.GetLatLngForAddress(txtSearch.Text + "+Ecuador");
                 MostrarResultados(p);
             }
         }
-        private async void MostrarResultados(IEnumerable<Position> p)
+        private async void MostrarResultados(IEnumerable<string> p)
         {
             List<string> vs = new List<string>();
             vs.Clear();
             foreach (var iter in p.ToList())
             {
-                var aux = await geocoder.GetAddressesForPositionAsync(iter);
-                vs.Add(aux.First());
+                var aux = Servicio.client.GetAddress(Convert.ToDouble(iter.Split(":")[0]), Convert.ToDouble(iter.Split(":")[1]));
+                vs.Add(aux);
             }
             lstVResultados.ItemsSource = vs;
             lstVResultados.IsVisible = true;
@@ -279,10 +278,10 @@ namespace AppTesisTestConductor.Views
                 Label = "Direccion",
                 Position = new Position(ltd,lng)
             };
-            var direccion = await geocoder.GetAddressesForPositionAsync(pin.Position);
+            var direccion = Servicio.GetAddressByQuery(pin.Position);
             txtLatUbi.Text = ltd.ToString();
             txtLngUbi.Text = lng.ToString();
-            txtDireccionUbi.Text = direccion.FirstOrDefault() ;
+            txtDireccionUbi.Text = direccion;
             pin.IsDraggable = true;
             mapa.Pins.Add(pin);
         }
